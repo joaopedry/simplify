@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Simplify.Negocio.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Simplify.Negocio.Persistencia;
 
 namespace Simplify.Negocio
 {
@@ -15,7 +17,7 @@ namespace Simplify.Negocio
         {
             Validacao validacao = new Validacao();
 
-            // CPF deve conter exatamente 11 NÚMEROS //
+            /* CPF deve conter exatamente 11 NÚMEROS 
             if (clienteAdicionado.CPF = 11)
             {
                 validacao.Mensagens.Add("CPF", "O CPF deve conter 11 números");
@@ -63,7 +65,7 @@ namespace Simplify.Negocio
             {
                 validacao.Mensagens.Add("Telefone", "O telefone deve conter 12 números");
             }
-
+            */
             if (validacao.Valido)
             {
                 this.banco.Clientes.Add(clienteAdicionado);
