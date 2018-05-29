@@ -96,11 +96,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabOcorrencia = new System.Windows.Forms.TabPage();
-            this.rbINSSnao = new System.Windows.Forms.RadioButton();
+            this.gbINSSAcidente = new System.Windows.Forms.GroupBox();
             this.rbINSSsim = new System.Windows.Forms.RadioButton();
+            this.rbINSSnao = new System.Windows.Forms.RadioButton();
+            this.gbTipoAcidente = new System.Windows.Forms.GroupBox();
             this.rbPessoal = new System.Windows.Forms.RadioButton();
-            this.rbTrabalho = new System.Windows.Forms.RadioButton();
             this.rbTipo = new System.Windows.Forms.RadioButton();
+            this.rbTrabalho = new System.Windows.Forms.RadioButton();
             this.rtbObservacoes = new System.Windows.Forms.RichTextBox();
             this.tbHospital = new System.Windows.Forms.TextBox();
             this.tbSocorrista = new System.Windows.Forms.TextBox();
@@ -120,6 +122,12 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.tabAnexos = new System.Windows.Forms.TabPage();
+            this.gbComprovante = new System.Windows.Forms.GroupBox();
+            this.rbComprovanteentregue = new System.Windows.Forms.RadioButton();
+            this.rbComprovantependente = new System.Windows.Forms.RadioButton();
+            this.gbCartaobanco = new System.Windows.Forms.GroupBox();
+            this.rbCartaoentregue = new System.Windows.Forms.RadioButton();
+            this.rbCartaopendente = new System.Windows.Forms.RadioButton();
             this.gbBoletimOcorrencia = new System.Windows.Forms.GroupBox();
             this.rbBOpendente = new System.Windows.Forms.RadioButton();
             this.rbBOentregue = new System.Windows.Forms.RadioButton();
@@ -131,10 +139,6 @@
             this.rbCPFentregue = new System.Windows.Forms.RadioButton();
             this.rbRgpentende = new System.Windows.Forms.RadioButton();
             this.rbRgentregue = new System.Windows.Forms.RadioButton();
-            this.rbCartaopendente = new System.Windows.Forms.RadioButton();
-            this.rbCartaoentregue = new System.Windows.Forms.RadioButton();
-            this.rbComprovantependente = new System.Windows.Forms.RadioButton();
-            this.rbComprovanteentregue = new System.Windows.Forms.RadioButton();
             this.rbProntuariopendente = new System.Windows.Forms.RadioButton();
             this.rbProntuarioentregue = new System.Windows.Forms.RadioButton();
             this.btAnexarDocVeiculo = new System.Windows.Forms.Button();
@@ -153,28 +157,32 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.gbProntuario = new System.Windows.Forms.GroupBox();
+            this.gbComprovanteRes = new System.Windows.Forms.GroupBox();
             this.tabObservacoes = new System.Windows.Forms.TabPage();
             this.rtbAbaObservacoes = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.gbTipoAcidente = new System.Windows.Forms.GroupBox();
-            this.gbINSSAcidente = new System.Windows.Forms.GroupBox();
-            this.gbProntuario = new System.Windows.Forms.GroupBox();
-            this.gbComprovanteRes = new System.Windows.Forms.GroupBox();
-            this.gbCartaobanco = new System.Windows.Forms.GroupBox();
-            this.gbComprovante = new System.Windows.Forms.GroupBox();
+            this.gbRG = new System.Windows.Forms.GroupBox();
+            this.gbCPF = new System.Windows.Forms.GroupBox();
+            this.gbCNH = new System.Windows.Forms.GroupBox();
+            this.gbDocVeic = new System.Windows.Forms.GroupBox();
             this.ctCadastro.SuspendLayout();
             this.tabcadastrocliente.SuspendLayout();
             this.abaEndereco.SuspendLayout();
             this.tabContato.SuspendLayout();
             this.tabOcorrencia.SuspendLayout();
-            this.tabAnexos.SuspendLayout();
-            this.gbBoletimOcorrencia.SuspendLayout();
-            this.tabObservacoes.SuspendLayout();
-            this.gbTipoAcidente.SuspendLayout();
             this.gbINSSAcidente.SuspendLayout();
-            this.gbProntuario.SuspendLayout();
-            this.gbCartaobanco.SuspendLayout();
+            this.gbTipoAcidente.SuspendLayout();
+            this.tabAnexos.SuspendLayout();
             this.gbComprovante.SuspendLayout();
+            this.gbCartaobanco.SuspendLayout();
+            this.gbBoletimOcorrencia.SuspendLayout();
+            this.gbProntuario.SuspendLayout();
+            this.tabObservacoes.SuspendLayout();
+            this.gbRG.SuspendLayout();
+            this.gbCPF.SuspendLayout();
+            this.gbCNH.SuspendLayout();
+            this.gbDocVeic.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbNome
@@ -929,18 +937,15 @@
             this.tabOcorrencia.TabIndex = 3;
             this.tabOcorrencia.Text = "Ocorrência";
             // 
-            // rbINSSnao
+            // gbINSSAcidente
             // 
-            this.rbINSSnao.AutoSize = true;
-            this.rbINSSnao.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbINSSnao.Location = new System.Drawing.Point(101, 11);
-            this.rbINSSnao.Margin = new System.Windows.Forms.Padding(4);
-            this.rbINSSnao.Name = "rbINSSnao";
-            this.rbINSSnao.Size = new System.Drawing.Size(51, 17);
-            this.rbINSSnao.TabIndex = 22;
-            this.rbINSSnao.TabStop = true;
-            this.rbINSSnao.Text = "NÃO";
-            this.rbINSSnao.UseVisualStyleBackColor = true;
+            this.gbINSSAcidente.Controls.Add(this.rbINSSsim);
+            this.gbINSSAcidente.Controls.Add(this.rbINSSnao);
+            this.gbINSSAcidente.Location = new System.Drawing.Point(196, 229);
+            this.gbINSSAcidente.Name = "gbINSSAcidente";
+            this.gbINSSAcidente.Size = new System.Drawing.Size(187, 40);
+            this.gbINSSAcidente.TabIndex = 24;
+            this.gbINSSAcidente.TabStop = false;
             // 
             // rbINSSsim
             // 
@@ -955,6 +960,31 @@
             this.rbINSSsim.Text = "SIM";
             this.rbINSSsim.UseVisualStyleBackColor = true;
             // 
+            // rbINSSnao
+            // 
+            this.rbINSSnao.AutoSize = true;
+            this.rbINSSnao.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbINSSnao.Location = new System.Drawing.Point(101, 11);
+            this.rbINSSnao.Margin = new System.Windows.Forms.Padding(4);
+            this.rbINSSnao.Name = "rbINSSnao";
+            this.rbINSSnao.Size = new System.Drawing.Size(51, 17);
+            this.rbINSSnao.TabIndex = 22;
+            this.rbINSSnao.TabStop = true;
+            this.rbINSSnao.Text = "NÃO";
+            this.rbINSSnao.UseVisualStyleBackColor = true;
+            // 
+            // gbTipoAcidente
+            // 
+            this.gbTipoAcidente.Controls.Add(this.rbPessoal);
+            this.gbTipoAcidente.Controls.Add(this.rbTipo);
+            this.gbTipoAcidente.Controls.Add(this.rbTrabalho);
+            this.gbTipoAcidente.Location = new System.Drawing.Point(196, 183);
+            this.gbTipoAcidente.Name = "gbTipoAcidente";
+            this.gbTipoAcidente.Size = new System.Drawing.Size(287, 29);
+            this.gbTipoAcidente.TabIndex = 23;
+            this.gbTipoAcidente.TabStop = false;
+            this.gbTipoAcidente.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // rbPessoal
             // 
             this.rbPessoal.AutoSize = true;
@@ -968,19 +998,6 @@
             this.rbPessoal.Text = "PESSOAL";
             this.rbPessoal.UseVisualStyleBackColor = true;
             // 
-            // rbTrabalho
-            // 
-            this.rbTrabalho.AutoSize = true;
-            this.rbTrabalho.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTrabalho.Location = new System.Drawing.Point(101, 9);
-            this.rbTrabalho.Margin = new System.Windows.Forms.Padding(4);
-            this.rbTrabalho.Name = "rbTrabalho";
-            this.rbTrabalho.Size = new System.Drawing.Size(86, 17);
-            this.rbTrabalho.TabIndex = 19;
-            this.rbTrabalho.TabStop = true;
-            this.rbTrabalho.Text = "TRABALHO";
-            this.rbTrabalho.UseVisualStyleBackColor = true;
-            // 
             // rbTipo
             // 
             this.rbTipo.AutoSize = true;
@@ -993,6 +1010,19 @@
             this.rbTipo.TabStop = true;
             this.rbTipo.Text = "TRANSITO";
             this.rbTipo.UseVisualStyleBackColor = true;
+            // 
+            // rbTrabalho
+            // 
+            this.rbTrabalho.AutoSize = true;
+            this.rbTrabalho.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTrabalho.Location = new System.Drawing.Point(101, 9);
+            this.rbTrabalho.Margin = new System.Windows.Forms.Padding(4);
+            this.rbTrabalho.Name = "rbTrabalho";
+            this.rbTrabalho.Size = new System.Drawing.Size(86, 17);
+            this.rbTrabalho.TabIndex = 19;
+            this.rbTrabalho.TabStop = true;
+            this.rbTrabalho.Text = "TRABALHO";
+            this.rbTrabalho.UseVisualStyleBackColor = true;
             // 
             // rtbObservacoes
             // 
@@ -1171,17 +1201,13 @@
             // tabAnexos
             // 
             this.tabAnexos.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabAnexos.Controls.Add(this.gbDocVeic);
+            this.tabAnexos.Controls.Add(this.gbCNH);
+            this.tabAnexos.Controls.Add(this.gbCPF);
+            this.tabAnexos.Controls.Add(this.gbRG);
             this.tabAnexos.Controls.Add(this.gbComprovante);
             this.tabAnexos.Controls.Add(this.gbCartaobanco);
             this.tabAnexos.Controls.Add(this.gbBoletimOcorrencia);
-            this.tabAnexos.Controls.Add(this.rbDocVeiculopendente);
-            this.tabAnexos.Controls.Add(this.rbDocVeiculoentregue);
-            this.tabAnexos.Controls.Add(this.rbCNHpendente);
-            this.tabAnexos.Controls.Add(this.rbCNHentregue);
-            this.tabAnexos.Controls.Add(this.rbCPFpendente);
-            this.tabAnexos.Controls.Add(this.rbCPFentregue);
-            this.tabAnexos.Controls.Add(this.rbRgpentende);
-            this.tabAnexos.Controls.Add(this.rbRgentregue);
             this.tabAnexos.Controls.Add(this.rbProntuariopendente);
             this.tabAnexos.Controls.Add(this.rbProntuarioentregue);
             this.tabAnexos.Controls.Add(this.btAnexarDocVeiculo);
@@ -1208,6 +1234,81 @@
             this.tabAnexos.Size = new System.Drawing.Size(1043, 494);
             this.tabAnexos.TabIndex = 4;
             this.tabAnexos.Text = "Anexos";
+            // 
+            // gbComprovante
+            // 
+            this.gbComprovante.Controls.Add(this.rbComprovanteentregue);
+            this.gbComprovante.Controls.Add(this.rbComprovantependente);
+            this.gbComprovante.Location = new System.Drawing.Point(532, 142);
+            this.gbComprovante.Name = "gbComprovante";
+            this.gbComprovante.Size = new System.Drawing.Size(287, 28);
+            this.gbComprovante.TabIndex = 36;
+            this.gbComprovante.TabStop = false;
+            // 
+            // rbComprovanteentregue
+            // 
+            this.rbComprovanteentregue.AutoSize = true;
+            this.rbComprovanteentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbComprovanteentregue.Location = new System.Drawing.Point(11, 4);
+            this.rbComprovanteentregue.Margin = new System.Windows.Forms.Padding(4);
+            this.rbComprovanteentregue.Name = "rbComprovanteentregue";
+            this.rbComprovanteentregue.Size = new System.Drawing.Size(88, 17);
+            this.rbComprovanteentregue.TabIndex = 20;
+            this.rbComprovanteentregue.Text = "ENTREGUE";
+            this.rbComprovanteentregue.UseVisualStyleBackColor = true;
+            // 
+            // rbComprovantependente
+            // 
+            this.rbComprovantependente.AutoSize = true;
+            this.rbComprovantependente.Checked = true;
+            this.rbComprovantependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbComprovantependente.Location = new System.Drawing.Point(165, 4);
+            this.rbComprovantependente.Margin = new System.Windows.Forms.Padding(4);
+            this.rbComprovantependente.Name = "rbComprovantependente";
+            this.rbComprovantependente.Size = new System.Drawing.Size(87, 17);
+            this.rbComprovantependente.TabIndex = 21;
+            this.rbComprovantependente.TabStop = true;
+            this.rbComprovantependente.Text = "PENDENTE";
+            this.rbComprovantependente.UseVisualStyleBackColor = true;
+            // 
+            // gbCartaobanco
+            // 
+            this.gbCartaobanco.BackColor = System.Drawing.Color.Transparent;
+            this.gbCartaobanco.Controls.Add(this.rbCartaoentregue);
+            this.gbCartaobanco.Controls.Add(this.rbCartaopendente);
+            this.gbCartaobanco.Location = new System.Drawing.Point(543, 185);
+            this.gbCartaobanco.Name = "gbCartaobanco";
+            this.gbCartaobanco.Size = new System.Drawing.Size(247, 34);
+            this.gbCartaobanco.TabIndex = 35;
+            this.gbCartaobanco.TabStop = false;
+            this.gbCartaobanco.Enter += new System.EventHandler(this.gbCartaobanco_Enter);
+            // 
+            // rbCartaoentregue
+            // 
+            this.rbCartaoentregue.AutoSize = true;
+            this.rbCartaoentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCartaoentregue.Location = new System.Drawing.Point(0, 6);
+            this.rbCartaoentregue.Margin = new System.Windows.Forms.Padding(4);
+            this.rbCartaoentregue.Name = "rbCartaoentregue";
+            this.rbCartaoentregue.Size = new System.Drawing.Size(88, 17);
+            this.rbCartaoentregue.TabIndex = 22;
+            this.rbCartaoentregue.Text = "ENTREGUE";
+            this.rbCartaoentregue.UseVisualStyleBackColor = true;
+            this.rbCartaoentregue.CheckedChanged += new System.EventHandler(this.rbCartaoentregue_CheckedChanged);
+            // 
+            // rbCartaopendente
+            // 
+            this.rbCartaopendente.AutoSize = true;
+            this.rbCartaopendente.Checked = true;
+            this.rbCartaopendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCartaopendente.Location = new System.Drawing.Point(154, 6);
+            this.rbCartaopendente.Margin = new System.Windows.Forms.Padding(4);
+            this.rbCartaopendente.Name = "rbCartaopendente";
+            this.rbCartaopendente.Size = new System.Drawing.Size(87, 17);
+            this.rbCartaopendente.TabIndex = 23;
+            this.rbCartaopendente.TabStop = true;
+            this.rbCartaopendente.Text = "PENDENTE";
+            this.rbCartaopendente.UseVisualStyleBackColor = true;
             // 
             // gbBoletimOcorrencia
             // 
@@ -1249,12 +1350,14 @@
             // rbDocVeiculopendente
             // 
             this.rbDocVeiculopendente.AutoSize = true;
+            this.rbDocVeiculopendente.Checked = true;
             this.rbDocVeiculopendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDocVeiculopendente.Location = new System.Drawing.Point(697, 391);
+            this.rbDocVeiculopendente.Location = new System.Drawing.Point(159, 9);
             this.rbDocVeiculopendente.Margin = new System.Windows.Forms.Padding(4);
             this.rbDocVeiculopendente.Name = "rbDocVeiculopendente";
             this.rbDocVeiculopendente.Size = new System.Drawing.Size(87, 17);
             this.rbDocVeiculopendente.TabIndex = 31;
+            this.rbDocVeiculopendente.TabStop = true;
             this.rbDocVeiculopendente.Text = "PENDENTE";
             this.rbDocVeiculopendente.UseVisualStyleBackColor = true;
             this.rbDocVeiculopendente.CheckedChanged += new System.EventHandler(this.rbDocVeiculopendente_CheckedChanged);
@@ -1263,7 +1366,7 @@
             // 
             this.rbDocVeiculoentregue.AutoSize = true;
             this.rbDocVeiculoentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDocVeiculoentregue.Location = new System.Drawing.Point(543, 391);
+            this.rbDocVeiculoentregue.Location = new System.Drawing.Point(5, 9);
             this.rbDocVeiculoentregue.Margin = new System.Windows.Forms.Padding(4);
             this.rbDocVeiculoentregue.Name = "rbDocVeiculoentregue";
             this.rbDocVeiculoentregue.Size = new System.Drawing.Size(88, 17);
@@ -1274,12 +1377,14 @@
             // rbCNHpendente
             // 
             this.rbCNHpendente.AutoSize = true;
+            this.rbCNHpendente.Checked = true;
             this.rbCNHpendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCNHpendente.Location = new System.Drawing.Point(697, 342);
+            this.rbCNHpendente.Location = new System.Drawing.Point(162, 5);
             this.rbCNHpendente.Margin = new System.Windows.Forms.Padding(4);
             this.rbCNHpendente.Name = "rbCNHpendente";
             this.rbCNHpendente.Size = new System.Drawing.Size(87, 17);
             this.rbCNHpendente.TabIndex = 29;
+            this.rbCNHpendente.TabStop = true;
             this.rbCNHpendente.Text = "PENDENTE";
             this.rbCNHpendente.UseVisualStyleBackColor = true;
             // 
@@ -1287,7 +1392,7 @@
             // 
             this.rbCNHentregue.AutoSize = true;
             this.rbCNHentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCNHentregue.Location = new System.Drawing.Point(543, 342);
+            this.rbCNHentregue.Location = new System.Drawing.Point(8, 5);
             this.rbCNHentregue.Margin = new System.Windows.Forms.Padding(4);
             this.rbCNHentregue.Name = "rbCNHentregue";
             this.rbCNHentregue.Size = new System.Drawing.Size(88, 17);
@@ -1298,12 +1403,14 @@
             // rbCPFpendente
             // 
             this.rbCPFpendente.AutoSize = true;
+            this.rbCPFpendente.Checked = true;
             this.rbCPFpendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCPFpendente.Location = new System.Drawing.Point(697, 293);
+            this.rbCPFpendente.Location = new System.Drawing.Point(158, 5);
             this.rbCPFpendente.Margin = new System.Windows.Forms.Padding(4);
             this.rbCPFpendente.Name = "rbCPFpendente";
             this.rbCPFpendente.Size = new System.Drawing.Size(87, 17);
             this.rbCPFpendente.TabIndex = 27;
+            this.rbCPFpendente.TabStop = true;
             this.rbCPFpendente.Text = "PENDENTE";
             this.rbCPFpendente.UseVisualStyleBackColor = true;
             // 
@@ -1311,7 +1418,7 @@
             // 
             this.rbCPFentregue.AutoSize = true;
             this.rbCPFentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCPFentregue.Location = new System.Drawing.Point(543, 293);
+            this.rbCPFentregue.Location = new System.Drawing.Point(4, 5);
             this.rbCPFentregue.Margin = new System.Windows.Forms.Padding(4);
             this.rbCPFentregue.Name = "rbCPFentregue";
             this.rbCPFentregue.Size = new System.Drawing.Size(88, 17);
@@ -1322,12 +1429,14 @@
             // rbRgpentende
             // 
             this.rbRgpentende.AutoSize = true;
+            this.rbRgpentende.Checked = true;
             this.rbRgpentende.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRgpentende.Location = new System.Drawing.Point(697, 244);
+            this.rbRgpentende.Location = new System.Drawing.Point(154, 4);
             this.rbRgpentende.Margin = new System.Windows.Forms.Padding(4);
             this.rbRgpentende.Name = "rbRgpentende";
             this.rbRgpentende.Size = new System.Drawing.Size(87, 17);
             this.rbRgpentende.TabIndex = 25;
+            this.rbRgpentende.TabStop = true;
             this.rbRgpentende.Text = "PENDENTE";
             this.rbRgpentende.UseVisualStyleBackColor = true;
             // 
@@ -1335,66 +1444,14 @@
             // 
             this.rbRgentregue.AutoSize = true;
             this.rbRgentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRgentregue.Location = new System.Drawing.Point(543, 244);
+            this.rbRgentregue.Location = new System.Drawing.Point(0, 4);
             this.rbRgentregue.Margin = new System.Windows.Forms.Padding(4);
             this.rbRgentregue.Name = "rbRgentregue";
             this.rbRgentregue.Size = new System.Drawing.Size(88, 17);
             this.rbRgentregue.TabIndex = 24;
             this.rbRgentregue.Text = "ENTREGUE";
             this.rbRgentregue.UseVisualStyleBackColor = true;
-            // 
-            // rbCartaopendente
-            // 
-            this.rbCartaopendente.AutoSize = true;
-            this.rbCartaopendente.Checked = true;
-            this.rbCartaopendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCartaopendente.Location = new System.Drawing.Point(154, 6);
-            this.rbCartaopendente.Margin = new System.Windows.Forms.Padding(4);
-            this.rbCartaopendente.Name = "rbCartaopendente";
-            this.rbCartaopendente.Size = new System.Drawing.Size(87, 17);
-            this.rbCartaopendente.TabIndex = 23;
-            this.rbCartaopendente.TabStop = true;
-            this.rbCartaopendente.Text = "PENDENTE";
-            this.rbCartaopendente.UseVisualStyleBackColor = true;
-            // 
-            // rbCartaoentregue
-            // 
-            this.rbCartaoentregue.AutoSize = true;
-            this.rbCartaoentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCartaoentregue.Location = new System.Drawing.Point(0, 6);
-            this.rbCartaoentregue.Margin = new System.Windows.Forms.Padding(4);
-            this.rbCartaoentregue.Name = "rbCartaoentregue";
-            this.rbCartaoentregue.Size = new System.Drawing.Size(88, 17);
-            this.rbCartaoentregue.TabIndex = 22;
-            this.rbCartaoentregue.Text = "ENTREGUE";
-            this.rbCartaoentregue.UseVisualStyleBackColor = true;
-            this.rbCartaoentregue.CheckedChanged += new System.EventHandler(this.rbCartaoentregue_CheckedChanged);
-            // 
-            // rbComprovantependente
-            // 
-            this.rbComprovantependente.AutoSize = true;
-            this.rbComprovantependente.Checked = true;
-            this.rbComprovantependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbComprovantependente.Location = new System.Drawing.Point(165, 4);
-            this.rbComprovantependente.Margin = new System.Windows.Forms.Padding(4);
-            this.rbComprovantependente.Name = "rbComprovantependente";
-            this.rbComprovantependente.Size = new System.Drawing.Size(87, 17);
-            this.rbComprovantependente.TabIndex = 21;
-            this.rbComprovantependente.TabStop = true;
-            this.rbComprovantependente.Text = "PENDENTE";
-            this.rbComprovantependente.UseVisualStyleBackColor = true;
-            // 
-            // rbComprovanteentregue
-            // 
-            this.rbComprovanteentregue.AutoSize = true;
-            this.rbComprovanteentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbComprovanteentregue.Location = new System.Drawing.Point(11, 4);
-            this.rbComprovanteentregue.Margin = new System.Windows.Forms.Padding(4);
-            this.rbComprovanteentregue.Name = "rbComprovanteentregue";
-            this.rbComprovanteentregue.Size = new System.Drawing.Size(88, 17);
-            this.rbComprovanteentregue.TabIndex = 20;
-            this.rbComprovanteentregue.Text = "ENTREGUE";
-            this.rbComprovanteentregue.UseVisualStyleBackColor = true;
+            this.rbRgentregue.CheckedChanged += new System.EventHandler(this.rbRgentregue_CheckedChanged);
             // 
             // rbProntuariopendente
             // 
@@ -1590,6 +1647,25 @@
             this.label34.TabIndex = 0;
             this.label34.Text = "BOLETIM DE OCORRÊNCIA:";
             // 
+            // gbProntuario
+            // 
+            this.gbProntuario.BackColor = System.Drawing.Color.Transparent;
+            this.gbProntuario.Controls.Add(this.gbComprovanteRes);
+            this.gbProntuario.Location = new System.Drawing.Point(532, 92);
+            this.gbProntuario.Name = "gbProntuario";
+            this.gbProntuario.Size = new System.Drawing.Size(275, 28);
+            this.gbProntuario.TabIndex = 33;
+            this.gbProntuario.TabStop = false;
+            // 
+            // gbComprovanteRes
+            // 
+            this.gbComprovanteRes.BackColor = System.Drawing.Color.Transparent;
+            this.gbComprovanteRes.Location = new System.Drawing.Point(272, 5);
+            this.gbComprovanteRes.Name = "gbComprovanteRes";
+            this.gbComprovanteRes.Size = new System.Drawing.Size(308, 29);
+            this.gbComprovanteRes.TabIndex = 34;
+            this.gbComprovanteRes.TabStop = false;
+            // 
             // tabObservacoes
             // 
             this.tabObservacoes.BackColor = System.Drawing.Color.Gainsboro;
@@ -1615,68 +1691,47 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // gbTipoAcidente
+            // gbRG
             // 
-            this.gbTipoAcidente.Controls.Add(this.rbPessoal);
-            this.gbTipoAcidente.Controls.Add(this.rbTipo);
-            this.gbTipoAcidente.Controls.Add(this.rbTrabalho);
-            this.gbTipoAcidente.Location = new System.Drawing.Point(196, 183);
-            this.gbTipoAcidente.Name = "gbTipoAcidente";
-            this.gbTipoAcidente.Size = new System.Drawing.Size(287, 29);
-            this.gbTipoAcidente.TabIndex = 23;
-            this.gbTipoAcidente.TabStop = false;
-            this.gbTipoAcidente.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gbRG.BackColor = System.Drawing.Color.Transparent;
+            this.gbRG.Controls.Add(this.rbRgentregue);
+            this.gbRG.Controls.Add(this.rbRgpentende);
+            this.gbRG.Location = new System.Drawing.Point(543, 240);
+            this.gbRG.Name = "gbRG";
+            this.gbRG.Size = new System.Drawing.Size(247, 24);
+            this.gbRG.TabIndex = 37;
+            this.gbRG.TabStop = false;
+            this.gbRG.Enter += new System.EventHandler(this.gbRG_Enter);
             // 
-            // gbINSSAcidente
+            // gbCPF
             // 
-            this.gbINSSAcidente.Controls.Add(this.rbINSSsim);
-            this.gbINSSAcidente.Controls.Add(this.rbINSSnao);
-            this.gbINSSAcidente.Location = new System.Drawing.Point(196, 229);
-            this.gbINSSAcidente.Name = "gbINSSAcidente";
-            this.gbINSSAcidente.Size = new System.Drawing.Size(187, 40);
-            this.gbINSSAcidente.TabIndex = 24;
-            this.gbINSSAcidente.TabStop = false;
+            this.gbCPF.Controls.Add(this.rbCPFentregue);
+            this.gbCPF.Controls.Add(this.rbCPFpendente);
+            this.gbCPF.Location = new System.Drawing.Point(539, 287);
+            this.gbCPF.Name = "gbCPF";
+            this.gbCPF.Size = new System.Drawing.Size(277, 30);
+            this.gbCPF.TabIndex = 38;
+            this.gbCPF.TabStop = false;
             // 
-            // gbProntuario
+            // gbCNH
             // 
-            this.gbProntuario.BackColor = System.Drawing.Color.Transparent;
-            this.gbProntuario.Controls.Add(this.gbComprovanteRes);
-            this.gbProntuario.Location = new System.Drawing.Point(532, 92);
-            this.gbProntuario.Name = "gbProntuario";
-            this.gbProntuario.Size = new System.Drawing.Size(275, 28);
-            this.gbProntuario.TabIndex = 33;
-            this.gbProntuario.TabStop = false;
+            this.gbCNH.Controls.Add(this.rbCNHentregue);
+            this.gbCNH.Controls.Add(this.rbCNHpendente);
+            this.gbCNH.Location = new System.Drawing.Point(535, 333);
+            this.gbCNH.Name = "gbCNH";
+            this.gbCNH.Size = new System.Drawing.Size(272, 33);
+            this.gbCNH.TabIndex = 39;
+            this.gbCNH.TabStop = false;
             // 
-            // gbComprovanteRes
+            // gbDocVeic
             // 
-            this.gbComprovanteRes.BackColor = System.Drawing.Color.Transparent;
-            this.gbComprovanteRes.Location = new System.Drawing.Point(272, 5);
-            this.gbComprovanteRes.Name = "gbComprovanteRes";
-            this.gbComprovanteRes.Size = new System.Drawing.Size(308, 29);
-            this.gbComprovanteRes.TabIndex = 34;
-            this.gbComprovanteRes.TabStop = false;
-            // 
-            // gbCartaobanco
-            // 
-            this.gbCartaobanco.BackColor = System.Drawing.Color.Transparent;
-            this.gbCartaobanco.Controls.Add(this.rbCartaoentregue);
-            this.gbCartaobanco.Controls.Add(this.rbCartaopendente);
-            this.gbCartaobanco.Location = new System.Drawing.Point(543, 185);
-            this.gbCartaobanco.Name = "gbCartaobanco";
-            this.gbCartaobanco.Size = new System.Drawing.Size(247, 34);
-            this.gbCartaobanco.TabIndex = 35;
-            this.gbCartaobanco.TabStop = false;
-            this.gbCartaobanco.Enter += new System.EventHandler(this.gbCartaobanco_Enter);
-            // 
-            // gbComprovante
-            // 
-            this.gbComprovante.Controls.Add(this.rbComprovanteentregue);
-            this.gbComprovante.Controls.Add(this.rbComprovantependente);
-            this.gbComprovante.Location = new System.Drawing.Point(532, 142);
-            this.gbComprovante.Name = "gbComprovante";
-            this.gbComprovante.Size = new System.Drawing.Size(287, 28);
-            this.gbComprovante.TabIndex = 36;
-            this.gbComprovante.TabStop = false;
+            this.gbDocVeic.Controls.Add(this.rbDocVeiculoentregue);
+            this.gbDocVeic.Controls.Add(this.rbDocVeiculopendente);
+            this.gbDocVeic.Location = new System.Drawing.Point(538, 379);
+            this.gbDocVeic.Name = "gbDocVeic";
+            this.gbDocVeic.Size = new System.Drawing.Size(252, 37);
+            this.gbDocVeic.TabIndex = 40;
+            this.gbDocVeic.TabStop = false;
             // 
             // ManterCliente
             // 
@@ -1705,20 +1760,28 @@
             this.tabContato.PerformLayout();
             this.tabOcorrencia.ResumeLayout(false);
             this.tabOcorrencia.PerformLayout();
-            this.tabAnexos.ResumeLayout(false);
-            this.tabAnexos.PerformLayout();
-            this.gbBoletimOcorrencia.ResumeLayout(false);
-            this.gbBoletimOcorrencia.PerformLayout();
-            this.tabObservacoes.ResumeLayout(false);
-            this.gbTipoAcidente.ResumeLayout(false);
-            this.gbTipoAcidente.PerformLayout();
             this.gbINSSAcidente.ResumeLayout(false);
             this.gbINSSAcidente.PerformLayout();
-            this.gbProntuario.ResumeLayout(false);
-            this.gbCartaobanco.ResumeLayout(false);
-            this.gbCartaobanco.PerformLayout();
+            this.gbTipoAcidente.ResumeLayout(false);
+            this.gbTipoAcidente.PerformLayout();
+            this.tabAnexos.ResumeLayout(false);
+            this.tabAnexos.PerformLayout();
             this.gbComprovante.ResumeLayout(false);
             this.gbComprovante.PerformLayout();
+            this.gbCartaobanco.ResumeLayout(false);
+            this.gbCartaobanco.PerformLayout();
+            this.gbBoletimOcorrencia.ResumeLayout(false);
+            this.gbBoletimOcorrencia.PerformLayout();
+            this.gbProntuario.ResumeLayout(false);
+            this.tabObservacoes.ResumeLayout(false);
+            this.gbRG.ResumeLayout(false);
+            this.gbRG.PerformLayout();
+            this.gbCPF.ResumeLayout(false);
+            this.gbCPF.PerformLayout();
+            this.gbCNH.ResumeLayout(false);
+            this.gbCNH.PerformLayout();
+            this.gbDocVeic.ResumeLayout(false);
+            this.gbDocVeic.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1859,5 +1922,9 @@
         private System.Windows.Forms.GroupBox gbComprovante;
         private System.Windows.Forms.GroupBox gbCartaobanco;
         private System.Windows.Forms.GroupBox gbComprovanteRes;
+        private System.Windows.Forms.GroupBox gbRG;
+        private System.Windows.Forms.GroupBox gbDocVeic;
+        private System.Windows.Forms.GroupBox gbCNH;
+        private System.Windows.Forms.GroupBox gbCPF;
     }
 }

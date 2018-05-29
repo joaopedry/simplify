@@ -144,5 +144,15 @@ namespace Simplify.Grafico
         {
 
         }
+
+        private void gbRG_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbRgentregue_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
