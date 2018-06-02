@@ -66,6 +66,10 @@ namespace Simplify.Negocio
                 validacao.Mensagens.Add("Telefone", "O telefone deve conter 12 números");
             }
             */
+            if (String.IsNullOrEmpty(clienteAdicionado.Nome_dados))
+            {
+                validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
+            }
             if (validacao.Valido)
             {
                 this.banco.Clientes.Add(clienteAdicionado);

@@ -128,6 +128,36 @@ namespace Simplify.Grafico
             cliente.Observacao_observacao = rtbAbaObservacoes.Text;
 
             */
+
+            Validacao validacao;
+            if (ClienteSelecionado == null)
+            {
+                validacao = Program.Gerenciador.AdicionarCliente(cliente);
+            }
+            else
+            {
+                validacao = Program.Gerenciador.AlterarCliente(cliente);
+            }
+
+
+
+            if (!validacao.Valido)
+            {
+                String mensagemValidacao = "";
+                foreach (var chave in validacao.Mensagens.Keys)
+                {
+                    String msg = validacao.Mensagens[chave];
+                    mensagemValidacao += msg;
+                    mensagemValidacao += Environment.NewLine;
+                }
+                MessageBox.Show(mensagemValidacao);
+            }
+            else
+            {
+                MessageBox.Show("Cliente salvo com sucesso");
+            }
+
+            this.Close();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -141,16 +171,6 @@ namespace Simplify.Grafico
         }
 
         private void gbCartaobanco_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gbRG_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbRgentregue_CheckedChanged(object sender, EventArgs e)
         {
 
         }
