@@ -945,6 +945,7 @@
             // rbINSSsim
             // 
             this.rbINSSsim.AutoSize = true;
+            this.rbINSSsim.Checked = true;
             this.rbINSSsim.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbINSSsim.Location = new System.Drawing.Point(0, 11);
             this.rbINSSsim.Margin = new System.Windows.Forms.Padding(4);
@@ -996,6 +997,7 @@
             // rbTipo
             // 
             this.rbTipo.AutoSize = true;
+            this.rbTipo.Checked = true;
             this.rbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbTipo.Location = new System.Drawing.Point(0, 9);
             this.rbTipo.Margin = new System.Windows.Forms.Padding(4);
