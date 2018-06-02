@@ -96,5 +96,30 @@ namespace Simplify.Negocio
 
             return validacao;
         }
+
+        public Validacao AdicionarUsuario(Usuario UsuarioAdicionado)
+        {
+            Validacao validacao = new Validacao();
+
+            
+            if (String.IsNullOrEmpty(UsuarioAdicionado.Nome_usuario))
+            {
+                validacao.Mensagens.Add("Nome_usuario", "Campo nome é obrigatório");
+            }
+            if (validacao.Valido)
+            {
+                this.banco.Usuarios.Add(UsuarioAdicionado);
+                this.banco.SaveChanges();
+            }
+
+            return validacao;
+        }
+
+        public Validacao AlterarUsuario(Usuario usuarioAlterado)
+        {
+            Validacao validacao = new Validacao();
+
+            return validacao;
+        }
     }
 }

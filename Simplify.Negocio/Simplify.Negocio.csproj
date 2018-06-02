@@ -51,6 +51,7 @@
     <Compile Include="Models\Acidente.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Persistencia\Banco.cs" />
     <Compile Include="Persistencia\Dados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

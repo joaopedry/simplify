@@ -10,8 +10,8 @@ namespace Simplify.Negocio.Persistencia
     public class Dados
     {
         public List<Cliente> Clientes;
-        /*public List<Bebida> Bebidas;
-        public List<Lanche> Lanches;
+        public List<Usuario> Usuarios;
+        /*public List<Lanche> Lanches;
         public List<Pedido> Pedidos;*/
     }
 }

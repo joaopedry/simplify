@@ -13,8 +13,8 @@ namespace Simplify.Negocio.Persistencia
     public class Banco : DbContext
     {
         public virtual DbSet<Cliente> Clientes { get; set; }
-        /*public virtual DbSet<Bebida> Bebidas { get; set; }
-        public virtual DbSet<Lanche> Lanches { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
+        /*public virtual DbSet<Lanche> Lanches { get; set; }
         public virtual DbSet<Pedido> Pedidos { get; set; }*/
     }
 }
