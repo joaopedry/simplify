@@ -161,10 +161,6 @@
       <Project>{cb1980d5-f2c2-4bc9-921b-b8b00488e129}</Project>
       <Name>Simplify.Negocio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simplify.Telas\Simplify.Telas.csproj">
-      <Project>{7055fd35-3265-4e91-a155-6a5c93adf39d}</Project>
-      <Name>Simplify.Telas</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
