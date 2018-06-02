@@ -22,5 +22,11 @@ namespace Simplify.Grafico
             ManterUsuario adicionauser = new ManterUsuario();
             adicionauser.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            TelaAjuda ajuda = new TelaAjuda();
+            ajuda.Show();
+        }
     }
 }
