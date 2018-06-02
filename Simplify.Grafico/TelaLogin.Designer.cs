@@ -32,12 +32,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btSair = new System.Windows.Forms.Button();
             this.btLogin = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbSenha = new System.Windows.Forms.TextBox();
             this.tbUsuario = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,16 +75,6 @@
             this.btLogin.Text = "Acessar";
             this.btLogin.UseVisualStyleBackColor = true;
             this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(738, 329);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "v 1.0";
             // 
             // label3
             // 
@@ -131,6 +121,16 @@
             this.tbUsuario.Size = new System.Drawing.Size(227, 22);
             this.tbUsuario.TabIndex = 0;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(738, 329);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 15);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "v 1.0";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -153,7 +153,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 400);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "TelaLogin";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

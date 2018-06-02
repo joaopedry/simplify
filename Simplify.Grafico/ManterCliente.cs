@@ -174,5 +174,18 @@ namespace Simplify.Grafico
         {
 
         }
+
+        private void ManterCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Se você sair agora, todas as alterações não salvas serão perdidas.", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void bt_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

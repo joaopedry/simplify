@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.tbindicacao = new System.Windows.Forms.TextBox();
             this.tbNascimento = new System.Windows.Forms.TextBox();
@@ -96,11 +97,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabOcorrencia = new System.Windows.Forms.TabPage();
-            this.rbINSSnao = new System.Windows.Forms.RadioButton();
+            this.gbINSSAcidente = new System.Windows.Forms.GroupBox();
             this.rbINSSsim = new System.Windows.Forms.RadioButton();
+            this.rbINSSnao = new System.Windows.Forms.RadioButton();
+            this.gbTipoAcidente = new System.Windows.Forms.GroupBox();
             this.rbPessoal = new System.Windows.Forms.RadioButton();
-            this.rbTrabalho = new System.Windows.Forms.RadioButton();
             this.rbTipo = new System.Windows.Forms.RadioButton();
+            this.rbTrabalho = new System.Windows.Forms.RadioButton();
             this.rtbObservacoes = new System.Windows.Forms.RichTextBox();
             this.tbHospital = new System.Windows.Forms.TextBox();
             this.tbSocorrista = new System.Windows.Forms.TextBox();
@@ -120,6 +123,12 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.tabAnexos = new System.Windows.Forms.TabPage();
+            this.gbComprovante = new System.Windows.Forms.GroupBox();
+            this.rbComprovanteentregue = new System.Windows.Forms.RadioButton();
+            this.rbComprovantependente = new System.Windows.Forms.RadioButton();
+            this.gbCartaobanco = new System.Windows.Forms.GroupBox();
+            this.rbCartaoentregue = new System.Windows.Forms.RadioButton();
+            this.rbCartaopendente = new System.Windows.Forms.RadioButton();
             this.gbBoletimOcorrencia = new System.Windows.Forms.GroupBox();
             this.rbBOpendente = new System.Windows.Forms.RadioButton();
             this.rbBOentregue = new System.Windows.Forms.RadioButton();
@@ -131,10 +140,6 @@
             this.rbCPFentregue = new System.Windows.Forms.RadioButton();
             this.rbRgpentende = new System.Windows.Forms.RadioButton();
             this.rbRgentregue = new System.Windows.Forms.RadioButton();
-            this.rbCartaopendente = new System.Windows.Forms.RadioButton();
-            this.rbCartaoentregue = new System.Windows.Forms.RadioButton();
-            this.rbComprovantependente = new System.Windows.Forms.RadioButton();
-            this.rbComprovanteentregue = new System.Windows.Forms.RadioButton();
             this.rbProntuariopendente = new System.Windows.Forms.RadioButton();
             this.rbProntuarioentregue = new System.Windows.Forms.RadioButton();
             this.btAnexarDocVeiculo = new System.Windows.Forms.Button();
@@ -153,28 +158,25 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.gbProntuario = new System.Windows.Forms.GroupBox();
+            this.gbComprovanteRes = new System.Windows.Forms.GroupBox();
             this.tabObservacoes = new System.Windows.Forms.TabPage();
             this.rtbAbaObservacoes = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.gbTipoAcidente = new System.Windows.Forms.GroupBox();
-            this.gbINSSAcidente = new System.Windows.Forms.GroupBox();
-            this.gbProntuario = new System.Windows.Forms.GroupBox();
-            this.gbComprovanteRes = new System.Windows.Forms.GroupBox();
-            this.gbCartaobanco = new System.Windows.Forms.GroupBox();
-            this.gbComprovante = new System.Windows.Forms.GroupBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctCadastro.SuspendLayout();
             this.tabcadastrocliente.SuspendLayout();
             this.abaEndereco.SuspendLayout();
             this.tabContato.SuspendLayout();
             this.tabOcorrencia.SuspendLayout();
-            this.tabAnexos.SuspendLayout();
-            this.gbBoletimOcorrencia.SuspendLayout();
-            this.tabObservacoes.SuspendLayout();
-            this.gbTipoAcidente.SuspendLayout();
             this.gbINSSAcidente.SuspendLayout();
-            this.gbProntuario.SuspendLayout();
-            this.gbCartaobanco.SuspendLayout();
+            this.gbTipoAcidente.SuspendLayout();
+            this.tabAnexos.SuspendLayout();
             this.gbComprovante.SuspendLayout();
+            this.gbCartaobanco.SuspendLayout();
+            this.gbBoletimOcorrencia.SuspendLayout();
+            this.gbProntuario.SuspendLayout();
+            this.tabObservacoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbNome
@@ -209,7 +211,7 @@
             this.tbRG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRG.Name = "tbRG";
             this.tbRG.Size = new System.Drawing.Size(265, 22);
-            this.tbRG.TabIndex = 5;
+            this.tbRG.TabIndex = 3;
             // 
             // tbProfissao
             // 
@@ -217,7 +219,7 @@
             this.tbProfissao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbProfissao.Name = "tbProfissao";
             this.tbProfissao.Size = new System.Drawing.Size(265, 22);
-            this.tbProfissao.TabIndex = 4;
+            this.tbProfissao.TabIndex = 5;
             // 
             // tbCpf
             // 
@@ -225,7 +227,7 @@
             this.tbCpf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCpf.Name = "tbCpf";
             this.tbCpf.Size = new System.Drawing.Size(265, 22);
-            this.tbCpf.TabIndex = 3;
+            this.tbCpf.TabIndex = 4;
             this.tbCpf.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // tbEstadoCivil
@@ -234,7 +236,7 @@
             this.tbEstadoCivil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEstadoCivil.Name = "tbEstadoCivil";
             this.tbEstadoCivil.Size = new System.Drawing.Size(265, 22);
-            this.tbEstadoCivil.TabIndex = 8;
+            this.tbEstadoCivil.TabIndex = 7;
             // 
             // tbSexo
             // 
@@ -350,6 +352,7 @@
             this.bt_cancelar.TabIndex = 18;
             this.bt_cancelar.Text = "Cancelar";
             this.bt_cancelar.UseVisualStyleBackColor = true;
+            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
             // ctCadastro
             // 
@@ -929,18 +932,15 @@
             this.tabOcorrencia.TabIndex = 3;
             this.tabOcorrencia.Text = "Ocorrência";
             // 
-            // rbINSSnao
+            // gbINSSAcidente
             // 
-            this.rbINSSnao.AutoSize = true;
-            this.rbINSSnao.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbINSSnao.Location = new System.Drawing.Point(101, 11);
-            this.rbINSSnao.Margin = new System.Windows.Forms.Padding(4);
-            this.rbINSSnao.Name = "rbINSSnao";
-            this.rbINSSnao.Size = new System.Drawing.Size(51, 17);
-            this.rbINSSnao.TabIndex = 22;
-            this.rbINSSnao.TabStop = true;
-            this.rbINSSnao.Text = "NÃO";
-            this.rbINSSnao.UseVisualStyleBackColor = true;
+            this.gbINSSAcidente.Controls.Add(this.rbINSSsim);
+            this.gbINSSAcidente.Controls.Add(this.rbINSSnao);
+            this.gbINSSAcidente.Location = new System.Drawing.Point(196, 229);
+            this.gbINSSAcidente.Name = "gbINSSAcidente";
+            this.gbINSSAcidente.Size = new System.Drawing.Size(187, 40);
+            this.gbINSSAcidente.TabIndex = 24;
+            this.gbINSSAcidente.TabStop = false;
             // 
             // rbINSSsim
             // 
@@ -955,6 +955,31 @@
             this.rbINSSsim.Text = "SIM";
             this.rbINSSsim.UseVisualStyleBackColor = true;
             // 
+            // rbINSSnao
+            // 
+            this.rbINSSnao.AutoSize = true;
+            this.rbINSSnao.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbINSSnao.Location = new System.Drawing.Point(101, 11);
+            this.rbINSSnao.Margin = new System.Windows.Forms.Padding(4);
+            this.rbINSSnao.Name = "rbINSSnao";
+            this.rbINSSnao.Size = new System.Drawing.Size(51, 17);
+            this.rbINSSnao.TabIndex = 22;
+            this.rbINSSnao.TabStop = true;
+            this.rbINSSnao.Text = "NÃO";
+            this.rbINSSnao.UseVisualStyleBackColor = true;
+            // 
+            // gbTipoAcidente
+            // 
+            this.gbTipoAcidente.Controls.Add(this.rbPessoal);
+            this.gbTipoAcidente.Controls.Add(this.rbTipo);
+            this.gbTipoAcidente.Controls.Add(this.rbTrabalho);
+            this.gbTipoAcidente.Location = new System.Drawing.Point(196, 183);
+            this.gbTipoAcidente.Name = "gbTipoAcidente";
+            this.gbTipoAcidente.Size = new System.Drawing.Size(287, 29);
+            this.gbTipoAcidente.TabIndex = 23;
+            this.gbTipoAcidente.TabStop = false;
+            this.gbTipoAcidente.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // rbPessoal
             // 
             this.rbPessoal.AutoSize = true;
@@ -968,19 +993,6 @@
             this.rbPessoal.Text = "PESSOAL";
             this.rbPessoal.UseVisualStyleBackColor = true;
             // 
-            // rbTrabalho
-            // 
-            this.rbTrabalho.AutoSize = true;
-            this.rbTrabalho.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTrabalho.Location = new System.Drawing.Point(101, 9);
-            this.rbTrabalho.Margin = new System.Windows.Forms.Padding(4);
-            this.rbTrabalho.Name = "rbTrabalho";
-            this.rbTrabalho.Size = new System.Drawing.Size(86, 17);
-            this.rbTrabalho.TabIndex = 19;
-            this.rbTrabalho.TabStop = true;
-            this.rbTrabalho.Text = "TRABALHO";
-            this.rbTrabalho.UseVisualStyleBackColor = true;
-            // 
             // rbTipo
             // 
             this.rbTipo.AutoSize = true;
@@ -993,6 +1005,19 @@
             this.rbTipo.TabStop = true;
             this.rbTipo.Text = "TRANSITO";
             this.rbTipo.UseVisualStyleBackColor = true;
+            // 
+            // rbTrabalho
+            // 
+            this.rbTrabalho.AutoSize = true;
+            this.rbTrabalho.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTrabalho.Location = new System.Drawing.Point(101, 9);
+            this.rbTrabalho.Margin = new System.Windows.Forms.Padding(4);
+            this.rbTrabalho.Name = "rbTrabalho";
+            this.rbTrabalho.Size = new System.Drawing.Size(86, 17);
+            this.rbTrabalho.TabIndex = 19;
+            this.rbTrabalho.TabStop = true;
+            this.rbTrabalho.Text = "TRABALHO";
+            this.rbTrabalho.UseVisualStyleBackColor = true;
             // 
             // rtbObservacoes
             // 
@@ -1209,6 +1234,81 @@
             this.tabAnexos.TabIndex = 4;
             this.tabAnexos.Text = "Anexos";
             // 
+            // gbComprovante
+            // 
+            this.gbComprovante.Controls.Add(this.rbComprovanteentregue);
+            this.gbComprovante.Controls.Add(this.rbComprovantependente);
+            this.gbComprovante.Location = new System.Drawing.Point(532, 142);
+            this.gbComprovante.Name = "gbComprovante";
+            this.gbComprovante.Size = new System.Drawing.Size(287, 28);
+            this.gbComprovante.TabIndex = 36;
+            this.gbComprovante.TabStop = false;
+            // 
+            // rbComprovanteentregue
+            // 
+            this.rbComprovanteentregue.AutoSize = true;
+            this.rbComprovanteentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbComprovanteentregue.Location = new System.Drawing.Point(11, 4);
+            this.rbComprovanteentregue.Margin = new System.Windows.Forms.Padding(4);
+            this.rbComprovanteentregue.Name = "rbComprovanteentregue";
+            this.rbComprovanteentregue.Size = new System.Drawing.Size(88, 17);
+            this.rbComprovanteentregue.TabIndex = 20;
+            this.rbComprovanteentregue.Text = "ENTREGUE";
+            this.rbComprovanteentregue.UseVisualStyleBackColor = true;
+            // 
+            // rbComprovantependente
+            // 
+            this.rbComprovantependente.AutoSize = true;
+            this.rbComprovantependente.Checked = true;
+            this.rbComprovantependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbComprovantependente.Location = new System.Drawing.Point(165, 4);
+            this.rbComprovantependente.Margin = new System.Windows.Forms.Padding(4);
+            this.rbComprovantependente.Name = "rbComprovantependente";
+            this.rbComprovantependente.Size = new System.Drawing.Size(87, 17);
+            this.rbComprovantependente.TabIndex = 21;
+            this.rbComprovantependente.TabStop = true;
+            this.rbComprovantependente.Text = "PENDENTE";
+            this.rbComprovantependente.UseVisualStyleBackColor = true;
+            // 
+            // gbCartaobanco
+            // 
+            this.gbCartaobanco.BackColor = System.Drawing.Color.Transparent;
+            this.gbCartaobanco.Controls.Add(this.rbCartaoentregue);
+            this.gbCartaobanco.Controls.Add(this.rbCartaopendente);
+            this.gbCartaobanco.Location = new System.Drawing.Point(543, 185);
+            this.gbCartaobanco.Name = "gbCartaobanco";
+            this.gbCartaobanco.Size = new System.Drawing.Size(247, 34);
+            this.gbCartaobanco.TabIndex = 35;
+            this.gbCartaobanco.TabStop = false;
+            this.gbCartaobanco.Enter += new System.EventHandler(this.gbCartaobanco_Enter);
+            // 
+            // rbCartaoentregue
+            // 
+            this.rbCartaoentregue.AutoSize = true;
+            this.rbCartaoentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCartaoentregue.Location = new System.Drawing.Point(0, 6);
+            this.rbCartaoentregue.Margin = new System.Windows.Forms.Padding(4);
+            this.rbCartaoentregue.Name = "rbCartaoentregue";
+            this.rbCartaoentregue.Size = new System.Drawing.Size(88, 17);
+            this.rbCartaoentregue.TabIndex = 22;
+            this.rbCartaoentregue.Text = "ENTREGUE";
+            this.rbCartaoentregue.UseVisualStyleBackColor = true;
+            this.rbCartaoentregue.CheckedChanged += new System.EventHandler(this.rbCartaoentregue_CheckedChanged);
+            // 
+            // rbCartaopendente
+            // 
+            this.rbCartaopendente.AutoSize = true;
+            this.rbCartaopendente.Checked = true;
+            this.rbCartaopendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCartaopendente.Location = new System.Drawing.Point(154, 6);
+            this.rbCartaopendente.Margin = new System.Windows.Forms.Padding(4);
+            this.rbCartaopendente.Name = "rbCartaopendente";
+            this.rbCartaopendente.Size = new System.Drawing.Size(87, 17);
+            this.rbCartaopendente.TabIndex = 23;
+            this.rbCartaopendente.TabStop = true;
+            this.rbCartaopendente.Text = "PENDENTE";
+            this.rbCartaopendente.UseVisualStyleBackColor = true;
+            // 
             // gbBoletimOcorrencia
             // 
             this.gbBoletimOcorrencia.Controls.Add(this.rbBOpendente);
@@ -1342,59 +1442,6 @@
             this.rbRgentregue.TabIndex = 24;
             this.rbRgentregue.Text = "ENTREGUE";
             this.rbRgentregue.UseVisualStyleBackColor = true;
-            // 
-            // rbCartaopendente
-            // 
-            this.rbCartaopendente.AutoSize = true;
-            this.rbCartaopendente.Checked = true;
-            this.rbCartaopendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCartaopendente.Location = new System.Drawing.Point(154, 6);
-            this.rbCartaopendente.Margin = new System.Windows.Forms.Padding(4);
-            this.rbCartaopendente.Name = "rbCartaopendente";
-            this.rbCartaopendente.Size = new System.Drawing.Size(87, 17);
-            this.rbCartaopendente.TabIndex = 23;
-            this.rbCartaopendente.TabStop = true;
-            this.rbCartaopendente.Text = "PENDENTE";
-            this.rbCartaopendente.UseVisualStyleBackColor = true;
-            // 
-            // rbCartaoentregue
-            // 
-            this.rbCartaoentregue.AutoSize = true;
-            this.rbCartaoentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCartaoentregue.Location = new System.Drawing.Point(0, 6);
-            this.rbCartaoentregue.Margin = new System.Windows.Forms.Padding(4);
-            this.rbCartaoentregue.Name = "rbCartaoentregue";
-            this.rbCartaoentregue.Size = new System.Drawing.Size(88, 17);
-            this.rbCartaoentregue.TabIndex = 22;
-            this.rbCartaoentregue.Text = "ENTREGUE";
-            this.rbCartaoentregue.UseVisualStyleBackColor = true;
-            this.rbCartaoentregue.CheckedChanged += new System.EventHandler(this.rbCartaoentregue_CheckedChanged);
-            // 
-            // rbComprovantependente
-            // 
-            this.rbComprovantependente.AutoSize = true;
-            this.rbComprovantependente.Checked = true;
-            this.rbComprovantependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbComprovantependente.Location = new System.Drawing.Point(165, 4);
-            this.rbComprovantependente.Margin = new System.Windows.Forms.Padding(4);
-            this.rbComprovantependente.Name = "rbComprovantependente";
-            this.rbComprovantependente.Size = new System.Drawing.Size(87, 17);
-            this.rbComprovantependente.TabIndex = 21;
-            this.rbComprovantependente.TabStop = true;
-            this.rbComprovantependente.Text = "PENDENTE";
-            this.rbComprovantependente.UseVisualStyleBackColor = true;
-            // 
-            // rbComprovanteentregue
-            // 
-            this.rbComprovanteentregue.AutoSize = true;
-            this.rbComprovanteentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbComprovanteentregue.Location = new System.Drawing.Point(11, 4);
-            this.rbComprovanteentregue.Margin = new System.Windows.Forms.Padding(4);
-            this.rbComprovanteentregue.Name = "rbComprovanteentregue";
-            this.rbComprovanteentregue.Size = new System.Drawing.Size(88, 17);
-            this.rbComprovanteentregue.TabIndex = 20;
-            this.rbComprovanteentregue.Text = "ENTREGUE";
-            this.rbComprovanteentregue.UseVisualStyleBackColor = true;
             // 
             // rbProntuariopendente
             // 
@@ -1590,53 +1637,6 @@
             this.label34.TabIndex = 0;
             this.label34.Text = "BOLETIM DE OCORRÊNCIA:";
             // 
-            // tabObservacoes
-            // 
-            this.tabObservacoes.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabObservacoes.Controls.Add(this.rtbAbaObservacoes);
-            this.tabObservacoes.Location = new System.Drawing.Point(4, 25);
-            this.tabObservacoes.Margin = new System.Windows.Forms.Padding(4);
-            this.tabObservacoes.Name = "tabObservacoes";
-            this.tabObservacoes.Padding = new System.Windows.Forms.Padding(4);
-            this.tabObservacoes.Size = new System.Drawing.Size(1043, 494);
-            this.tabObservacoes.TabIndex = 5;
-            this.tabObservacoes.Text = "Observações";
-            // 
-            // rtbAbaObservacoes
-            // 
-            this.rtbAbaObservacoes.Location = new System.Drawing.Point(9, 9);
-            this.rtbAbaObservacoes.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbAbaObservacoes.Name = "rtbAbaObservacoes";
-            this.rtbAbaObservacoes.Size = new System.Drawing.Size(1021, 474);
-            this.rtbAbaObservacoes.TabIndex = 0;
-            this.rtbAbaObservacoes.Text = "";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // gbTipoAcidente
-            // 
-            this.gbTipoAcidente.Controls.Add(this.rbPessoal);
-            this.gbTipoAcidente.Controls.Add(this.rbTipo);
-            this.gbTipoAcidente.Controls.Add(this.rbTrabalho);
-            this.gbTipoAcidente.Location = new System.Drawing.Point(196, 183);
-            this.gbTipoAcidente.Name = "gbTipoAcidente";
-            this.gbTipoAcidente.Size = new System.Drawing.Size(287, 29);
-            this.gbTipoAcidente.TabIndex = 23;
-            this.gbTipoAcidente.TabStop = false;
-            this.gbTipoAcidente.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // gbINSSAcidente
-            // 
-            this.gbINSSAcidente.Controls.Add(this.rbINSSsim);
-            this.gbINSSAcidente.Controls.Add(this.rbINSSnao);
-            this.gbINSSAcidente.Location = new System.Drawing.Point(196, 229);
-            this.gbINSSAcidente.Name = "gbINSSAcidente";
-            this.gbINSSAcidente.Size = new System.Drawing.Size(187, 40);
-            this.gbINSSAcidente.TabIndex = 24;
-            this.gbINSSAcidente.TabStop = false;
-            // 
             // gbProntuario
             // 
             this.gbProntuario.BackColor = System.Drawing.Color.Transparent;
@@ -1656,27 +1656,39 @@
             this.gbComprovanteRes.TabIndex = 34;
             this.gbComprovanteRes.TabStop = false;
             // 
-            // gbCartaobanco
+            // tabObservacoes
             // 
-            this.gbCartaobanco.BackColor = System.Drawing.Color.Transparent;
-            this.gbCartaobanco.Controls.Add(this.rbCartaoentregue);
-            this.gbCartaobanco.Controls.Add(this.rbCartaopendente);
-            this.gbCartaobanco.Location = new System.Drawing.Point(543, 185);
-            this.gbCartaobanco.Name = "gbCartaobanco";
-            this.gbCartaobanco.Size = new System.Drawing.Size(247, 34);
-            this.gbCartaobanco.TabIndex = 35;
-            this.gbCartaobanco.TabStop = false;
-            this.gbCartaobanco.Enter += new System.EventHandler(this.gbCartaobanco_Enter);
+            this.tabObservacoes.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabObservacoes.Controls.Add(this.rtbAbaObservacoes);
+            this.tabObservacoes.Location = new System.Drawing.Point(4, 25);
+            this.tabObservacoes.Margin = new System.Windows.Forms.Padding(4);
+            this.tabObservacoes.Name = "tabObservacoes";
+            this.tabObservacoes.Padding = new System.Windows.Forms.Padding(4);
+            this.tabObservacoes.Size = new System.Drawing.Size(1043, 494);
+            this.tabObservacoes.TabIndex = 5;
+            this.tabObservacoes.Text = "Observações";
             // 
-            // gbComprovante
+            // rtbAbaObservacoes
             // 
-            this.gbComprovante.Controls.Add(this.rbComprovanteentregue);
-            this.gbComprovante.Controls.Add(this.rbComprovantependente);
-            this.gbComprovante.Location = new System.Drawing.Point(532, 142);
-            this.gbComprovante.Name = "gbComprovante";
-            this.gbComprovante.Size = new System.Drawing.Size(287, 28);
-            this.gbComprovante.TabIndex = 36;
-            this.gbComprovante.TabStop = false;
+            this.rtbAbaObservacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbAbaObservacoes.Location = new System.Drawing.Point(9, 9);
+            this.rtbAbaObservacoes.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbAbaObservacoes.Name = "rtbAbaObservacoes";
+            this.rtbAbaObservacoes.Size = new System.Drawing.Size(1021, 474);
+            this.rtbAbaObservacoes.TabIndex = 0;
+            this.rtbAbaObservacoes.Text = "";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // ManterCliente
             // 
@@ -1695,6 +1707,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cadastrar Cliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManterCliente_FormClosing);
             this.Load += new System.EventHandler(this.ManterCliente_Load);
             this.ctCadastro.ResumeLayout(false);
             this.tabcadastrocliente.ResumeLayout(false);
@@ -1705,20 +1718,20 @@
             this.tabContato.PerformLayout();
             this.tabOcorrencia.ResumeLayout(false);
             this.tabOcorrencia.PerformLayout();
-            this.tabAnexos.ResumeLayout(false);
-            this.tabAnexos.PerformLayout();
-            this.gbBoletimOcorrencia.ResumeLayout(false);
-            this.gbBoletimOcorrencia.PerformLayout();
-            this.tabObservacoes.ResumeLayout(false);
-            this.gbTipoAcidente.ResumeLayout(false);
-            this.gbTipoAcidente.PerformLayout();
             this.gbINSSAcidente.ResumeLayout(false);
             this.gbINSSAcidente.PerformLayout();
-            this.gbProntuario.ResumeLayout(false);
-            this.gbCartaobanco.ResumeLayout(false);
-            this.gbCartaobanco.PerformLayout();
+            this.gbTipoAcidente.ResumeLayout(false);
+            this.gbTipoAcidente.PerformLayout();
+            this.tabAnexos.ResumeLayout(false);
+            this.tabAnexos.PerformLayout();
             this.gbComprovante.ResumeLayout(false);
             this.gbComprovante.PerformLayout();
+            this.gbCartaobanco.ResumeLayout(false);
+            this.gbCartaobanco.PerformLayout();
+            this.gbBoletimOcorrencia.ResumeLayout(false);
+            this.gbBoletimOcorrencia.PerformLayout();
+            this.gbProntuario.ResumeLayout(false);
+            this.tabObservacoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1859,5 +1872,6 @@
         private System.Windows.Forms.GroupBox gbComprovante;
         private System.Windows.Forms.GroupBox gbCartaobanco;
         private System.Windows.Forms.GroupBox gbComprovanteRes;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

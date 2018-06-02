@@ -174,7 +174,15 @@ namespace Simplify.Grafico
 
         }
 
-        
+        private void TelaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            {
+                if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
     }
 
