@@ -191,6 +191,12 @@ namespace Simplify.Grafico
             TelaAjuda ajuda = new TelaAjuda();
             ajuda.Show();
         }
+
+        private void btRelatorios_Click(object sender, EventArgs e)
+        {
+            TelaGerarRelatorio telarelatorio = new TelaGerarRelatorio();
+            telarelatorio.Show();
+        }
     }
     }
 
