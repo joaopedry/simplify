@@ -164,6 +164,10 @@
             this.rtbAbaObservacoes = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gbRG = new System.Windows.Forms.GroupBox();
+            this.gbCPF = new System.Windows.Forms.GroupBox();
+            this.gbCNH = new System.Windows.Forms.GroupBox();
+            this.gbDocVeiculo = new System.Windows.Forms.GroupBox();
             this.ctCadastro.SuspendLayout();
             this.tabcadastrocliente.SuspendLayout();
             this.abaEndereco.SuspendLayout();
@@ -177,6 +181,10 @@
             this.gbBoletimOcorrencia.SuspendLayout();
             this.gbProntuario.SuspendLayout();
             this.tabObservacoes.SuspendLayout();
+            this.gbRG.SuspendLayout();
+            this.gbCPF.SuspendLayout();
+            this.gbCNH.SuspendLayout();
+            this.gbDocVeiculo.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbNome
@@ -1198,17 +1206,11 @@
             // tabAnexos
             // 
             this.tabAnexos.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabAnexos.Controls.Add(this.gbCPF);
+            this.tabAnexos.Controls.Add(this.gbRG);
             this.tabAnexos.Controls.Add(this.gbComprovante);
             this.tabAnexos.Controls.Add(this.gbCartaobanco);
             this.tabAnexos.Controls.Add(this.gbBoletimOcorrencia);
-            this.tabAnexos.Controls.Add(this.rbDocVeiculopendente);
-            this.tabAnexos.Controls.Add(this.rbDocVeiculoentregue);
-            this.tabAnexos.Controls.Add(this.rbCNHpendente);
-            this.tabAnexos.Controls.Add(this.rbCNHentregue);
-            this.tabAnexos.Controls.Add(this.rbCPFpendente);
-            this.tabAnexos.Controls.Add(this.rbCPFentregue);
-            this.tabAnexos.Controls.Add(this.rbRgpentende);
-            this.tabAnexos.Controls.Add(this.rbRgentregue);
             this.tabAnexos.Controls.Add(this.rbProntuariopendente);
             this.tabAnexos.Controls.Add(this.rbProntuarioentregue);
             this.tabAnexos.Controls.Add(this.btAnexarDocVeiculo);
@@ -1228,6 +1230,8 @@
             this.tabAnexos.Controls.Add(this.label35);
             this.tabAnexos.Controls.Add(this.label34);
             this.tabAnexos.Controls.Add(this.gbProntuario);
+            this.tabAnexos.Controls.Add(this.gbCNH);
+            this.tabAnexos.Controls.Add(this.gbDocVeiculo);
             this.tabAnexos.Location = new System.Drawing.Point(4, 25);
             this.tabAnexos.Margin = new System.Windows.Forms.Padding(4);
             this.tabAnexos.Name = "tabAnexos";
@@ -1351,12 +1355,14 @@
             // rbDocVeiculopendente
             // 
             this.rbDocVeiculopendente.AutoSize = true;
+            this.rbDocVeiculopendente.Checked = true;
             this.rbDocVeiculopendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDocVeiculopendente.Location = new System.Drawing.Point(697, 391);
+            this.rbDocVeiculopendente.Location = new System.Drawing.Point(177, 2);
             this.rbDocVeiculopendente.Margin = new System.Windows.Forms.Padding(4);
             this.rbDocVeiculopendente.Name = "rbDocVeiculopendente";
             this.rbDocVeiculopendente.Size = new System.Drawing.Size(87, 17);
             this.rbDocVeiculopendente.TabIndex = 31;
+            this.rbDocVeiculopendente.TabStop = true;
             this.rbDocVeiculopendente.Text = "PENDENTE";
             this.rbDocVeiculopendente.UseVisualStyleBackColor = true;
             this.rbDocVeiculopendente.CheckedChanged += new System.EventHandler(this.rbDocVeiculopendente_CheckedChanged);
@@ -1365,7 +1371,7 @@
             // 
             this.rbDocVeiculoentregue.AutoSize = true;
             this.rbDocVeiculoentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDocVeiculoentregue.Location = new System.Drawing.Point(543, 391);
+            this.rbDocVeiculoentregue.Location = new System.Drawing.Point(23, 2);
             this.rbDocVeiculoentregue.Margin = new System.Windows.Forms.Padding(4);
             this.rbDocVeiculoentregue.Name = "rbDocVeiculoentregue";
             this.rbDocVeiculoentregue.Size = new System.Drawing.Size(88, 17);
@@ -1376,12 +1382,14 @@
             // rbCNHpendente
             // 
             this.rbCNHpendente.AutoSize = true;
+            this.rbCNHpendente.Checked = true;
             this.rbCNHpendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCNHpendente.Location = new System.Drawing.Point(697, 342);
+            this.rbCNHpendente.Location = new System.Drawing.Point(165, 4);
             this.rbCNHpendente.Margin = new System.Windows.Forms.Padding(4);
             this.rbCNHpendente.Name = "rbCNHpendente";
             this.rbCNHpendente.Size = new System.Drawing.Size(87, 17);
             this.rbCNHpendente.TabIndex = 29;
+            this.rbCNHpendente.TabStop = true;
             this.rbCNHpendente.Text = "PENDENTE";
             this.rbCNHpendente.UseVisualStyleBackColor = true;
             // 
@@ -1389,7 +1397,7 @@
             // 
             this.rbCNHentregue.AutoSize = true;
             this.rbCNHentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCNHentregue.Location = new System.Drawing.Point(543, 342);
+            this.rbCNHentregue.Location = new System.Drawing.Point(11, 4);
             this.rbCNHentregue.Margin = new System.Windows.Forms.Padding(4);
             this.rbCNHentregue.Name = "rbCNHentregue";
             this.rbCNHentregue.Size = new System.Drawing.Size(88, 17);
@@ -1400,12 +1408,14 @@
             // rbCPFpendente
             // 
             this.rbCPFpendente.AutoSize = true;
+            this.rbCPFpendente.Checked = true;
             this.rbCPFpendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCPFpendente.Location = new System.Drawing.Point(697, 293);
+            this.rbCPFpendente.Location = new System.Drawing.Point(165, 9);
             this.rbCPFpendente.Margin = new System.Windows.Forms.Padding(4);
             this.rbCPFpendente.Name = "rbCPFpendente";
             this.rbCPFpendente.Size = new System.Drawing.Size(87, 17);
             this.rbCPFpendente.TabIndex = 27;
+            this.rbCPFpendente.TabStop = true;
             this.rbCPFpendente.Text = "PENDENTE";
             this.rbCPFpendente.UseVisualStyleBackColor = true;
             // 
@@ -1413,7 +1423,7 @@
             // 
             this.rbCPFentregue.AutoSize = true;
             this.rbCPFentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCPFentregue.Location = new System.Drawing.Point(543, 293);
+            this.rbCPFentregue.Location = new System.Drawing.Point(11, 9);
             this.rbCPFentregue.Margin = new System.Windows.Forms.Padding(4);
             this.rbCPFentregue.Name = "rbCPFentregue";
             this.rbCPFentregue.Size = new System.Drawing.Size(88, 17);
@@ -1424,12 +1434,14 @@
             // rbRgpentende
             // 
             this.rbRgpentende.AutoSize = true;
+            this.rbRgpentende.Checked = true;
             this.rbRgpentende.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRgpentende.Location = new System.Drawing.Point(697, 244);
+            this.rbRgpentende.Location = new System.Drawing.Point(165, 7);
             this.rbRgpentende.Margin = new System.Windows.Forms.Padding(4);
             this.rbRgpentende.Name = "rbRgpentende";
             this.rbRgpentende.Size = new System.Drawing.Size(87, 17);
             this.rbRgpentende.TabIndex = 25;
+            this.rbRgpentende.TabStop = true;
             this.rbRgpentende.Text = "PENDENTE";
             this.rbRgpentende.UseVisualStyleBackColor = true;
             // 
@@ -1437,7 +1449,7 @@
             // 
             this.rbRgentregue.AutoSize = true;
             this.rbRgentregue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRgentregue.Location = new System.Drawing.Point(543, 244);
+            this.rbRgentregue.Location = new System.Drawing.Point(11, 7);
             this.rbRgentregue.Margin = new System.Windows.Forms.Padding(4);
             this.rbRgentregue.Name = "rbRgentregue";
             this.rbRgentregue.Size = new System.Drawing.Size(88, 17);
@@ -1692,6 +1704,46 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // gbRG
+            // 
+            this.gbRG.Controls.Add(this.rbRgentregue);
+            this.gbRG.Controls.Add(this.rbRgpentende);
+            this.gbRG.Location = new System.Drawing.Point(532, 233);
+            this.gbRG.Name = "gbRG";
+            this.gbRG.Size = new System.Drawing.Size(287, 28);
+            this.gbRG.TabIndex = 37;
+            this.gbRG.TabStop = false;
+            // 
+            // gbCPF
+            // 
+            this.gbCPF.Controls.Add(this.rbCPFentregue);
+            this.gbCPF.Controls.Add(this.rbCPFpendente);
+            this.gbCPF.Location = new System.Drawing.Point(532, 282);
+            this.gbCPF.Name = "gbCPF";
+            this.gbCPF.Size = new System.Drawing.Size(287, 28);
+            this.gbCPF.TabIndex = 38;
+            this.gbCPF.TabStop = false;
+            // 
+            // gbCNH
+            // 
+            this.gbCNH.Controls.Add(this.rbCNHentregue);
+            this.gbCNH.Controls.Add(this.rbCNHpendente);
+            this.gbCNH.Location = new System.Drawing.Point(532, 338);
+            this.gbCNH.Name = "gbCNH";
+            this.gbCNH.Size = new System.Drawing.Size(287, 28);
+            this.gbCNH.TabIndex = 39;
+            this.gbCNH.TabStop = false;
+            // 
+            // gbDocVeiculo
+            // 
+            this.gbDocVeiculo.Controls.Add(this.rbDocVeiculoentregue);
+            this.gbDocVeiculo.Controls.Add(this.rbDocVeiculopendente);
+            this.gbDocVeiculo.Location = new System.Drawing.Point(520, 388);
+            this.gbDocVeiculo.Name = "gbDocVeiculo";
+            this.gbDocVeiculo.Size = new System.Drawing.Size(287, 28);
+            this.gbDocVeiculo.TabIndex = 40;
+            this.gbDocVeiculo.TabStop = false;
+            // 
             // ManterCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1734,6 +1786,14 @@
             this.gbBoletimOcorrencia.PerformLayout();
             this.gbProntuario.ResumeLayout(false);
             this.tabObservacoes.ResumeLayout(false);
+            this.gbRG.ResumeLayout(false);
+            this.gbRG.PerformLayout();
+            this.gbCPF.ResumeLayout(false);
+            this.gbCPF.PerformLayout();
+            this.gbCNH.ResumeLayout(false);
+            this.gbCNH.PerformLayout();
+            this.gbDocVeiculo.ResumeLayout(false);
+            this.gbDocVeiculo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1875,5 +1935,9 @@
         private System.Windows.Forms.GroupBox gbCartaobanco;
         private System.Windows.Forms.GroupBox gbComprovanteRes;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.GroupBox gbCPF;
+        private System.Windows.Forms.GroupBox gbRG;
+        private System.Windows.Forms.GroupBox gbCNH;
+        private System.Windows.Forms.GroupBox gbDocVeiculo;
     }
 }
