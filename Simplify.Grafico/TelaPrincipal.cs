@@ -134,11 +134,6 @@ namespace Simplify.Grafico
             telaandamento.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btProcessEnviados_Click(object sender, EventArgs e)
         {
             TelaProcessosEnviados telaenviados = new TelaProcessosEnviados();
@@ -189,6 +184,12 @@ namespace Simplify.Grafico
             TelaAjustes ajustes = new TelaAjustes();
             
             ajustes.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            TelaAjuda ajuda = new TelaAjuda();
+            ajuda.Show();
         }
     }
     }
