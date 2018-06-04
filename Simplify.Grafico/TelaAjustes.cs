@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Simplify.Negocio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Simplify.Grafico
         public TelaAjustes()
         {
             InitializeComponent();
+            CarregaUsuario();
+        }
+
+        private void CarregaUsuario()
+        {
+            dgUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgUsuario.MultiSelect = false;
+            dgUsuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgUsuario.AutoGenerateColumns = true;
+            List<Usuario> usuarios = Program.Gerenciador.TodosOsUsuarios();
+            dgUsuario.DataSource = usuarios;
         }
 
         private void btAdicionarUsuario_Click(object sender, EventArgs e)
@@ -27,6 +39,11 @@ namespace Simplify.Grafico
         {
             TelaAjuda ajuda = new TelaAjuda();
             ajuda.Show();
+        }
+
+        private void dgUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

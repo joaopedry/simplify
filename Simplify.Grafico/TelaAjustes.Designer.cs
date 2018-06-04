@@ -36,9 +36,10 @@
             // 
             // btAdicionarUsuario
             // 
-            this.btAdicionarUsuario.Location = new System.Drawing.Point(12, 12);
+            this.btAdicionarUsuario.Location = new System.Drawing.Point(9, 10);
+            this.btAdicionarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btAdicionarUsuario.Name = "btAdicionarUsuario";
-            this.btAdicionarUsuario.Size = new System.Drawing.Size(90, 49);
+            this.btAdicionarUsuario.Size = new System.Drawing.Size(68, 40);
             this.btAdicionarUsuario.TabIndex = 0;
             this.btAdicionarUsuario.Text = "Adicionar Usuário";
             this.btAdicionarUsuario.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // btRemoverUsuario
             // 
-            this.btRemoverUsuario.Location = new System.Drawing.Point(119, 12);
+            this.btRemoverUsuario.Location = new System.Drawing.Point(89, 10);
+            this.btRemoverUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btRemoverUsuario.Name = "btRemoverUsuario";
-            this.btRemoverUsuario.Size = new System.Drawing.Size(90, 49);
+            this.btRemoverUsuario.Size = new System.Drawing.Size(68, 40);
             this.btRemoverUsuario.TabIndex = 1;
             this.btRemoverUsuario.Text = "Remover Usuário";
             this.btRemoverUsuario.UseVisualStyleBackColor = true;
@@ -58,22 +60,25 @@
             this.dgUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuario.Location = new System.Drawing.Point(12, 82);
+            this.dgUsuario.Location = new System.Drawing.Point(9, 67);
+            this.dgUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgUsuario.Name = "dgUsuario";
             this.dgUsuario.RowTemplate.Height = 24;
-            this.dgUsuario.Size = new System.Drawing.Size(782, 330);
+            this.dgUsuario.Size = new System.Drawing.Size(586, 268);
             this.dgUsuario.TabIndex = 2;
+            this.dgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuario_CellContentClick);
             // 
             // TelaAjustes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 426);
+            this.ClientSize = new System.Drawing.Size(606, 353);
             this.Controls.Add(this.dgUsuario);
             this.Controls.Add(this.btRemoverUsuario);
             this.Controls.Add(this.btAdicionarUsuario);
-            this.MaximumSize = new System.Drawing.Size(1024, 473);
-            this.MinimumSize = new System.Drawing.Size(824, 473);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(772, 392);
+            this.MinimumSize = new System.Drawing.Size(622, 392);
             this.Name = "TelaAjustes";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

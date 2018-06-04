@@ -121,5 +121,10 @@ namespace Simplify.Negocio
 
             return validacao;
         }
+
+        public List<Usuario> TodosOsUsuarios()
+        {
+            return this.banco.Usuarios.ToList();
+        }
     }
 }
