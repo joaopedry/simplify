@@ -29,7 +29,15 @@ namespace Simplify.Grafico
         private void btSalvarUsuario_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
-            /*Cadatro usuario sistema*/
+            if (Int64.TryParse(tbIdUsuario.Text, out long value))
+            {
+                usuario.Id = value;
+            }
+            else
+            {
+                usuario.Id = -1;
+                //passa indentificador com valor negativo se não conseguir converter
+            }
             usuario.Nome_usuario = tbNomeUsuario.Text;
             usuario.Email_usuario = tbEmailUsuario.Text;
             usuario.Login_usuario = tbLoginUsuario.Text;
@@ -63,6 +71,43 @@ namespace Simplify.Grafico
                 MessageBox.Show("Usuario cadastrado com sucesso");
             }
             this.Close();
+        }
+
+        private void tbMatriculaUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManterUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManterUsuario_Shown(object sender, EventArgs e)
+        {
+            if (UsuarioSelecionado != null)
+            {
+                this.tbIdUsuario.Text = UsuarioSelecionado.Id.ToString();
+                this.tbNomeUsuario.Text = UsuarioSelecionado.Nome_usuario;
+                this.tbEmailUsuario.Text = UsuarioSelecionado.Email_usuario;
+                this.tbLoginUsuario.Text = UsuarioSelecionado.Login_usuario;
+                this.tbSenhaUsuario.Text = UsuarioSelecionado.Password_usuario;
+            }
+        }
+
+        private void btCancelarUsuario_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbAdminUsuario_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

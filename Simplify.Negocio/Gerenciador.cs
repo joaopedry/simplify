@@ -115,11 +115,29 @@ namespace Simplify.Negocio
             return validacao;
         }
 
+        public Validacao RemoverUsuario(Usuario usuario)
+        {
+            Validacao validacao = new Validacao();
+            banco.Usuarios.Remove(usuario);
+            banco.SaveChanges();
+            return validacao;
+        }
+
         public Validacao AlterarUsuario(Usuario usuarioAlterado)
         {
             Validacao validacao = new Validacao();
-
+            Usuario usuarioBanco = BuscaUsuarioPorId(usuarioAlterado.Id);
+            usuarioBanco.Nome_usuario = usuarioAlterado.Nome_usuario;
+            usuarioBanco.Email_usuario = usuarioAlterado.Email_usuario;
+            usuarioBanco.Login_usuario = usuarioAlterado.Login_usuario;
+            usuarioBanco.Password_usuario = usuarioAlterado.Password_usuario;
+            this.banco.SaveChanges();
             return validacao;
+        }
+
+        public Usuario BuscaUsuarioPorId(long id)
+        {
+            return this.banco.Usuarios.Where(c => c.Id == id).FirstOrDefault();
         }
 
         public List<Usuario> TodosOsUsuarios()
