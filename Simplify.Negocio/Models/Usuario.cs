@@ -13,5 +13,6 @@ namespace Simplify.Negocio.Models
         public String Email_usuario { get; set; }
         public String Login_usuario { get; set; }
         public String Password_usuario { get; set; }
+        public bool Administrador_usuario { get; set; }
     }
 }

@@ -47,15 +47,16 @@
             // tbNomeUsuario
             // 
             this.tbNomeUsuario.Location = new System.Drawing.Point(84, 45);
-            this.tbNomeUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNomeUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbNomeUsuario.Name = "tbNomeUsuario";
             this.tbNomeUsuario.Size = new System.Drawing.Size(231, 20);
             this.tbNomeUsuario.TabIndex = 0;
+            this.tbNomeUsuario.TextChanged += new System.EventHandler(this.tbNomeUsuario_TextChanged);
             // 
             // tbEmailUsuario
             // 
             this.tbEmailUsuario.Location = new System.Drawing.Point(84, 69);
-            this.tbEmailUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmailUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmailUsuario.Name = "tbEmailUsuario";
             this.tbEmailUsuario.Size = new System.Drawing.Size(231, 20);
             this.tbEmailUsuario.TabIndex = 1;
@@ -63,7 +64,7 @@
             // tbLoginUsuario
             // 
             this.tbLoginUsuario.Location = new System.Drawing.Point(84, 92);
-            this.tbLoginUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbLoginUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbLoginUsuario.Name = "tbLoginUsuario";
             this.tbLoginUsuario.Size = new System.Drawing.Size(231, 20);
             this.tbLoginUsuario.TabIndex = 2;
@@ -71,7 +72,7 @@
             // tbSenhaUsuario
             // 
             this.tbSenhaUsuario.Location = new System.Drawing.Point(84, 115);
-            this.tbSenhaUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSenhaUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbSenhaUsuario.Name = "tbSenhaUsuario";
             this.tbSenhaUsuario.Size = new System.Drawing.Size(231, 20);
             this.tbSenhaUsuario.TabIndex = 3;
@@ -132,7 +133,7 @@
             // btSalvarUsuario
             // 
             this.btSalvarUsuario.Location = new System.Drawing.Point(158, 169);
-            this.btSalvarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSalvarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btSalvarUsuario.Name = "btSalvarUsuario";
             this.btSalvarUsuario.Size = new System.Drawing.Size(67, 24);
             this.btSalvarUsuario.TabIndex = 9;
@@ -143,7 +144,7 @@
             // btCancelarUsuario
             // 
             this.btCancelarUsuario.Location = new System.Drawing.Point(230, 169);
-            this.btCancelarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCancelarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btCancelarUsuario.Name = "btCancelarUsuario";
             this.btCancelarUsuario.Size = new System.Drawing.Size(74, 24);
             this.btCancelarUsuario.TabIndex = 10;
@@ -202,7 +203,7 @@
             this.Controls.Add(this.tbLoginUsuario);
             this.Controls.Add(this.tbEmailUsuario);
             this.Controls.Add(this.tbNomeUsuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(344, 248);
             this.MinimizeBox = false;

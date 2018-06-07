@@ -131,6 +131,7 @@ namespace Simplify.Negocio
             usuarioBanco.Email_usuario = usuarioAlterado.Email_usuario;
             usuarioBanco.Login_usuario = usuarioAlterado.Login_usuario;
             usuarioBanco.Password_usuario = usuarioAlterado.Password_usuario;
+            usuarioBanco.Administrador_usuario = usuarioAlterado.Administrador_usuario;
             this.banco.SaveChanges();
             return validacao;
         }

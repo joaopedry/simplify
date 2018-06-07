@@ -38,6 +38,7 @@ namespace Simplify.Grafico
                 usuario.Id = -1;
                 //passa indentificador com valor negativo se não conseguir converter
             }
+            usuario.Administrador_usuario = cbAdminUsuario.Checked;
             usuario.Nome_usuario = tbNomeUsuario.Text;
             usuario.Email_usuario = tbEmailUsuario.Text;
             usuario.Login_usuario = tbLoginUsuario.Text;
@@ -92,6 +93,7 @@ namespace Simplify.Grafico
                 this.tbEmailUsuario.Text = UsuarioSelecionado.Email_usuario;
                 this.tbLoginUsuario.Text = UsuarioSelecionado.Login_usuario;
                 this.tbSenhaUsuario.Text = UsuarioSelecionado.Password_usuario;
+                this.cbAdminUsuario.Checked = UsuarioSelecionado.Administrador_usuario;
             }
         }
 
@@ -106,6 +108,11 @@ namespace Simplify.Grafico
         }
 
         private void cbAdminUsuario_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbNomeUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }

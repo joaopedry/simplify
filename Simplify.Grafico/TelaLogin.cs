@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Simplify.Negocio;
+using Simplify.Negocio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +17,27 @@ namespace Simplify.Grafico
         public TelaLogin()
         {
             InitializeComponent();
+           // LoginRoot();
         }
+
+       /* private void LoginRoot()
+        {
+            Usuario usuario = new Usuario();
+            usuario.Id = 1;
+            usuario.Administrador_usuario = true;
+            usuario.Nome_usuario = "root";
+            usuario.Email_usuario = "root@simplify.com.br";
+            usuario.Login_usuario = "root";
+            usuario.Password_usuario = "root";
+
+            Validacao validacao;
+            validacao = Program.Gerenciador.AdicionarUsuario(usuario);
+
+            
+            usuarioBanco.Login_usuario = usuarioAlterado.Login_usuario;
+            usuarioBanco.Password_usuario = usuarioAlterado.Password_usuario;
+             
+        }*/
 
         private void btLogin_Click(object sender, EventArgs e)
         {
@@ -31,5 +53,16 @@ namespace Simplify.Grafico
             this.AcceptButton = btLogin;
             this.CancelButton = btSair;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }
