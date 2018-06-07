@@ -48,7 +48,7 @@ namespace Simplify.Grafico
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-
+      
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -82,8 +82,8 @@ namespace Simplify.Grafico
             /*Dados Pessoais*/
             cliente.Nome_dados = tbNome.Text;
             cliente.Indicacao_dados = tbindicacao.Text;
-            cliente.Nascimento_dados = DateTime.Parse(tbNascimento.Text);
-            cliente.CPF_dados = Double.Parse(tbCpf.Text);
+            cliente.Nascimento_dados = tbNascimento.Text;
+            cliente.CPF_dados = tbCpf.Text;
             cliente.RG_dados = Double.Parse(tbRG.Text);
             cliente.Profissao_dados = tbProfissao.Text;
             cliente.Sexo_dados = tbSexo.Text;
@@ -93,7 +93,7 @@ namespace Simplify.Grafico
             cliente.Rua_endereco1 = tbRua1.Text;
             cliente.Num_endereco1 = Int32.Parse(tbNumero1.Text);
             cliente.Complemento_endereco1 = tbComplemento1.Text;
-            cliente.CEP_endereco1 = Double.Parse(tbCep1.Text);
+            cliente.CEP_endereco1 = tbCep1.Text;
             cliente.Bairro_endereco1 = tbBairro1.Text;
             cliente.Cidade_endereco1 = tbCidade1.Text;
             //Endereço2
@@ -101,7 +101,7 @@ namespace Simplify.Grafico
             cliente.Rua_endereco2 = tbRua2.Text;
             cliente.Num_endereco2 = Int32.Parse(tbNumero2.Text);
             cliente.Complemento_endereco2 = tbComplemento2.Text;
-            cliente.CEP_endereco2 = Double.Parse(tbCep2.Text);
+            cliente.CEP_endereco2 = tbCep2.Text;
             cliente.Bairro_endereco2 = tbBairro2.Text;
             cliente.Cidade_endereco2 = tbCidade2.Text;
             //Contato
@@ -186,6 +186,112 @@ namespace Simplify.Grafico
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            
+        }
+
+        private void tbCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; // ou ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 3 || t.Text.Length == 7)
+                    t.Text += ".";
+                else if (t.Text.Length == 11)
+                    t.Text += "-";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbRG_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbRG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 1 || t.Text.Length == 5)
+                    t.Text += ".";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbNascimento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 2 || t.Text.Length == 5)
+                    t.Text += "/";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)58)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbNumero1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbNumero2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCep1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 5)
+                    t.Text += "-";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+            //89227-064
+
         }
     }
 }
