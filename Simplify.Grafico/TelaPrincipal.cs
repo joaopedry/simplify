@@ -123,7 +123,18 @@ namespace Simplify.Grafico
             ManterCliente mantercliente = new ManterCliente();
             mantercliente.MdiParent = this;
             panel5.Controls.Add(mantercliente);
-            mantercliente.Show();
+            if (Application.OpenForms.OfType<ManterCliente>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<ManterCliente>().First().Focus();
+            }
+            else
+            {
+
+                mantercliente.Show();
+            }
+            
         }
 
         private void btProcessAndamento_Click(object sender, EventArgs e)
@@ -131,7 +142,19 @@ namespace Simplify.Grafico
             TelaProcessosAndamento telaandamento = new TelaProcessosAndamento();
             telaandamento.MdiParent = this;
             panel5.Controls.Add(telaandamento);
-            telaandamento.Show();
+
+            if (Application.OpenForms.OfType<TelaProcessosAndamento>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaProcessosAndamento>().First().Focus();
+            }
+            else
+            {
+
+                telaandamento.Show();
+            }
+            
         }
 
         private void btProcessEnviados_Click(object sender, EventArgs e)
@@ -139,7 +162,18 @@ namespace Simplify.Grafico
             TelaProcessosEnviados telaenviados = new TelaProcessosEnviados();
             telaenviados.MdiParent = this;
             panel5.Controls.Add(telaenviados);
-            telaenviados.Show();
+            if (Application.OpenForms.OfType<TelaProcessosEnviados>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaProcessosEnviados>().First().Focus();
+            }
+            else
+            {
+
+                telaenviados.Show();
+            }
+            
 
         }
 
@@ -148,7 +182,18 @@ namespace Simplify.Grafico
             TelaProcessosPendencia telapendencia = new TelaProcessosPendencia();
             telapendencia.MdiParent = this;
             panel5.Controls.Add(telapendencia);
-            telapendencia.Show();
+            if (Application.OpenForms.OfType<TelaProcessosPendencia>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaProcessosPendencia>().First().Focus();
+            }
+            else
+            {
+
+                telapendencia.Show();
+            }
+           
         }
 
         private void btProcessosnegados_Click(object sender, EventArgs e)
@@ -156,7 +201,19 @@ namespace Simplify.Grafico
             TelaProcessosNegados telanegados = new TelaProcessosNegados();
             telanegados.MdiParent = this;
             panel5.Controls.Add(telanegados);
-            telanegados.Show();
+            if (Application.OpenForms.OfType<TelaProcessosNegados>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaProcessosNegados>().First().Focus();
+            }
+            else
+            {
+
+                telanegados.Show();
+            }
+
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -182,20 +239,56 @@ namespace Simplify.Grafico
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             TelaAjustes ajustes = new TelaAjustes();
+
+            if (Application.OpenForms.OfType<TelaAjustes>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaAjustes>().First().Focus();
+            }
+            else
+            {
+
+                ajustes.Show();
+            }
+
+
+
             
-            ajustes.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             TelaAjuda ajuda = new TelaAjuda();
-            ajuda.Show();
+            if (Application.OpenForms.OfType<TelaAjuda>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaAjuda>().First().Focus();
+            }
+            else
+            {
+
+                ajuda.Show();
+            }
         }
+            
 
         private void btRelatorios_Click(object sender, EventArgs e)
         {
             TelaGerarRelatorio telarelatorio = new TelaGerarRelatorio();
-            telarelatorio.Show();
+            if (Application.OpenForms.OfType<TelaGerarRelatorio>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaGerarRelatorio>().First().Focus();
+            }
+            else
+            {
+
+                telarelatorio.Show();
+            }
+            
         }
 
         private void btConsultarProcesso_Click(object sender, EventArgs e)
@@ -203,7 +296,19 @@ namespace Simplify.Grafico
             TelaListaProcessos tela = new TelaListaProcessos();
             tela.MdiParent = this;
             panel5.Controls.Add(tela);
-            tela.Show();
+
+            if (Application.OpenForms.OfType<TelaListaProcessos>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaListaProcessos>().First().Focus();
+            }
+            else
+            {
+                
+                tela.Show();
+            }
+            
         }
     }
     }
