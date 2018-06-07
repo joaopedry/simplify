@@ -38,15 +38,19 @@
             this.rbProcessoEnviado = new System.Windows.Forms.RadioButton();
             this.rbProcessoNegado = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.gbStatusProcesso = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gbStatusProcesso.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 76);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(349, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(349, 289);
             this.dataGridView1.TabIndex = 0;
             // 
             // textBox1
@@ -67,7 +71,8 @@
             // 
             // btAlterarDados
             // 
-            this.btAlterarDados.Location = new System.Drawing.Point(233, 461);
+            this.btAlterarDados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btAlterarDados.Location = new System.Drawing.Point(233, 371);
             this.btAlterarDados.Name = "btAlterarDados";
             this.btAlterarDados.Size = new System.Drawing.Size(129, 23);
             this.btAlterarDados.TabIndex = 3;
@@ -85,17 +90,20 @@
             // 
             // btImprimirFolhaDeRosto
             // 
-            this.btImprimirFolhaDeRosto.Location = new System.Drawing.Point(625, 461);
+            this.btImprimirFolhaDeRosto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btImprimirFolhaDeRosto.Location = new System.Drawing.Point(99, 371);
             this.btImprimirFolhaDeRosto.Name = "btImprimirFolhaDeRosto";
-            this.btImprimirFolhaDeRosto.Size = new System.Drawing.Size(75, 23);
+            this.btImprimirFolhaDeRosto.Size = new System.Drawing.Size(128, 23);
             this.btImprimirFolhaDeRosto.TabIndex = 5;
-            this.btImprimirFolhaDeRosto.Text = "Imprimir";
+            this.btImprimirFolhaDeRosto.Text = "Imprimir folha de rosto";
             this.btImprimirFolhaDeRosto.UseVisualStyleBackColor = true;
             // 
             // rbProcessoPendencia
             // 
+            this.rbProcessoPendencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rbProcessoPendencia.AutoSize = true;
-            this.rbProcessoPendencia.Location = new System.Drawing.Point(397, 464);
+            this.rbProcessoPendencia.Checked = true;
+            this.rbProcessoPendencia.Location = new System.Drawing.Point(8, 5);
             this.rbProcessoPendencia.Name = "rbProcessoPendencia";
             this.rbProcessoPendencia.Size = new System.Drawing.Size(71, 17);
             this.rbProcessoPendencia.TabIndex = 6;
@@ -105,8 +113,9 @@
             // 
             // rbProcessoEnviado
             // 
+            this.rbProcessoEnviado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rbProcessoEnviado.AutoSize = true;
-            this.rbProcessoEnviado.Location = new System.Drawing.Point(473, 464);
+            this.rbProcessoEnviado.Location = new System.Drawing.Point(84, 5);
             this.rbProcessoEnviado.Name = "rbProcessoEnviado";
             this.rbProcessoEnviado.Size = new System.Drawing.Size(64, 17);
             this.rbProcessoEnviado.TabIndex = 7;
@@ -116,8 +125,9 @@
             // 
             // rbProcessoNegado
             // 
+            this.rbProcessoNegado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rbProcessoNegado.AutoSize = true;
-            this.rbProcessoNegado.Location = new System.Drawing.Point(543, 464);
+            this.rbProcessoNegado.Location = new System.Drawing.Point(154, 5);
             this.rbProcessoNegado.Name = "rbProcessoNegado";
             this.rbProcessoNegado.Size = new System.Drawing.Size(63, 17);
             this.rbProcessoNegado.TabIndex = 8;
@@ -127,33 +137,52 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(394, 442);
+            this.label2.Location = new System.Drawing.Point(382, 378);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Status do Processo:";
+            // 
+            // gbStatusProcesso
+            // 
+            this.gbStatusProcesso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gbStatusProcesso.BackColor = System.Drawing.Color.Transparent;
+            this.gbStatusProcesso.Controls.Add(this.rbProcessoEnviado);
+            this.gbStatusProcesso.Controls.Add(this.rbProcessoPendencia);
+            this.gbStatusProcesso.Controls.Add(this.rbProcessoNegado);
+            this.gbStatusProcesso.Location = new System.Drawing.Point(484, 371);
+            this.gbStatusProcesso.Name = "gbStatusProcesso";
+            this.gbStatusProcesso.Size = new System.Drawing.Size(215, 33);
+            this.gbStatusProcesso.TabIndex = 10;
+            this.gbStatusProcesso.TabStop = false;
             // 
             // TelaListaProcessos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(712, 491);
+            this.ClientSize = new System.Drawing.Size(699, 401);
+            this.Controls.Add(this.gbStatusProcesso);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.rbProcessoNegado);
-            this.Controls.Add(this.rbProcessoEnviado);
-            this.Controls.Add(this.rbProcessoPendencia);
             this.Controls.Add(this.btImprimirFolhaDeRosto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btAlterarDados);
             this.Controls.Add(this.btBuscarProcesso);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TelaListaProcessos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TelaListaProcessos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.gbStatusProcesso.ResumeLayout(false);
+            this.gbStatusProcesso.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +200,6 @@
         private System.Windows.Forms.RadioButton rbProcessoEnviado;
         private System.Windows.Forms.RadioButton rbProcessoNegado;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox gbStatusProcesso;
     }
 }
