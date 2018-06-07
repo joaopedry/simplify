@@ -31,11 +31,11 @@
             this.btAdicionarUsuario = new System.Windows.Forms.Button();
             this.btRemoverUsuario = new System.Windows.Forms.Button();
             this.dgUsuario = new System.Windows.Forms.DataGridView();
-            this.btAlterarUsuario = new System.Windows.Forms.Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Administrador = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btAlterarUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // 
             // btRemoverUsuario
             // 
-            this.btRemoverUsuario.Location = new System.Drawing.Point(89, 10);
+            this.btRemoverUsuario.Location = new System.Drawing.Point(153, 10);
             this.btRemoverUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btRemoverUsuario.Name = "btRemoverUsuario";
             this.btRemoverUsuario.Size = new System.Drawing.Size(68, 40);
@@ -78,17 +78,6 @@
             this.dgUsuario.Size = new System.Drawing.Size(586, 268);
             this.dgUsuario.TabIndex = 2;
             this.dgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuario_CellContentClick);
-            // 
-            // btAlterarUsuario
-            // 
-            this.btAlterarUsuario.Location = new System.Drawing.Point(169, 10);
-            this.btAlterarUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.btAlterarUsuario.Name = "btAlterarUsuario";
-            this.btAlterarUsuario.Size = new System.Drawing.Size(68, 40);
-            this.btAlterarUsuario.TabIndex = 3;
-            this.btAlterarUsuario.Text = "Alterar Usuário";
-            this.btAlterarUsuario.UseVisualStyleBackColor = true;
-            this.btAlterarUsuario.Click += new System.EventHandler(this.btAlterarUsuario_Click);
             // 
             // Nome
             // 
@@ -118,11 +107,22 @@
             this.Administrador.Name = "Administrador";
             this.Administrador.ReadOnly = true;
             // 
+            // btAlterarUsuario
+            // 
+            this.btAlterarUsuario.Location = new System.Drawing.Point(81, 10);
+            this.btAlterarUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.btAlterarUsuario.Name = "btAlterarUsuario";
+            this.btAlterarUsuario.Size = new System.Drawing.Size(68, 40);
+            this.btAlterarUsuario.TabIndex = 3;
+            this.btAlterarUsuario.Text = "Alterar Usuário";
+            this.btAlterarUsuario.UseVisualStyleBackColor = true;
+            this.btAlterarUsuario.Click += new System.EventHandler(this.btAlterarUsuario_Click);
+            // 
             // TelaAjustes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 353);
+            this.ClientSize = new System.Drawing.Size(606, 354);
             this.Controls.Add(this.btAlterarUsuario);
             this.Controls.Add(this.dgUsuario);
             this.Controls.Add(this.btRemoverUsuario);

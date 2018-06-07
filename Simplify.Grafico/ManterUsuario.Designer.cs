@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManterUsuario));
             this.tbNomeUsuario = new System.Windows.Forms.TextBox();
             this.tbEmailUsuario = new System.Windows.Forms.TextBox();
             this.tbLoginUsuario = new System.Windows.Forms.TextBox();
@@ -42,11 +43,13 @@
             this.tbIdUsuario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbAdminUsuario = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbNomeUsuario
             // 
-            this.tbNomeUsuario.Location = new System.Drawing.Point(84, 45);
+            this.tbNomeUsuario.Location = new System.Drawing.Point(102, 53);
             this.tbNomeUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbNomeUsuario.Name = "tbNomeUsuario";
             this.tbNomeUsuario.Size = new System.Drawing.Size(231, 20);
@@ -55,7 +58,7 @@
             // 
             // tbEmailUsuario
             // 
-            this.tbEmailUsuario.Location = new System.Drawing.Point(84, 69);
+            this.tbEmailUsuario.Location = new System.Drawing.Point(102, 77);
             this.tbEmailUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmailUsuario.Name = "tbEmailUsuario";
             this.tbEmailUsuario.Size = new System.Drawing.Size(231, 20);
@@ -63,7 +66,7 @@
             // 
             // tbLoginUsuario
             // 
-            this.tbLoginUsuario.Location = new System.Drawing.Point(84, 92);
+            this.tbLoginUsuario.Location = new System.Drawing.Point(102, 100);
             this.tbLoginUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbLoginUsuario.Name = "tbLoginUsuario";
             this.tbLoginUsuario.Size = new System.Drawing.Size(231, 20);
@@ -71,7 +74,7 @@
             // 
             // tbSenhaUsuario
             // 
-            this.tbSenhaUsuario.Location = new System.Drawing.Point(84, 115);
+            this.tbSenhaUsuario.Location = new System.Drawing.Point(102, 123);
             this.tbSenhaUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbSenhaUsuario.Name = "tbSenhaUsuario";
             this.tbSenhaUsuario.Size = new System.Drawing.Size(231, 20);
@@ -81,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 48);
+            this.label1.Location = new System.Drawing.Point(10, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
@@ -91,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 119);
+            this.label2.Location = new System.Drawing.Point(10, 127);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
@@ -101,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 96);
+            this.label3.Location = new System.Drawing.Point(10, 104);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
@@ -112,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 73);
+            this.label4.Location = new System.Drawing.Point(10, 81);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
@@ -123,7 +126,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(107, 11);
+            this.label5.Location = new System.Drawing.Point(164, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 18);
@@ -132,7 +135,7 @@
             // 
             // btSalvarUsuario
             // 
-            this.btSalvarUsuario.Location = new System.Drawing.Point(158, 169);
+            this.btSalvarUsuario.Location = new System.Drawing.Point(189, 173);
             this.btSalvarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btSalvarUsuario.Name = "btSalvarUsuario";
             this.btSalvarUsuario.Size = new System.Drawing.Size(67, 24);
@@ -143,7 +146,7 @@
             // 
             // btCancelarUsuario
             // 
-            this.btCancelarUsuario.Location = new System.Drawing.Point(230, 169);
+            this.btCancelarUsuario.Location = new System.Drawing.Point(261, 173);
             this.btCancelarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btCancelarUsuario.Name = "btCancelarUsuario";
             this.btCancelarUsuario.Size = new System.Drawing.Size(74, 24);
@@ -165,7 +168,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 149);
+            this.label6.Location = new System.Drawing.Point(10, 151);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
@@ -176,19 +179,30 @@
             // cbAdminUsuario
             // 
             this.cbAdminUsuario.AutoSize = true;
-            this.cbAdminUsuario.Location = new System.Drawing.Point(98, 149);
+            this.cbAdminUsuario.Location = new System.Drawing.Point(102, 150);
             this.cbAdminUsuario.Name = "cbAdminUsuario";
             this.cbAdminUsuario.Size = new System.Drawing.Size(15, 14);
             this.cbAdminUsuario.TabIndex = 22;
             this.cbAdminUsuario.UseVisualStyleBackColor = true;
             this.cbAdminUsuario.CheckedChanged += new System.EventHandler(this.cbAdminUsuario_CheckedChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(346, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 141);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // ManterUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(328, 209);
+            this.ClientSize = new System.Drawing.Size(495, 210);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbAdminUsuario);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbIdUsuario);
@@ -205,14 +219,13 @@
             this.Controls.Add(this.tbNomeUsuario);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(344, 248);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(344, 248);
             this.Name = "ManterUsuario";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ManterUsuario_Load);
             this.Shown += new System.EventHandler(this.ManterUsuario_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +247,6 @@
         private System.Windows.Forms.TextBox tbIdUsuario;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox cbAdminUsuario;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -197,6 +197,13 @@ namespace Simplify.Grafico
             TelaGerarRelatorio telarelatorio = new TelaGerarRelatorio();
             telarelatorio.Show();
         }
+
+        private void btConsultarProcesso_Click(object sender, EventArgs e)
+        {
+            TelaListaProcessos tela = new TelaListaProcessos();
+            
+            tela.Show();
+        }
     }
     }
 
