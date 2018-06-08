@@ -209,7 +209,7 @@
             // 
             this.tbNascimento.Location = new System.Drawing.Point(147, 115);
             this.tbNascimento.Margin = new System.Windows.Forms.Padding(2);
-            this.tbNascimento.MaxLength = 100;
+            this.tbNascimento.MaxLength = 10;
             this.tbNascimento.Name = "tbNascimento";
             this.tbNascimento.Size = new System.Drawing.Size(200, 20);
             this.tbNascimento.TabIndex = 2;
@@ -743,6 +743,7 @@
             this.tbTelrecados.Name = "tbTelrecados";
             this.tbTelrecados.Size = new System.Drawing.Size(200, 20);
             this.tbTelrecados.TabIndex = 16;
+            this.tbTelrecados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelResidencial_KeyPress);
             // 
             // tbNomerecados
             // 
@@ -782,17 +783,21 @@
             // tbCel1
             // 
             this.tbCel1.Location = new System.Drawing.Point(147, 75);
+            this.tbCel1.MaxLength = 15;
             this.tbCel1.Name = "tbCel1";
             this.tbCel1.Size = new System.Drawing.Size(200, 20);
             this.tbCel1.TabIndex = 10;
             this.tbCel1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbCel1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCel1_KeyPress);
             // 
             // tbTelResidencial
             // 
             this.tbTelResidencial.Location = new System.Drawing.Point(147, 35);
+            this.tbTelResidencial.MaxLength = 14;
             this.tbTelResidencial.Name = "tbTelResidencial";
             this.tbTelResidencial.Size = new System.Drawing.Size(200, 20);
             this.tbTelResidencial.TabIndex = 9;
+            this.tbTelResidencial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelResidencial_KeyPress);
             // 
             // label23
             // 

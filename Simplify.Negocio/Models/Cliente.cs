@@ -14,7 +14,7 @@ namespace Simplify.Negocio.Models
         public String Indicacao_dados { get; set; }
         public String Nascimento_dados { get; set; }
         public String CPF_dados { get; set; }
-        public Double RG_dados { get; set; }
+        public String RG_dados { get; set; }
         public String Profissao_dados { get; set; }
         public String Sexo_dados { get; set; }
         public String EstadoCivil_dados { get; set; }
@@ -44,12 +44,12 @@ namespace Simplify.Negocio.Models
         public String NomeRecado_contato { get; set; }
         public Double TelefoneRecado_contato { get; set; }
         //Ocorrencia
-        public DateTime Data_ocorrencia { get; set; }
+        public String Data_ocorrencia { get; set; }
         public String Local_ocorrencia { get; set; }
         public String Veiculo_ocorrencia { get; set; }
         public String Tipo_ocorrencia { get; set; }
         public String INSS_ocorrencia { get; set; }
-        public DateTime Horario_ocorrencia { get; set; }
+        public String Horario_ocorrencia { get; set; }
         public String Lesao_ocorrencia { get; set; }
         public String Socorrista_ocorrencia { get; set; }
         public String Hospital_ocorrencia { get; set; }

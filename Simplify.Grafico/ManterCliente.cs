@@ -82,9 +82,9 @@ namespace Simplify.Grafico
             /*Dados Pessoais*/
             cliente.Nome_dados = tbNome.Text;
             cliente.Indicacao_dados = tbindicacao.Text;
-            cliente.Nascimento_dados = tbNascimento.Text;
+            cliente.Nascimento_dados = DateTime.Now.ToString(tbNascimento.Text);
             cliente.CPF_dados = tbCpf.Text;
-            cliente.RG_dados = Double.Parse(tbRG.Text);
+            cliente.RG_dados = tbRG.Text;
             cliente.Profissao_dados = tbProfissao.Text;
             cliente.Sexo_dados = tbSexo.Text;
             cliente.EstadoCivil_dados = tbEstadoCivil.Text;
@@ -114,12 +114,12 @@ namespace Simplify.Grafico
             cliente.NomeRecado_contato = tbNomerecados.Text;
             cliente.TelefoneRecado_contato = Double.Parse(tbTelrecados.Text);
             //Ocorrencia
-            cliente.Data_ocorrencia = DateTime.Parse(tbDataocorrencia.Text);
+            cliente.Data_ocorrencia = DateTime.Now.ToString(tbDataocorrencia.Text);
             cliente.Local_ocorrencia = tbLocalocorrencia.Text;
             cliente.Veiculo_ocorrencia = tbVeiculosacidente.Text;
             cliente.Tipo_ocorrencia = gbTipoAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
             cliente.INSS_ocorrencia = gbINSSAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
-            cliente.Horario_ocorrencia = DateTime.Parse(tbHorarioacidente.Text);
+            cliente.Horario_ocorrencia = DateTime.Now.ToString (tbHorarioacidente.Text);
             cliente.Lesao_ocorrencia = tbLesoesacidente.Text;
             cliente.Socorrista_ocorrencia = tbSocorrista.Text;
             cliente.Hospital_ocorrencia = tbHospital.Text;
@@ -290,8 +290,68 @@ namespace Simplify.Grafico
             {
                 e.Handled = true;
             }
-            //89227-064
+        }
 
+        private void tbTelResidencial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 0)
+                    t.Text += "(";
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 3)
+                    t.Text += ")";
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 4)
+                    t.Text += " ";
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 9)
+                    t.Text += "-";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCel1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 0)
+                    t.Text += "(";
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 3)
+                    t.Text += ")";
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 4)
+                    t.Text += " ";
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 10)
+                    t.Text += "-";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
