@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaSenhaUsuarios));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbUser_Admin = new System.Windows.Forms.TextBox();
+            this.tbSenha_admin = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btAcessarAjustes = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
+            this.btSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,20 +60,20 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Para proseguir, informe as credenciais do administrador do sistema:";
             // 
-            // textBox1
+            // tbUser_Admin
             // 
-            this.textBox1.Location = new System.Drawing.Point(63, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbUser_Admin.Location = new System.Drawing.Point(63, 59);
+            this.tbUser_Admin.Name = "tbUser_Admin";
+            this.tbUser_Admin.Size = new System.Drawing.Size(161, 20);
+            this.tbUser_Admin.TabIndex = 2;
             // 
-            // textBox2
+            // tbSenha_admin
             // 
-            this.textBox2.Location = new System.Drawing.Point(63, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.tbSenha_admin.Location = new System.Drawing.Point(63, 91);
+            this.tbSenha_admin.Name = "tbSenha_admin";
+            this.tbSenha_admin.Size = new System.Drawing.Size(161, 20);
+            this.tbSenha_admin.TabIndex = 3;
+            this.tbSenha_admin.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -112,15 +112,15 @@
             this.btAcessarAjustes.UseVisualStyleBackColor = true;
             this.btAcessarAjustes.Click += new System.EventHandler(this.btAcessarAjustes_Click);
             // 
-            // btCancelar
+            // btSair
             // 
-            this.btCancelar.Location = new System.Drawing.Point(162, 117);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(62, 23);
-            this.btCancelar.TabIndex = 8;
-            this.btCancelar.Text = "Sair";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            this.btSair.Location = new System.Drawing.Point(162, 117);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(62, 23);
+            this.btSair.TabIndex = 8;
+            this.btSair.Text = "Sair";
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // TelaSenhaUsuarios
             // 
@@ -128,13 +128,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(336, 147);
-            this.Controls.Add(this.btCancelar);
+            this.Controls.Add(this.btSair);
             this.Controls.Add(this.btAcessarAjustes);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSenha_admin);
+            this.Controls.Add(this.tbUser_Admin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -154,12 +154,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbUser_Admin;
+        private System.Windows.Forms.TextBox tbSenha_admin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btAcessarAjustes;
-        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btSair;
     }
 }

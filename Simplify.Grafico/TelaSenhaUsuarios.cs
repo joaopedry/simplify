@@ -21,6 +21,7 @@ namespace Simplify.Grafico
         {
             TelaAjustes tela = new TelaAjustes();
             this.Close();
+            
             tela.Show();
         }
 
@@ -29,10 +30,10 @@ namespace Simplify.Grafico
 
             btAcessarAjustes.Text = "OK";
             btAcessarAjustes.DialogResult = DialogResult.OK;
-            btCancelar.Text = "Cancelar";
-            btCancelar.DialogResult = DialogResult.Cancel;
+            btSair.Text = "Cancelar";
+            btSair.DialogResult = DialogResult.Cancel;
             this.AcceptButton = btAcessarAjustes;
-            this.CancelButton = btCancelar;
+            this.CancelButton = btSair;
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
