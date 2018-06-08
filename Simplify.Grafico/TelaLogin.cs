@@ -1,5 +1,6 @@
 ﻿using Simplify.Negocio;
 using Simplify.Negocio.Models;
+using Simplify.Negocio.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,34 +15,40 @@ namespace Simplify.Grafico
 {
     public partial class TelaLogin : Form
     {
+
+        private Banco banco = new Banco();
+
         public TelaLogin()
         {
             InitializeComponent();
-           // LoginRoot();
+            LoginRoot();
         }
 
-       /* private void LoginRoot()
+        private void LoginRoot()
         {
-            Usuario usuario = new Usuario();
-            usuario.Id = 1;
-            usuario.Administrador_usuario = true;
-            usuario.Nome_usuario = "root";
-            usuario.Email_usuario = "root@simplify.com.br";
-            usuario.Login_usuario = "root";
-            usuario.Password_usuario = "root";
+            /*Criando usuario root*/
 
-            Validacao validacao;
-            validacao = Program.Gerenciador.AdicionarUsuario(usuario);
+            if (this.banco.Usuarios.Where(c => c.Id == 1).Any())
+            {
+            }
+            else
+            {
+                Usuario usuario = new Usuario();
+                usuario.Id = 1;
+                usuario.Administrador_usuario = true;
+                usuario.Nome_usuario = "root";
+                usuario.Email_usuario = "root@simplify.com.br";
+                usuario.Login_usuario = "root";
+                usuario.Password_usuario = "root";
 
-            
-            usuarioBanco.Login_usuario = usuarioAlterado.Login_usuario;
-            usuarioBanco.Password_usuario = usuarioAlterado.Password_usuario;
-             
-        }*/
+                Validacao validacao;
+                validacao = Program.Gerenciador.AdicionarUsuario(usuario);
+            }
+        }
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void TelaLhogin_Load(object sender, EventArgs e)
@@ -63,6 +70,6 @@ namespace Simplify.Grafico
         {
 
         }
-        
+
     }
 }
