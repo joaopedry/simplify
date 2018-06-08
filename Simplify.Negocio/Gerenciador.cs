@@ -1,17 +1,21 @@
-﻿using Simplify.Negocio.Models;
+﻿using Simplify.Negocio;
+using Simplify.Negocio.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Simplify.Negocio.Persistencia;
+using System.Windows.Forms;
 
 namespace Simplify.Negocio
 {
     public class Gerenciador
     {
         private Banco banco = new Banco();
+        public int i;
 
+        //public String i;
         // ADICIONAR CLIENTE //
         public Validacao AdicionarCliente(Cliente clienteAdicionado)
         {
@@ -136,9 +140,51 @@ namespace Simplify.Negocio
             return validacao;
         }
 
+        public Validacao VerificaUsuario(Usuario usuarioVerificado)
+        {
+            Validacao validacao = new Validacao();
+            Usuario usuarioBanco = BuscaUsuarioPorLogin(usuarioVerificado.Login_usuario);
+            if (usuarioBanco != null) {
+
+                if (usuarioBanco.Login_usuario == usuarioVerificado.Login_usuario)
+                {
+                    if (usuarioBanco.Password_usuario == usuarioVerificado.Password_usuario)
+                    {
+                        MessageBox.Show("Login efetuado com sucesso!.", "!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        i = 1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario ou senha incorreta!.", "Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        i = 0;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario ou senha incorreta!.", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    i = 0;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Digite um usuario válido!.", "Erro",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                i = 0;
+            }
+            return validacao;
+        }
+
         public Usuario BuscaUsuarioPorId(long id)
         {
             return this.banco.Usuarios.Where(c => c.Id == id).FirstOrDefault();
+        }
+
+        public Usuario BuscaUsuarioPorLogin(String Login_usuario)
+        {
+            return this.banco.Usuarios.Where(c => c.Login_usuario == Login_usuario).FirstOrDefault();
         }
 
         public List<Usuario> TodosOsUsuarios()

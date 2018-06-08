@@ -13,8 +13,11 @@ using System.Windows.Forms;
 
 namespace Simplify.Grafico
 {
+
     public partial class TelaLogin : Form
     {
+
+        public Usuario LoginInformado { get; set; }
 
         private Banco banco = new Banco();
 
@@ -46,20 +49,33 @@ namespace Simplify.Grafico
             }
         }
 
+        
+
         private void btLogin_Click(object sender, EventArgs e)
         {
+            Usuario usuario = new Usuario();
 
+            usuario.Login_usuario = tbUsuario.Text;
+            usuario.Password_usuario = tbSenha.Text;
+
+            Validacao validacao;
+            validacao = Program.Gerenciador.VerificaUsuario(usuario);
+            AbreTelaPrincipal();
+
+        }
+
+        public void AbreTelaPrincipal()
+        {
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.MdiParent = this.MdiParent;
+            tela.Show();
         }
 
         private void TelaLhogin_Load(object sender, EventArgs e)
         {
-            btLogin.Text = "OK";
-            btLogin.DialogResult = DialogResult.OK;
-            btSair.Text = "Cancelar";
-            btSair.DialogResult = DialogResult.Cancel;
-            this.AcceptButton = btLogin;
-            this.CancelButton = btSair;
         }
+
+        
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
