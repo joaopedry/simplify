@@ -238,23 +238,34 @@ namespace Simplify.Grafico
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            TelaAjustes ajustes = new TelaAjustes();
+            /* TelaAjustes ajustes = new TelaAjustes();
 
-            if (Application.OpenForms.OfType<TelaAjustes>().Count() > 0)
+             if (Application.OpenForms.OfType<TelaAjustes>().Count() > 0)
+             {
+                 MessageBox.Show("Esta janela já está em execução.", "!",
+                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                 Application.OpenForms.OfType<TelaAjustes>().First().Focus();
+             }
+             else
+             {
+
+                 ajustes.Show();
+             }*/
+            TelaSenhaUsuarios tela = new TelaSenhaUsuarios();
+
+            if (Application.OpenForms.OfType<TelaSenhaUsuarios>().Count() > 0)
             {
                 MessageBox.Show("Esta janela já está em execução.", "!",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                Application.OpenForms.OfType<TelaAjustes>().First().Focus();
+                Application.OpenForms.OfType<TelaSenhaUsuarios>().First().Focus();
             }
             else
             {
 
-                ajustes.Show();
+                tela.Show();
             }
 
 
-
-            
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
