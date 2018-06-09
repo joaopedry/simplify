@@ -16,7 +16,6 @@ namespace Simplify.Grafico
 
     public partial class TelaLogin : Form
     {
-
         public Usuario LoginInformado { get; set; }
 
         private Banco banco = new Banco();
@@ -60,8 +59,18 @@ namespace Simplify.Grafico
 
             Validacao validacao;
             validacao = Program.Gerenciador.VerificaUsuario(usuario);
-            AbreTelaPrincipal();
+            
+            if (validacao.UsuarioValido)
+            {
 
+                Program.AbreTelaPrincipal();
+               // this.Close();
+            }
+            else
+            {
+                MessageBox.Show("nao passou!.", "Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         public void AbreTelaPrincipal()

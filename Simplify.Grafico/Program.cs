@@ -28,10 +28,12 @@ namespace Simplify.Grafico
             // Se o OK for pressionado, eu abro o aplicativo, senão eu saio
             if (telalogin.ShowDialog() == DialogResult.OK)
                 Application.Run(new TelaPrincipal());
+        }
 
-
-
-
+        public static void AbreTelaPrincipal()
+        {
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.Show();
         }
     }
 }

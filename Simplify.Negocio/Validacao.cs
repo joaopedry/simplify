@@ -17,6 +17,14 @@ namespace Simplify.Negocio
             }
         }
 
+        public Boolean UsuarioValido
+        {
+            get
+            {
+                return this.Mensagens.Count == 0;
+            }
+        }
+
         public Validacao()
         {
             this.Mensagens = new Dictionary<string, string>();

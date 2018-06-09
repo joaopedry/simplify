@@ -152,27 +152,30 @@ namespace Simplify.Negocio
                     {
                         MessageBox.Show("Login efetuado com sucesso!.", "!",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        i = 1;
+                        
                     }
                     else
                     {
-                        MessageBox.Show("Usuario ou senha incorreta!.", "Erro",
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        i = 0;
+                        validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
+                        //MessageBox.Show("Usuario ou senha incorreta!.", "Erro",
+                        //MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Usuario ou senha incorreta!.", "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    i = 0;
+                    validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
+                    //MessageBox.Show("Usuario ou senha incorreta!.", "Erro",
+                    //MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    
                 }
             }
             else
             {
-                MessageBox.Show("Digite um usuario válido!.", "Erro",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                i = 0;
+                validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
+                //MessageBox.Show("Digite um usuario válido!.", "Erro",
+                //MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
             }
             return validacao;
         }
