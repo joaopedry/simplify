@@ -53,7 +53,7 @@
             this.panel1.Controls.Add(this.tbSenha);
             this.panel1.Controls.Add(this.tbUsuario);
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(315, 283);
             this.panel1.TabIndex = 0;
@@ -62,17 +62,18 @@
             // btSair
             // 
             this.btSair.Location = new System.Drawing.Point(226, 188);
-            this.btSair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSair.Margin = new System.Windows.Forms.Padding(2);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(70, 27);
             this.btSair.TabIndex = 7;
             this.btSair.Text = "Sair";
             this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btLogin
             // 
             this.btLogin.Location = new System.Drawing.Point(126, 188);
-            this.btLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(70, 27);
             this.btLogin.TabIndex = 6;
@@ -116,7 +117,7 @@
             // tbSenha
             // 
             this.tbSenha.Location = new System.Drawing.Point(126, 138);
-            this.tbSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSenha.Margin = new System.Windows.Forms.Padding(2);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(171, 20);
             this.tbSenha.TabIndex = 1;
@@ -125,7 +126,7 @@
             // tbUsuario
             // 
             this.tbUsuario.Location = new System.Drawing.Point(126, 107);
-            this.tbUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(171, 20);
             this.tbUsuario.TabIndex = 0;
@@ -148,7 +149,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(322, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(264, 250);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -164,7 +165,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(604, 332);
             this.MinimizeBox = false;

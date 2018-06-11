@@ -228,11 +228,15 @@ namespace Simplify.Grafico
 
         private void TelaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
+                
+            if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
-                if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
+                e.Cancel = true;
+            }
+            else
+            {
+                Application.ExitThread();
             }
         }
 
@@ -321,6 +325,18 @@ namespace Simplify.Grafico
             }
             
         }
+
+        public void AbreTelaLogin_load(object sender, EventArgs e)
+        {
+            TelaLogin tela = new TelaLogin();
+            tela.MdiParent = this.MdiParent;
+            tela.Show();
+        }
+
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 

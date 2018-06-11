@@ -149,33 +149,21 @@ namespace Simplify.Negocio
                 if (usuarioBanco.Login_usuario == usuarioVerificado.Login_usuario)
                 {
                     if (usuarioBanco.Password_usuario == usuarioVerificado.Password_usuario)
-                    {
-                        MessageBox.Show("Login efetuado com sucesso!.", "!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        
+                    {                        
                     }
                     else
                     {
-                        validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
-                        //MessageBox.Show("Usuario ou senha incorreta!.", "Erro",
-                        //MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        
+                        validacao.Mensagens.Add("Password_usuario", "Incorreto"); 
                     }
                 }
                 else
                 {
-                    validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
-                    //MessageBox.Show("Usuario ou senha incorreta!.", "Erro",
-                    //MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    
+                    validacao.Mensagens.Add("Login_usuario", "Incorreto");
                 }
             }
             else
             {
-                validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
-                //MessageBox.Show("Digite um usuario válido!.", "Erro",
-                //MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                
+                validacao.Mensagens.Add("Login_usuario", "Campo nome é obrigatório");               
             }
             return validacao;
         }

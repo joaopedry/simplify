@@ -62,22 +62,22 @@ namespace Simplify.Grafico
             
             if (validacao.UsuarioValido)
             {
-
-                Program.AbreTelaPrincipal();
-               // this.Close();
+                MessageBox.Show("Login efetuado com sucesso!", "Login",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                AbreTelaPrincipal();
             }
             else
             {
-                MessageBox.Show("nao passou!.", "Erro",
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Login ou senha incorretos!", "Erro",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         public void AbreTelaPrincipal()
         {
             TelaPrincipal tela = new TelaPrincipal();
-            tela.MdiParent = this.MdiParent;
-            tela.Show();
+            this.Hide();
+            tela.ShowDialog();
         }
 
         private void TelaLhogin_Load(object sender, EventArgs e)
@@ -96,5 +96,9 @@ namespace Simplify.Grafico
 
         }
 
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
