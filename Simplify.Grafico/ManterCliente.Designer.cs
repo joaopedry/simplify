@@ -168,6 +168,12 @@
             this.rtbAbaObservacoes = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.rbProcessoNegado = new System.Windows.Forms.RadioButton();
+            this.rbProcessoPendencia = new System.Windows.Forms.RadioButton();
+            this.rbProcessoEnviado = new System.Windows.Forms.RadioButton();
+            this.label42 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gbStatusProcesso = new System.Windows.Forms.GroupBox();
             this.ctCadastro.SuspendLayout();
             this.tabcadastrocliente.SuspendLayout();
             this.abaEndereco.SuspendLayout();
@@ -185,6 +191,7 @@
             this.gbCNH.SuspendLayout();
             this.gbDocVeiculo.SuspendLayout();
             this.tabObservacoes.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbNome
@@ -400,6 +407,7 @@
             // tabcadastrocliente
             // 
             this.tabcadastrocliente.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabcadastrocliente.Controls.Add(this.gbStatusProcesso);
             this.tabcadastrocliente.Controls.Add(this.Nome);
             this.tabcadastrocliente.Controls.Add(this.tbNome);
             this.tabcadastrocliente.Controls.Add(this.tbindicacao);
@@ -1683,12 +1691,86 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // rbProcessoNegado
+            // 
+            this.rbProcessoNegado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.rbProcessoNegado.AutoSize = true;
+            this.rbProcessoNegado.Location = new System.Drawing.Point(294, 10);
+            this.rbProcessoNegado.Name = "rbProcessoNegado";
+            this.rbProcessoNegado.Size = new System.Drawing.Size(63, 17);
+            this.rbProcessoNegado.TabIndex = 11;
+            this.rbProcessoNegado.TabStop = true;
+            this.rbProcessoNegado.Text = "Negado";
+            this.rbProcessoNegado.UseVisualStyleBackColor = true;
+            // 
+            // rbProcessoPendencia
+            // 
+            this.rbProcessoPendencia.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.rbProcessoPendencia.AutoSize = true;
+            this.rbProcessoPendencia.Checked = true;
+            this.rbProcessoPendencia.Location = new System.Drawing.Point(148, 10);
+            this.rbProcessoPendencia.Name = "rbProcessoPendencia";
+            this.rbProcessoPendencia.Size = new System.Drawing.Size(71, 17);
+            this.rbProcessoPendencia.TabIndex = 9;
+            this.rbProcessoPendencia.TabStop = true;
+            this.rbProcessoPendencia.Text = "Pendente";
+            this.rbProcessoPendencia.UseVisualStyleBackColor = true;
+            // 
+            // rbProcessoEnviado
+            // 
+            this.rbProcessoEnviado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.rbProcessoEnviado.AutoSize = true;
+            this.rbProcessoEnviado.Location = new System.Drawing.Point(224, 10);
+            this.rbProcessoEnviado.Name = "rbProcessoEnviado";
+            this.rbProcessoEnviado.Size = new System.Drawing.Size(64, 17);
+            this.rbProcessoEnviado.TabIndex = 10;
+            this.rbProcessoEnviado.TabStop = true;
+            this.rbProcessoEnviado.Text = "Enviado";
+            this.rbProcessoEnviado.UseVisualStyleBackColor = true;
+            // 
+            // label42
+            // 
+            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(24, 10);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(115, 15);
+            this.label42.TabIndex = 17;
+            this.label42.Text = "Status do Processo:";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.label42);
+            this.panel1.Controls.Add(this.rbProcessoEnviado);
+            this.panel1.Controls.Add(this.rbProcessoPendencia);
+            this.panel1.Controls.Add(this.rbProcessoNegado);
+            this.panel1.Location = new System.Drawing.Point(9, 440);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(624, 37);
+            this.panel1.TabIndex = 20;
+            // 
+            // gbStatusProcesso
+            // 
+            this.gbStatusProcesso.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.gbStatusProcesso.Location = new System.Drawing.Point(140, 411);
+            this.gbStatusProcesso.Name = "gbStatusProcesso";
+            this.gbStatusProcesso.Size = new System.Drawing.Size(212, 31);
+            this.gbStatusProcesso.TabIndex = 18;
+            this.gbStatusProcesso.TabStop = false;
+            this.gbStatusProcesso.Text = "groupBox1";
+            // 
             // ManterCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(806, 486);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ctCadastro);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_salvar);
@@ -1733,6 +1815,8 @@
             this.gbDocVeiculo.ResumeLayout(false);
             this.gbDocVeiculo.PerformLayout();
             this.tabObservacoes.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1878,5 +1962,11 @@
         private System.Windows.Forms.GroupBox gbRG;
         private System.Windows.Forms.GroupBox gbCNH;
         private System.Windows.Forms.GroupBox gbDocVeiculo;
+        private System.Windows.Forms.RadioButton rbProcessoNegado;
+        private System.Windows.Forms.RadioButton rbProcessoPendencia;
+        private System.Windows.Forms.RadioButton rbProcessoEnviado;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox gbStatusProcesso;
     }
 }

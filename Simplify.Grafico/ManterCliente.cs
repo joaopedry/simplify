@@ -126,6 +126,8 @@ namespace Simplify.Grafico
             cliente.Observacao_ocorrencia = rtbObservacoes.Text;
             //Observaçoes
             cliente.Observacao_observacao = rtbAbaObservacoes.Text;
+            //status
+            
 
             
 

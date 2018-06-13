@@ -168,9 +168,38 @@ namespace Simplify.Negocio
             return validacao;
         }
 
+
+        public Validacao BuscaCliente(Cliente ClienteVerificado)
+        {
+            Validacao validacao = new Validacao();
+            Cliente usuarioBanco = BuscaClientePorCPF(ClienteVerificado.CPF_dados);
+            if (usuarioBanco != null)
+            {
+                ClienteVerificado.CPF_dados = usuarioBanco.CPF_dados;
+                ClienteVerificado.Nome_dados = usuarioBanco.Nome_dados;
+                ClienteVerificado.Indicacao_dados = usuarioBanco.Indicacao_dados;
+                ClienteVerificado.Celular1_contato = usuarioBanco.Celular1_contato;
+                ClienteVerificado.Email_contato = usuarioBanco.Email_contato;
+                ClienteVerificado.Endereco_endereco1 = usuarioBanco.Endereco_endereco1;
+                ClienteVerificado.Bairro_endereco1 = usuarioBanco.Bairro_endereco1;
+            }
+            else
+            {
+                MessageBox.Show("Não Buscou", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            return validacao;
+        }
+
+
         public Usuario BuscaUsuarioPorId(long id)
         {
             return this.banco.Usuarios.Where(c => c.Id == id).FirstOrDefault();
+        }
+
+        public Cliente BuscaClientePorCPF(String CPF_dados)
+        {
+            return this.banco.Clientes.Where(c => c.CPF_dados == CPF_dados).FirstOrDefault();
         }
 
         public Usuario BuscaUsuarioPorLogin(String Login_usuario)
