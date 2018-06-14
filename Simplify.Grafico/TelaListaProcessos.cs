@@ -73,5 +73,7 @@ namespace Simplify.Grafico
         private void TelaListaProcessos_Shown(object sender, EventArgs e)
         {
         }
+
+        
     }
 }
