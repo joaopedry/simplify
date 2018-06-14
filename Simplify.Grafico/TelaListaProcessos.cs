@@ -61,8 +61,22 @@ namespace Simplify.Grafico
             lbIndicacao.Text = cliente.Indicacao_dados;
             lbTelefone.Text = cliente.Celular1_contato.ToString();
             lbEmail.Text = cliente.Email_contato;
-            lbEndereco.Text = cliente.Endereco_endereco1;
+            lbRua.Text = cliente.Rua_endereco1;
             lbBairro.Text = cliente.Bairro_endereco1;
+            lbReferencia.Text = cliente.Complemento_endereco1;
+            lbLesoes.Text = cliente.Lesao_ocorrencia;
+            lbData.Text = cliente.Data_ocorrencia.ToString();
+            lbSocorrista.Text = cliente.Socorrista_ocorrencia;
+            lbProfissao.Text = cliente.Profissao_dados;
+            lbVeiculos.Text = cliente.Veiculo_ocorrencia;
+            lbNumerocasa.Text = cliente.Num_endereco1.ToString();
+            lbCidade.Text = cliente.Cidade_endereco1;
+            //lbRegistro.Text = cliente
+            lbHorario.Text = cliente.Horario_ocorrencia.ToString();
+            lbHospital.Text = cliente.Hospital_ocorrencia;
+            lbTipo.Text = cliente.Tipo_ocorrencia;
+            lbLocal.Text = cliente.Local_ocorrencia;
+            lbObservacoes.Text = cliente.Observacao_observacao;
 
         }
 

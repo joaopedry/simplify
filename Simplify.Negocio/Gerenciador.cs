@@ -141,8 +141,26 @@ namespace Simplify.Negocio
                 ClienteVerificado.Indicacao_dados = usuarioBanco.Indicacao_dados;
                 ClienteVerificado.Celular1_contato = usuarioBanco.Celular1_contato;
                 ClienteVerificado.Email_contato = usuarioBanco.Email_contato;
-                ClienteVerificado.Endereco_endereco1 = usuarioBanco.Endereco_endereco1;
+                ClienteVerificado.Rua_endereco1 = usuarioBanco.Rua_endereco1;
                 ClienteVerificado.Bairro_endereco1 = usuarioBanco.Bairro_endereco1;
+                ClienteVerificado.Bairro_endereco1 = usuarioBanco.Bairro_endereco1;
+                ClienteVerificado.Complemento_endereco1 = usuarioBanco.Complemento_endereco1;
+                ClienteVerificado.Lesao_ocorrencia = usuarioBanco.Lesao_ocorrencia;
+                ClienteVerificado.Data_ocorrencia = usuarioBanco.Data_ocorrencia;
+                ClienteVerificado.Socorrista_ocorrencia = usuarioBanco.Socorrista_ocorrencia;
+                ClienteVerificado.Profissao_dados = usuarioBanco.Profissao_dados;
+                ClienteVerificado.Veiculo_ocorrencia = usuarioBanco.Veiculo_ocorrencia;
+                ClienteVerificado.Num_endereco1 = usuarioBanco.Num_endereco1;
+                ClienteVerificado.Cidade_endereco1 = usuarioBanco.Cidade_endereco1;
+                ClienteVerificado.INSS_ocorrencia = usuarioBanco.INSS_ocorrencia;
+                ClienteVerificado.Horario_ocorrencia = usuarioBanco.Horario_ocorrencia;
+                ClienteVerificado.Hospital_ocorrencia = usuarioBanco.Hospital_ocorrencia;
+                ClienteVerificado.Tipo_ocorrencia = usuarioBanco.Tipo_ocorrencia;
+                ClienteVerificado.Local_ocorrencia = usuarioBanco.Local_ocorrencia;
+                ClienteVerificado.Observacao_observacao = usuarioBanco.Observacao_observacao;
+
+
+
             }
             else
             {
