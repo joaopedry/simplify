@@ -62,13 +62,11 @@ namespace Simplify.Grafico
             
             if (validacao.UsuarioValido)
             {
-                MessageBox.Show("Login efetuado com sucesso!", "Login",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 AbreTelaPrincipal();
             }
             else
             {
-                MessageBox.Show("Login ou senha incorretos!", "Erro",
+                MessageBox.Show("Usuário ou senha incorretos!", "Erro",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
@@ -78,10 +76,6 @@ namespace Simplify.Grafico
             TelaPrincipal tela = new TelaPrincipal();
             this.Hide();
             tela.ShowDialog();
-        }
-
-        private void TelaLhogin_Load(object sender, EventArgs e)
-        {
         }
 
         
@@ -99,6 +93,14 @@ namespace Simplify.Grafico
         private void btSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btLogin_Click(sender, e);
+            }
         }
     }
 }

@@ -127,9 +127,9 @@ namespace Simplify.Grafico
             //Observaçoes
             cliente.Observacao_observacao = rtbAbaObservacoes.Text;
             //status
-            
+            cliente.Status = gbStatus.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
 
-            
+
 
             Validacao validacao;
             if (ClienteSelecionado == null)

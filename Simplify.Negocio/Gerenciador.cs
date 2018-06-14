@@ -134,7 +134,7 @@ namespace Simplify.Negocio
         {
             Validacao validacao = new Validacao();
             Cliente usuarioBanco = BuscaClientePorCPF(ClienteVerificado.CPF_dados);
-            if (usuarioBanco != null)
+            if ((usuarioBanco != null) && (usuarioBanco.Nome_dados != null))
             {
                 ClienteVerificado.CPF_dados = usuarioBanco.CPF_dados;
                 ClienteVerificado.Nome_dados = usuarioBanco.Nome_dados;
@@ -158,14 +158,10 @@ namespace Simplify.Negocio
                 ClienteVerificado.Tipo_ocorrencia = usuarioBanco.Tipo_ocorrencia;
                 ClienteVerificado.Local_ocorrencia = usuarioBanco.Local_ocorrencia;
                 ClienteVerificado.Observacao_observacao = usuarioBanco.Observacao_observacao;
-
-
-
             }
             else
             {
-                MessageBox.Show("Não Buscou", "!",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                validacao.Mensagens.Add("cpf_dados", "CPF não encontrado");
             }
             return validacao;
         }

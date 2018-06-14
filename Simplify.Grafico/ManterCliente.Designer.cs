@@ -49,6 +49,7 @@
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.ctCadastro = new System.Windows.Forms.TabControl();
             this.tabcadastrocliente = new System.Windows.Forms.TabPage();
+            this.gbStatusProcesso = new System.Windows.Forms.GroupBox();
             this.abaEndereco = new System.Windows.Forms.TabPage();
             this.tbCidade2 = new System.Windows.Forms.TextBox();
             this.tbBairro2 = new System.Windows.Forms.TextBox();
@@ -173,7 +174,7 @@
             this.rbProcessoEnviado = new System.Windows.Forms.RadioButton();
             this.label42 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gbStatusProcesso = new System.Windows.Forms.GroupBox();
+            this.gbStatus = new System.Windows.Forms.GroupBox();
             this.ctCadastro.SuspendLayout();
             this.tabcadastrocliente.SuspendLayout();
             this.abaEndereco.SuspendLayout();
@@ -192,6 +193,7 @@
             this.gbDocVeiculo.SuspendLayout();
             this.tabObservacoes.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.gbStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbNome
@@ -431,6 +433,16 @@
             this.tabcadastrocliente.Size = new System.Drawing.Size(780, 399);
             this.tabcadastrocliente.TabIndex = 0;
             this.tabcadastrocliente.Text = "Dados Pessoais";
+            // 
+            // gbStatusProcesso
+            // 
+            this.gbStatusProcesso.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.gbStatusProcesso.Location = new System.Drawing.Point(140, 411);
+            this.gbStatusProcesso.Name = "gbStatusProcesso";
+            this.gbStatusProcesso.Size = new System.Drawing.Size(212, 31);
+            this.gbStatusProcesso.TabIndex = 18;
+            this.gbStatusProcesso.TabStop = false;
+            this.gbStatusProcesso.Text = "groupBox1";
             // 
             // abaEndereco
             // 
@@ -1695,7 +1707,7 @@
             // 
             this.rbProcessoNegado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.rbProcessoNegado.AutoSize = true;
-            this.rbProcessoNegado.Location = new System.Drawing.Point(294, 10);
+            this.rbProcessoNegado.Location = new System.Drawing.Point(152, 7);
             this.rbProcessoNegado.Name = "rbProcessoNegado";
             this.rbProcessoNegado.Size = new System.Drawing.Size(63, 17);
             this.rbProcessoNegado.TabIndex = 11;
@@ -1708,7 +1720,7 @@
             this.rbProcessoPendencia.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.rbProcessoPendencia.AutoSize = true;
             this.rbProcessoPendencia.Checked = true;
-            this.rbProcessoPendencia.Location = new System.Drawing.Point(148, 10);
+            this.rbProcessoPendencia.Location = new System.Drawing.Point(6, 7);
             this.rbProcessoPendencia.Name = "rbProcessoPendencia";
             this.rbProcessoPendencia.Size = new System.Drawing.Size(71, 17);
             this.rbProcessoPendencia.TabIndex = 9;
@@ -1720,7 +1732,7 @@
             // 
             this.rbProcessoEnviado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.rbProcessoEnviado.AutoSize = true;
-            this.rbProcessoEnviado.Location = new System.Drawing.Point(224, 10);
+            this.rbProcessoEnviado.Location = new System.Drawing.Point(82, 7);
             this.rbProcessoEnviado.Name = "rbProcessoEnviado";
             this.rbProcessoEnviado.Size = new System.Drawing.Size(64, 17);
             this.rbProcessoEnviado.TabIndex = 10;
@@ -1745,24 +1757,23 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.gbStatus);
             this.panel1.Controls.Add(this.label42);
-            this.panel1.Controls.Add(this.rbProcessoEnviado);
-            this.panel1.Controls.Add(this.rbProcessoPendencia);
-            this.panel1.Controls.Add(this.rbProcessoNegado);
             this.panel1.Location = new System.Drawing.Point(9, 440);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(624, 37);
             this.panel1.TabIndex = 20;
             // 
-            // gbStatusProcesso
+            // gbStatus
             // 
-            this.gbStatusProcesso.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.gbStatusProcesso.Location = new System.Drawing.Point(140, 411);
-            this.gbStatusProcesso.Name = "gbStatusProcesso";
-            this.gbStatusProcesso.Size = new System.Drawing.Size(212, 31);
-            this.gbStatusProcesso.TabIndex = 18;
-            this.gbStatusProcesso.TabStop = false;
-            this.gbStatusProcesso.Text = "groupBox1";
+            this.gbStatus.Controls.Add(this.rbProcessoEnviado);
+            this.gbStatus.Controls.Add(this.rbProcessoNegado);
+            this.gbStatus.Controls.Add(this.rbProcessoPendencia);
+            this.gbStatus.Location = new System.Drawing.Point(144, 3);
+            this.gbStatus.Name = "gbStatus";
+            this.gbStatus.Size = new System.Drawing.Size(283, 31);
+            this.gbStatus.TabIndex = 18;
+            this.gbStatus.TabStop = false;
             // 
             // ManterCliente
             // 
@@ -1817,6 +1828,8 @@
             this.tabObservacoes.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.gbStatus.ResumeLayout(false);
+            this.gbStatus.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1968,5 +1981,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox gbStatusProcesso;
+        private System.Windows.Forms.GroupBox gbStatus;
     }
 }

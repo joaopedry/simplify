@@ -61,24 +61,26 @@
             // 
             // btSair
             // 
+            this.btSair.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btSair.Location = new System.Drawing.Point(226, 188);
             this.btSair.Margin = new System.Windows.Forms.Padding(2);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(70, 27);
-            this.btSair.TabIndex = 7;
+            this.btSair.TabIndex = 4;
             this.btSair.Text = "Sair";
-            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.UseVisualStyleBackColor = false;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btLogin
             // 
+            this.btLogin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btLogin.Location = new System.Drawing.Point(126, 188);
             this.btLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(70, 27);
-            this.btLogin.TabIndex = 6;
+            this.btLogin.TabIndex = 3;
             this.btLogin.Text = "Acessar";
-            this.btLogin.UseVisualStyleBackColor = true;
+            this.btLogin.UseVisualStyleBackColor = false;
             this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
             // label3
@@ -120,8 +122,9 @@
             this.tbSenha.Margin = new System.Windows.Forms.Padding(2);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(171, 20);
-            this.tbSenha.TabIndex = 1;
+            this.tbSenha.TabIndex = 2;
             this.tbSenha.UseSystemPasswordChar = true;
+            this.tbSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSenha_KeyDown);
             // 
             // tbUsuario
             // 
@@ -129,8 +132,9 @@
             this.tbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(171, 20);
-            this.tbUsuario.TabIndex = 0;
+            this.tbUsuario.TabIndex = 1;
             this.tbUsuario.TextChanged += new System.EventHandler(this.tbUsuario_TextChanged);
+            this.tbUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSenha_KeyDown);
             // 
             // label4
             // 
@@ -174,7 +178,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.TelaLhogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

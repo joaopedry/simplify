@@ -57,8 +57,9 @@ namespace Simplify.Negocio.Models
         //Observaçoes
 
         public String Observacao_observacao { get; set; }
-        
+
         //status
+        public String Status { get; set; }
 
         /*fim*/
 
