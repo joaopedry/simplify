@@ -35,21 +35,21 @@ namespace Simplify.Negocio.Models
         public String Bairro_endereco2 { get; set; }
         public String Cidade_endereco2 { get; set; }
         //Contato
-        public Double Residencial_contato { get; set; }
-        public Double Celular1_contato { get; set; }
-        public Double Celular2_contato { get; set; }
-        public Double TelTrabalho_contato { get; set; }
+        public String Residencial_contato { get; set; }
+        public String Celular1_contato { get; set; }
+        public String Celular2_contato { get; set; }
+        public String TelTrabalho_contato { get; set; }
         public String Email_contato { get; set; }
         public String Facebook_contato { get; set; }
         public String NomeRecado_contato { get; set; }
-        public Double TelefoneRecado_contato { get; set; }
+        public String TelefoneRecado_contato { get; set; }
         //Ocorrencia
-        public DateTime Data_ocorrencia { get; set; }
+        public String Data_ocorrencia { get; set; }
         public String Local_ocorrencia { get; set; }
         public String Veiculo_ocorrencia { get; set; }
         public String Tipo_ocorrencia { get; set; }
         public String INSS_ocorrencia { get; set; }
-        public DateTime Horario_ocorrencia { get; set; }
+        public String Horario_ocorrencia { get; set; }
         public String Lesao_ocorrencia { get; set; }
         public String Socorrista_ocorrencia { get; set; }
         public String Hospital_ocorrencia { get; set; }

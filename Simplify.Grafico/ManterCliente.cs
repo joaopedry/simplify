@@ -105,21 +105,21 @@ namespace Simplify.Grafico
             cliente.Bairro_endereco2 = tbBairro2.Text;
             cliente.Cidade_endereco2 = tbCidade2.Text;
             //Contato
-            cliente.Residencial_contato = Double.Parse(tbTelResidencial.Text);
-            cliente.Celular1_contato = Double.Parse(tbCel1.Text);
-            cliente.Celular2_contato = Double.Parse(tbCel2.Text);
-            cliente.TelTrabalho_contato = Double.Parse(tbTeltrabalho.Text);
+            cliente.Residencial_contato = tbTelResidencial.Text;
+            cliente.Celular1_contato = tbCel1.Text;
+            cliente.Celular2_contato = tbCel2.Text;
+            cliente.TelTrabalho_contato = tbTeltrabalho.Text;
             cliente.Email_contato = tbEmail.Text;
             cliente.Facebook_contato = tbFacebook.Text;
             cliente.NomeRecado_contato = tbNomerecados.Text;
-            cliente.TelefoneRecado_contato = Double.Parse(tbTelrecados.Text);
+            cliente.TelefoneRecado_contato = tbTelrecados.Text;
             //Ocorrencia
-            cliente.Data_ocorrencia = DateTime.Parse(tbDataocorrencia.Text);
+            cliente.Data_ocorrencia = tbDataocorrencia.Text;
             cliente.Local_ocorrencia = tbLocalocorrencia.Text;
             cliente.Veiculo_ocorrencia = tbVeiculosacidente.Text;
             cliente.Tipo_ocorrencia = gbTipoAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
             cliente.INSS_ocorrencia = gbINSSAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
-            cliente.Horario_ocorrencia = DateTime.Parse(tbHorarioacidente.Text);
+            cliente.Horario_ocorrencia = tbHorarioacidente.Text;
             cliente.Lesao_ocorrencia = tbLesoesacidente.Text;
             cliente.Socorrista_ocorrencia = tbSocorrista.Text;
             cliente.Hospital_ocorrencia = tbHospital.Text;

@@ -21,55 +21,16 @@ namespace Simplify.Negocio
         {
             Validacao validacao = new Validacao();
 
-            /* CPF deve conter exatamente 11 NÚMEROS 
-            if (clienteAdicionado.CPF = 11)
+            if (String.IsNullOrEmpty(clienteAdicionado.Email_contato))
             {
-                validacao.Mensagens.Add("CPF", "O CPF deve conter 11 números");
+                validacao.Mensagens.Add("Email", "O email não pode ser nulo ou vazio");
             }
 
-            // Verifica existência do CPF já cadastado no sistema //
-            if (this.banco.Clientes.Where(c => c.CPF == clienteAdicionado.CPF).Any() && validacao.Mensagens.Count == 0)
+            if (!clienteAdicionado.Email_contato.Contains("@") && validacao.Mensagens.Count == 0)
             {
-                validacao.Mensagens.Add("CPF", "Cliente já cadastrado no sistema");
+                validacao.Mensagens.Add("Email", "Email no formato inválido");
             }
 
-            // Campo nome é obrigatório //
-            if (String.IsNullOrEmpty(clienteAdicionado.Nome))
-            {
-                validacao.Mensagens.Add("Nome", "O campo nome é obrigatório");
-            }
-
-            // Campo email é obrigatório//
-            if (String.IsNullOrEmpty(clienteAdicionado.Email))
-            {
-                validacao.Mensagens.Add("Email", "O campo email é obrigatório");
-            }
-
-
-            // Campo email, inválido //
-            if (!clienteAdicionado.Email.Contains("@") && validacao.Mensagens.Count == 0)
-            {
-                validacao.Mensagens.Add("Email", "Email inválido");
-            }
-
-            // Verifica existência do email já cadastrado no sistema //
-            if (this.banco.Clientes.Where(c => c.Email == clienteAdicionado.Email).Any() && validacao.Mensagens.Count == 0)
-            {
-                validacao.Mensagens.Add("Email", "Email já cadastrado no sistema");
-            }
-
-            // Campo telefone é obrigatório //
-            if (String.IsNullOrEmpty(clienteAdicionado.Telefone))
-            {
-                validacao.Mensagens.Add("Telefone", "Campo telefone é obrigatório");
-            }
-
-            // Telefone deve conter 10 NÚMEROS //
-            if (clienteAdicionado.Telefone = 10)
-            {
-                validacao.Mensagens.Add("Telefone", "O telefone deve conter 12 números");
-            }
-            */
             if (String.IsNullOrEmpty(clienteAdicionado.Nome_dados))
             {
                 validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
