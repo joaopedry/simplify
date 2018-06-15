@@ -38,28 +38,24 @@ namespace Simplify.Negocio
             {
                 validacao.Mensagens.Add("Nascimento_dados", "Campo nascimento é obrigatório");
             }
-            if (validacao.Valido)
 
             // -- CAMPO CPF OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.CPF_dados))
             {
                 validacao.Mensagens.Add("CPF_dados", "Campo CPF é obrigatório");
             }
-            if (validacao.Valido)
 
             // -- CAMPO RG OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.RG_dados))
             {
                 validacao.Mensagens.Add("RG_dados", "Campo RG obrigatório");
             }
-            if (validacao.Valido)
 
             // -- CAMPO PROFISSÃO OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Profissao_dados))
             {
                 validacao.Mensagens.Add("Profissao_dados", "Campo profissão é obrigatório");
             }
-            if (validacao.Valido)
 
             // -- CAMPO SEXO OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Sexo_dados))
@@ -114,22 +110,18 @@ namespace Simplify.Negocio
             {
                 validacao.Mensagens.Add("Cidade_endereco1", "Campo cidade é obrigatório");
             }
-
-            /*if (String.IsNullOrEmpty(clienteAdicionado.Email_contato))
+            
+            // -- CAMPO EMAIL OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.Email_contato))
             {
-                validacao.Mensagens.Add("Email", "O email não pode ser nulo ou vazio");
+                validacao.Mensagens.Add("Email_contato", "O email não pode ser nulo ou vazio");
             }
 
             if (!clienteAdicionado.Email_contato.Contains("@") && validacao.Mensagens.Count == 0)
             {
-                validacao.Mensagens.Add("Email", "Email no formato inválido");
+                validacao.Mensagens.Add("Email_contato", "Email no formato inválido");
             }
 
-            if (String.IsNullOrEmpty(clienteAdicionado.Nome_dados))
-            {
-                validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
-            }*/
-            
             if (validacao.Valido)
             {
                 this.banco.Clientes.Add(clienteAdicionado);
