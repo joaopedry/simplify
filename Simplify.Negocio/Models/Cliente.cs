@@ -14,14 +14,14 @@ namespace Simplify.Negocio.Models
         public String Indicacao_dados { get; set; }
         public String Nascimento_dados { get; set; }
         public String CPF_dados { get; set; }
-        public Double RG_dados { get; set; }
+        public String RG_dados { get; set; }
         public String Profissao_dados { get; set; }
         public String Sexo_dados { get; set; }
         public String EstadoCivil_dados { get; set; }
         //Endereço1
         public String Endereco_endereco1 { get; set; }
         public String Rua_endereco1 { get; set; }
-        public Int32 Num_endereco1 { get; set; }
+        public String Num_endereco1 { get; set; }
         public String Complemento_endereco1 { get; set; }
         public String CEP_endereco1 { get; set; }
         public String Bairro_endereco1 { get; set; }
@@ -29,7 +29,7 @@ namespace Simplify.Negocio.Models
         //Endereço2
         public String Endereco_endereco2 { get; set; }
         public String Rua_endereco2 { get; set; }
-        public Int32 Num_endereco2 { get; set; }
+        public String Num_endereco2 { get; set; }
         public String Complemento_endereco2 { get; set; }
         public String CEP_endereco2 { get; set; }
         public String Bairro_endereco2 { get; set; }

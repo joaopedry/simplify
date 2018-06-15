@@ -84,14 +84,14 @@ namespace Simplify.Grafico
             cliente.Indicacao_dados = tbindicacao.Text;
             cliente.Nascimento_dados = tbNascimento.Text;
             cliente.CPF_dados = tbCpf.Text;
-            cliente.RG_dados = Double.Parse(tbRG.Text);
+            cliente.RG_dados = tbRG.Text;
             cliente.Profissao_dados = tbProfissao.Text;
             cliente.Sexo_dados = tbSexo.Text;
             cliente.EstadoCivil_dados = tbEstadoCivil.Text;
             //Endereço1
             cliente.Endereco_endereco1 = tbEndereco1.Text;
             cliente.Rua_endereco1 = tbRua1.Text;
-            cliente.Num_endereco1 = Int32.Parse(tbNumero1.Text);
+            cliente.Num_endereco1 = tbNumero1.Text;
             cliente.Complemento_endereco1 = tbComplemento1.Text;
             cliente.CEP_endereco1 = tbCep1.Text;
             cliente.Bairro_endereco1 = tbBairro1.Text;
@@ -99,7 +99,7 @@ namespace Simplify.Grafico
             //Endereço2
             cliente.Endereco_endereco2 = tbEndereco2.Text;
             cliente.Rua_endereco2 = tbRua2.Text;
-            cliente.Num_endereco2 = Int32.Parse(tbNumero2.Text);
+            cliente.Num_endereco2 = tbNumero2.Text;
             cliente.Complemento_endereco2 = tbComplemento2.Text;
             cliente.CEP_endereco2 = tbCep2.Text;
             cliente.Bairro_endereco2 = tbBairro2.Text;
@@ -158,8 +158,11 @@ namespace Simplify.Grafico
             {
                 MessageBox.Show("Cliente salvo com sucesso");
             }
-
-            this.Close();
+            if (validacao.Valido)
+            {
+                this.Close();
+            }
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
