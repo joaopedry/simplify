@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dgProcessosEnviados = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgProcessosEnviados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,10 +41,33 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgProcessosEnviados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProcessosEnviados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.CPF,
+            this.Status});
             this.dgProcessosEnviados.Location = new System.Drawing.Point(1, 2);
             this.dgProcessosEnviados.Name = "dgProcessosEnviados";
             this.dgProcessosEnviados.Size = new System.Drawing.Size(353, 429);
             this.dgProcessosEnviados.TabIndex = 0;
+            this.dgProcessosEnviados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProcessosEnviados_CellContentClick);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome_dados";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "CPF_dados";
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
             // 
             // TelaProcessosEnviados
             // 
@@ -57,6 +83,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Processos Enviados";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaProcessosEnviados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgProcessosEnviados)).EndInit();
             this.ResumeLayout(false);
 
@@ -65,5 +92,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgProcessosEnviados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

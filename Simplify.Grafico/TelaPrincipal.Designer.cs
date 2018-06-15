@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,8 +51,6 @@
             this.lbProcessoNegado = new System.Windows.Forms.Label();
             this.lbProcessoPendencia = new System.Windows.Forms.Label();
             this.lbProcessosEnviados = new System.Windows.Forms.Label();
-            this.lbProcessoAndamento = new System.Windows.Forms.Label();
-            this.btProcessAndamento = new System.Windows.Forms.Button();
             this.btProcessocompendencia = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btProcessEnviados = new System.Windows.Forms.Button();
@@ -269,8 +267,6 @@
             this.panel4.Controls.Add(this.lbProcessoNegado);
             this.panel4.Controls.Add(this.lbProcessoPendencia);
             this.panel4.Controls.Add(this.lbProcessosEnviados);
-            this.panel4.Controls.Add(this.lbProcessoAndamento);
-            this.panel4.Controls.Add(this.btProcessAndamento);
             this.panel4.Controls.Add(this.btProcessocompendencia);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btProcessEnviados);
@@ -287,7 +283,7 @@
             this.lbProcessoNegado.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoNegado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessoNegado.ForeColor = System.Drawing.Color.Tomato;
-            this.lbProcessoNegado.Location = new System.Drawing.Point(113, 404);
+            this.lbProcessoNegado.Location = new System.Drawing.Point(113, 322);
             this.lbProcessoNegado.Name = "lbProcessoNegado";
             this.lbProcessoNegado.Size = new System.Drawing.Size(25, 25);
             this.lbProcessoNegado.TabIndex = 8;
@@ -299,7 +295,7 @@
             this.lbProcessoPendencia.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoPendencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessoPendencia.ForeColor = System.Drawing.Color.Khaki;
-            this.lbProcessoPendencia.Location = new System.Drawing.Point(111, 305);
+            this.lbProcessoPendencia.Location = new System.Drawing.Point(111, 223);
             this.lbProcessoPendencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProcessoPendencia.Name = "lbProcessoPendencia";
             this.lbProcessoPendencia.Size = new System.Drawing.Size(25, 25);
@@ -312,7 +308,7 @@
             this.lbProcessosEnviados.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessosEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessosEnviados.ForeColor = System.Drawing.Color.SkyBlue;
-            this.lbProcessosEnviados.Location = new System.Drawing.Point(111, 201);
+            this.lbProcessosEnviados.Location = new System.Drawing.Point(111, 119);
             this.lbProcessosEnviados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProcessosEnviados.Name = "lbProcessosEnviados";
             this.lbProcessosEnviados.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
@@ -320,41 +316,11 @@
             this.lbProcessosEnviados.TabIndex = 6;
             this.lbProcessosEnviados.Text = "0";
             // 
-            // lbProcessoAndamento
-            // 
-            this.lbProcessoAndamento.AutoSize = true;
-            this.lbProcessoAndamento.BackColor = System.Drawing.Color.DarkGray;
-            this.lbProcessoAndamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.lbProcessoAndamento.ForeColor = System.Drawing.Color.LightGreen;
-            this.lbProcessoAndamento.Location = new System.Drawing.Point(111, 104);
-            this.lbProcessoAndamento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbProcessoAndamento.Name = "lbProcessoAndamento";
-            this.lbProcessoAndamento.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbProcessoAndamento.Size = new System.Drawing.Size(25, 32);
-            this.lbProcessoAndamento.TabIndex = 5;
-            this.lbProcessoAndamento.Text = "0";
-            this.lbProcessoAndamento.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // btProcessAndamento
-            // 
-            this.btProcessAndamento.AutoSize = true;
-            this.btProcessAndamento.BackColor = System.Drawing.Color.DarkGray;
-            this.btProcessAndamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessAndamento.Location = new System.Drawing.Point(4, 50);
-            this.btProcessAndamento.Margin = new System.Windows.Forms.Padding(2);
-            this.btProcessAndamento.Name = "btProcessAndamento";
-            this.btProcessAndamento.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
-            this.btProcessAndamento.Size = new System.Drawing.Size(238, 94);
-            this.btProcessAndamento.TabIndex = 0;
-            this.btProcessAndamento.Text = "Processos em andamento";
-            this.btProcessAndamento.UseVisualStyleBackColor = false;
-            this.btProcessAndamento.Click += new System.EventHandler(this.btProcessAndamento_Click);
-            // 
             // btProcessocompendencia
             // 
             this.btProcessocompendencia.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessocompendencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessocompendencia.Location = new System.Drawing.Point(4, 247);
+            this.btProcessocompendencia.Location = new System.Drawing.Point(4, 165);
             this.btProcessocompendencia.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessocompendencia.Name = "btProcessocompendencia";
             this.btProcessocompendencia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
@@ -380,7 +346,7 @@
             // 
             this.btProcessEnviados.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessEnviados.Location = new System.Drawing.Point(4, 148);
+            this.btProcessEnviados.Location = new System.Drawing.Point(4, 66);
             this.btProcessEnviados.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessEnviados.Name = "btProcessEnviados";
             this.btProcessEnviados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
@@ -395,7 +361,7 @@
             // 
             this.btProcessosnegados.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessosnegados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessosnegados.Location = new System.Drawing.Point(4, 346);
+            this.btProcessosnegados.Location = new System.Drawing.Point(4, 264);
             this.btProcessosnegados.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessosnegados.Name = "btProcessosnegados";
             this.btProcessosnegados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
@@ -467,17 +433,17 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(30, 50);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart1.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(682, 328);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -550,9 +516,7 @@
         private System.Windows.Forms.Button btProcessosnegados;
         private System.Windows.Forms.Button btProcessEnviados;
         private System.Windows.Forms.Button btProcessocompendencia;
-        private System.Windows.Forms.Button btProcessAndamento;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbProcessoAndamento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbProcessoNegado;

@@ -66,7 +66,7 @@ namespace Simplify.Negocio
         {
             Validacao validacao = new Validacao();
 
-            
+
             if (String.IsNullOrEmpty(UsuarioAdicionado.Nome_usuario))
             {
                 validacao.Mensagens.Add("Nome_usuario", "Campo nome é obrigatório");
@@ -110,11 +110,11 @@ namespace Simplify.Negocio
                 if (usuarioBanco.Login_usuario == usuarioVerificado.Login_usuario)
                 {
                     if (usuarioBanco.Password_usuario == usuarioVerificado.Password_usuario)
-                    {                        
+                    {
                     }
                     else
                     {
-                        validacao.Mensagens.Add("Password_usuario", "Incorreto"); 
+                        validacao.Mensagens.Add("Password_usuario", "Incorreto");
                     }
                 }
                 else
@@ -124,7 +124,7 @@ namespace Simplify.Negocio
             }
             else
             {
-                validacao.Mensagens.Add("Login_usuario", "Campo nome é obrigatório");               
+                validacao.Mensagens.Add("Login_usuario", "Campo nome é obrigatório");
             }
             return validacao;
         }
@@ -166,7 +166,6 @@ namespace Simplify.Negocio
             return validacao;
         }
 
-
         public Usuario BuscaUsuarioPorId(long id)
         {
             return this.banco.Usuarios.Where(c => c.Id == id).FirstOrDefault();
@@ -185,6 +184,11 @@ namespace Simplify.Negocio
         public List<Usuario> TodosOsUsuarios()
         {
             return this.banco.Usuarios.ToList();
+        }
+
+        public List<Cliente> BuscaProcessos(String StatusRecebido)
+        {
+            return this.banco.Clientes.Where(c => c.Status == StatusRecebido).ToList();
         }
     }
 }

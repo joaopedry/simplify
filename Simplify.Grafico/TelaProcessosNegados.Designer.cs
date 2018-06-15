@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dgProcessosNegados = new System.Windows.Forms.DataGridView();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgProcessosNegados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,10 +41,33 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgProcessosNegados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProcessosNegados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CPF,
+            this.Nome,
+            this.Status});
             this.dgProcessosNegados.Location = new System.Drawing.Point(1, 2);
             this.dgProcessosNegados.Name = "dgProcessosNegados";
             this.dgProcessosNegados.Size = new System.Drawing.Size(352, 436);
             this.dgProcessosNegados.TabIndex = 0;
+            this.dgProcessosNegados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProcessosNegados_CellContentClick);
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "CPF_dados";
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome_dados";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
             // 
             // TelaProcessosNegados
             // 
@@ -58,6 +84,7 @@
             this.Text = "Processos Negados";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaProcessosNegados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgProcessosNegados)).EndInit();
             this.ResumeLayout(false);
 
@@ -66,5 +93,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgProcessosNegados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }
