@@ -21,10 +21,7 @@ namespace Simplify.Grafico
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void ManterCliente_Load(object sender, EventArgs e)
         {
@@ -296,6 +293,67 @@ namespace Simplify.Grafico
                 e.Handled = true;
             }
             //89227-064
+
+        }
+
+        private void ManterCliente_Shown(object sender, EventArgs e)
+        {
+            if (ClienteSelecionado != null)
+            {
+                /*Dados Pessoais*/
+                this.tbNome.Text = ClienteSelecionado.Nome_dados;
+                this.tbindicacao.Text = ClienteSelecionado.Indicacao_dados;
+                this.tbNascimento.Text = ClienteSelecionado.Nascimento_dados;
+                this.tbCpf.Text = ClienteSelecionado.CPF_dados;
+                this.tbRG.Text = ClienteSelecionado.RG_dados;
+                this.tbProfissao.Text = ClienteSelecionado.Profissao_dados;
+                this.tbSexo.Text = ClienteSelecionado.Sexo_dados;
+                this.tbEstadoCivil.Text = ClienteSelecionado.EstadoCivil_dados;
+                //Endereço1
+                this.tbEndereco1.Text = ClienteSelecionado.Endereco_endereco1;
+                this.tbRua1.Text = ClienteSelecionado.Rua_endereco1;
+                this.tbNumero1.Text = ClienteSelecionado.Num_endereco1;
+                this.tbComplemento1.Text = ClienteSelecionado.Complemento_endereco1;
+                this.tbCep1.Text = ClienteSelecionado.CEP_endereco1;
+                this.tbBairro1.Text = ClienteSelecionado.Bairro_endereco1;
+                this.tbCidade1.Text = ClienteSelecionado.Cidade_endereco1;
+                //Endereço2
+                this.tbEndereco2.Text = ClienteSelecionado.Endereco_endereco2;
+                this.tbRua2.Text = ClienteSelecionado.Rua_endereco2;
+                this.tbNumero2.Text = ClienteSelecionado.Num_endereco2;
+                this.tbComplemento2.Text = ClienteSelecionado.Complemento_endereco2;
+                this.tbCep2.Text = ClienteSelecionado.CEP_endereco2;
+                this.tbBairro2.Text = ClienteSelecionado.Bairro_endereco2;
+                this.tbCidade2.Text = ClienteSelecionado.Cidade_endereco2;
+                //Contato
+                this.tbTelResidencial.Text = ClienteSelecionado.Residencial_contato;
+                this.tbCel1.Text = ClienteSelecionado.Celular1_contato;
+                this.tbCel2.Text = ClienteSelecionado.Celular2_contato;
+                this.tbTeltrabalho.Text = ClienteSelecionado.TelTrabalho_contato;
+                this.tbEmail.Text = ClienteSelecionado.Email_contato;
+                this.tbFacebook.Text = ClienteSelecionado.Facebook_contato;
+                this.tbNomerecados.Text = ClienteSelecionado.NomeRecado_contato;
+                this.tbTelrecados.Text = ClienteSelecionado.TelefoneRecado_contato;
+                //Ocorrencia
+                this.tbDataocorrencia.Text = ClienteSelecionado.Data_ocorrencia;
+                this.tbLocalocorrencia.Text = ClienteSelecionado.Local_ocorrencia;
+                this.tbVeiculosacidente.Text = ClienteSelecionado.Veiculo_ocorrencia;
+                this.gbTipoAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.Tipo_ocorrencia;
+                this.gbINSSAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.INSS_ocorrencia;
+                this.tbHorarioacidente.Text = ClienteSelecionado.Horario_ocorrencia;
+                this.tbLesoesacidente.Text = ClienteSelecionado.Lesao_ocorrencia;
+                this.tbSocorrista.Text = ClienteSelecionado.Socorrista_ocorrencia;
+                this.tbHospital.Text = ClienteSelecionado.Hospital_ocorrencia;
+                this.rtbObservacoes.Text = ClienteSelecionado.Observacao_ocorrencia;
+                //Observaçoes
+                this.rtbAbaObservacoes.Text = ClienteSelecionado.Observacao_observacao;
+                //status
+                this.gbStatus.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.Status;
+            }
+        }
+
+        private void tbNome_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -49,55 +49,60 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbCPF = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lbReferencia = new System.Windows.Forms.Label();
-            this.lbLesoes = new System.Windows.Forms.Label();
-            this.lbData = new System.Windows.Forms.Label();
-            this.lbSocorrista = new System.Windows.Forms.Label();
-            this.lbProfissao = new System.Windows.Forms.Label();
-            this.lbVeiculos = new System.Windows.Forms.Label();
-            this.lbObservacoes = new System.Windows.Forms.Label();
-            this.lbNumerocasa = new System.Windows.Forms.Label();
-            this.lbCidade = new System.Windows.Forms.Label();
-            this.lbRegistro = new System.Windows.Forms.Label();
-            this.lbInss = new System.Windows.Forms.Label();
-            this.lbHorario = new System.Windows.Forms.Label();
-            this.lbHospital = new System.Windows.Forms.Label();
-            this.lbTipo = new System.Windows.Forms.Label();
             this.lbLocal = new System.Windows.Forms.Label();
+            this.lbTipo = new System.Windows.Forms.Label();
+            this.lbHospital = new System.Windows.Forms.Label();
+            this.lbHorario = new System.Windows.Forms.Label();
+            this.lbInss = new System.Windows.Forms.Label();
+            this.lbRegistro = new System.Windows.Forms.Label();
+            this.lbCidade = new System.Windows.Forms.Label();
+            this.lbNumerocasa = new System.Windows.Forms.Label();
+            this.lbObservacoes = new System.Windows.Forms.Label();
+            this.lbVeiculos = new System.Windows.Forms.Label();
+            this.lbProfissao = new System.Windows.Forms.Label();
+            this.lbSocorrista = new System.Windows.Forms.Label();
+            this.lbData = new System.Windows.Forms.Label();
+            this.lbLesoes = new System.Windows.Forms.Label();
+            this.lbReferencia = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgTodosOsClientes = new System.Windows.Forms.DataGridView();
+            this.Nome_dados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF_dados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusProcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTodosOsClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // tbBusca
             // 
             this.tbBusca.Location = new System.Drawing.Point(12, 51);
             this.tbBusca.Name = "tbBusca";
-            this.tbBusca.Size = new System.Drawing.Size(128, 20);
+            this.tbBusca.Size = new System.Drawing.Size(177, 20);
             this.tbBusca.TabIndex = 1;
             this.tbBusca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btBuscarProcesso
             // 
-            this.btBuscarProcesso.Location = new System.Drawing.Point(148, 51);
+            this.btBuscarProcesso.Location = new System.Drawing.Point(195, 51);
             this.btBuscarProcesso.Name = "btBuscarProcesso";
-            this.btBuscarProcesso.Size = new System.Drawing.Size(75, 23);
+            this.btBuscarProcesso.Size = new System.Drawing.Size(128, 23);
             this.btBuscarProcesso.TabIndex = 2;
             this.btBuscarProcesso.Text = "Procurar";
             this.btBuscarProcesso.UseVisualStyleBackColor = true;
@@ -108,10 +113,11 @@
             this.btAlterarDados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btAlterarDados.Location = new System.Drawing.Point(12, 77);
             this.btAlterarDados.Name = "btAlterarDados";
-            this.btAlterarDados.Size = new System.Drawing.Size(129, 23);
+            this.btAlterarDados.Size = new System.Drawing.Size(177, 23);
             this.btAlterarDados.TabIndex = 3;
             this.btAlterarDados.Text = "Alterar dados cadastrais";
             this.btAlterarDados.UseVisualStyleBackColor = true;
+            this.btAlterarDados.Click += new System.EventHandler(this.btAlterarDados_Click);
             // 
             // label1
             // 
@@ -125,7 +131,7 @@
             // btImprimirFolhaDeRosto
             // 
             this.btImprimirFolhaDeRosto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btImprimirFolhaDeRosto.Location = new System.Drawing.Point(12, 106);
+            this.btImprimirFolhaDeRosto.Location = new System.Drawing.Point(195, 77);
             this.btImprimirFolhaDeRosto.Name = "btImprimirFolhaDeRosto";
             this.btImprimirFolhaDeRosto.Size = new System.Drawing.Size(128, 23);
             this.btImprimirFolhaDeRosto.TabIndex = 5;
@@ -308,20 +314,280 @@
             this.panel1.Controls.Add(this.lbRua);
             this.panel1.Controls.Add(this.lbEmail);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(229, 12);
+            this.panel1.Location = new System.Drawing.Point(349, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(444, 578);
             this.panel1.TabIndex = 29;
             // 
-            // label2
+            // lbLocal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(302, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "PROCESSO PARA SOLICITAÇÃO DE INDENIZAÇÃO ";
+            this.lbLocal.AutoSize = true;
+            this.lbLocal.Location = new System.Drawing.Point(305, 425);
+            this.lbLocal.Name = "lbLocal";
+            this.lbLocal.Size = new System.Drawing.Size(10, 13);
+            this.lbLocal.TabIndex = 63;
+            this.lbLocal.Text = "-";
+            // 
+            // lbTipo
+            // 
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Location = new System.Drawing.Point(306, 395);
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(10, 13);
+            this.lbTipo.TabIndex = 62;
+            this.lbTipo.Text = "-";
+            // 
+            // lbHospital
+            // 
+            this.lbHospital.AutoSize = true;
+            this.lbHospital.Location = new System.Drawing.Point(306, 365);
+            this.lbHospital.Name = "lbHospital";
+            this.lbHospital.Size = new System.Drawing.Size(10, 13);
+            this.lbHospital.TabIndex = 61;
+            this.lbHospital.Text = "-";
+            // 
+            // lbHorario
+            // 
+            this.lbHorario.AutoSize = true;
+            this.lbHorario.Location = new System.Drawing.Point(305, 335);
+            this.lbHorario.Name = "lbHorario";
+            this.lbHorario.Size = new System.Drawing.Size(10, 13);
+            this.lbHorario.TabIndex = 59;
+            this.lbHorario.Text = "-";
+            // 
+            // lbInss
+            // 
+            this.lbInss.AutoSize = true;
+            this.lbInss.Location = new System.Drawing.Point(305, 305);
+            this.lbInss.Name = "lbInss";
+            this.lbInss.Size = new System.Drawing.Size(10, 13);
+            this.lbInss.TabIndex = 58;
+            this.lbInss.Text = "-";
+            // 
+            // lbRegistro
+            // 
+            this.lbRegistro.AutoSize = true;
+            this.lbRegistro.Location = new System.Drawing.Point(305, 275);
+            this.lbRegistro.Name = "lbRegistro";
+            this.lbRegistro.Size = new System.Drawing.Size(10, 13);
+            this.lbRegistro.TabIndex = 57;
+            this.lbRegistro.Text = "-";
+            // 
+            // lbCidade
+            // 
+            this.lbCidade.AutoSize = true;
+            this.lbCidade.Location = new System.Drawing.Point(305, 245);
+            this.lbCidade.Name = "lbCidade";
+            this.lbCidade.Size = new System.Drawing.Size(10, 13);
+            this.lbCidade.TabIndex = 56;
+            this.lbCidade.Text = "-";
+            // 
+            // lbNumerocasa
+            // 
+            this.lbNumerocasa.AutoSize = true;
+            this.lbNumerocasa.Location = new System.Drawing.Point(305, 215);
+            this.lbNumerocasa.Name = "lbNumerocasa";
+            this.lbNumerocasa.Size = new System.Drawing.Size(10, 13);
+            this.lbNumerocasa.TabIndex = 55;
+            this.lbNumerocasa.Text = "-";
+            // 
+            // lbObservacoes
+            // 
+            this.lbObservacoes.AutoSize = true;
+            this.lbObservacoes.Location = new System.Drawing.Point(115, 455);
+            this.lbObservacoes.Name = "lbObservacoes";
+            this.lbObservacoes.Size = new System.Drawing.Size(10, 13);
+            this.lbObservacoes.TabIndex = 54;
+            this.lbObservacoes.Text = "-";
+            // 
+            // lbVeiculos
+            // 
+            this.lbVeiculos.AutoSize = true;
+            this.lbVeiculos.Location = new System.Drawing.Point(93, 425);
+            this.lbVeiculos.Name = "lbVeiculos";
+            this.lbVeiculos.Size = new System.Drawing.Size(10, 13);
+            this.lbVeiculos.TabIndex = 53;
+            this.lbVeiculos.Text = "-";
+            // 
+            // lbProfissao
+            // 
+            this.lbProfissao.AutoSize = true;
+            this.lbProfissao.Location = new System.Drawing.Point(93, 395);
+            this.lbProfissao.Name = "lbProfissao";
+            this.lbProfissao.Size = new System.Drawing.Size(10, 13);
+            this.lbProfissao.TabIndex = 52;
+            this.lbProfissao.Text = "-";
+            // 
+            // lbSocorrista
+            // 
+            this.lbSocorrista.AutoSize = true;
+            this.lbSocorrista.Location = new System.Drawing.Point(93, 365);
+            this.lbSocorrista.Name = "lbSocorrista";
+            this.lbSocorrista.Size = new System.Drawing.Size(10, 13);
+            this.lbSocorrista.TabIndex = 51;
+            this.lbSocorrista.Text = "-";
+            // 
+            // lbData
+            // 
+            this.lbData.AutoSize = true;
+            this.lbData.Location = new System.Drawing.Point(93, 335);
+            this.lbData.Name = "lbData";
+            this.lbData.Size = new System.Drawing.Size(10, 13);
+            this.lbData.TabIndex = 50;
+            this.lbData.Text = "-";
+            // 
+            // lbLesoes
+            // 
+            this.lbLesoes.AutoSize = true;
+            this.lbLesoes.Location = new System.Drawing.Point(93, 305);
+            this.lbLesoes.Name = "lbLesoes";
+            this.lbLesoes.Size = new System.Drawing.Size(10, 13);
+            this.lbLesoes.TabIndex = 49;
+            this.lbLesoes.Text = "-";
+            // 
+            // lbReferencia
+            // 
+            this.lbReferencia.AutoSize = true;
+            this.lbReferencia.Location = new System.Drawing.Point(93, 275);
+            this.lbReferencia.Name = "lbReferencia";
+            this.lbReferencia.Size = new System.Drawing.Size(10, 13);
+            this.lbReferencia.TabIndex = 48;
+            this.lbReferencia.Text = "-";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(19, 455);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(90, 13);
+            this.label23.TabIndex = 47;
+            this.label23.Text = "OBSERVAÇÕES:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(19, 425);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(63, 13);
+            this.label22.TabIndex = 46;
+            this.label22.Text = "VEÍCULOS:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(237, 425);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 13);
+            this.label21.TabIndex = 45;
+            this.label21.Text = "LOCAL:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(237, 395);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 13);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "TIPO:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(237, 215);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(22, 13);
+            this.label18.TabIndex = 43;
+            this.label18.Text = "Nº:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(237, 245);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(50, 13);
+            this.label19.TabIndex = 42;
+            this.label19.Text = "CIDADE:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(240, 365);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 13);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "HOSPITAL:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(237, 335);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(60, 13);
+            this.label16.TabIndex = 39;
+            this.label16.Text = "HORÁRIO:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(237, 305);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(35, 13);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "INSS:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(237, 275);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 13);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "REGISTRO:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(19, 395);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 13);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "PROFISSÃO:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 365);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "SOCORRISTA:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 335);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "DATA:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 305);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "LESÕES:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 275);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "REFERÊNCIA:";
             // 
             // pictureBox1
             // 
@@ -333,282 +599,53 @@
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
-            // label5
+            // label2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 275);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "REFERÊNCIA:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(51, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(302, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "PROCESSO PARA SOLICITAÇÃO DE INDENIZAÇÃO ";
             // 
-            // label7
+            // dgTodosOsClientes
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 305);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "LESÕES:";
+            this.dgTodosOsClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTodosOsClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome_dados,
+            this.CPF_dados,
+            this.StatusProcesso});
+            this.dgTodosOsClientes.Location = new System.Drawing.Point(12, 108);
+            this.dgTodosOsClientes.Name = "dgTodosOsClientes";
+            this.dgTodosOsClientes.Size = new System.Drawing.Size(311, 480);
+            this.dgTodosOsClientes.TabIndex = 30;
             // 
-            // label9
+            // Nome_dados
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 335);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "DATA:";
+            this.Nome_dados.DataPropertyName = "Nome_dados";
+            this.Nome_dados.HeaderText = "Nome";
+            this.Nome_dados.Name = "Nome_dados";
             // 
-            // label11
+            // CPF_dados
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 365);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 13);
-            this.label11.TabIndex = 35;
-            this.label11.Text = "SOCORRISTA:";
+            this.CPF_dados.DataPropertyName = "CPF_dados";
+            this.CPF_dados.HeaderText = "CPF";
+            this.CPF_dados.Name = "CPF_dados";
             // 
-            // label13
+            // StatusProcesso
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 395);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 13);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "PROFISSÃO:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(237, 275);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 13);
-            this.label14.TabIndex = 37;
-            this.label14.Text = "REGISTRO:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(237, 305);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(35, 13);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "INSS:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(237, 335);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(60, 13);
-            this.label16.TabIndex = 39;
-            this.label16.Text = "HORÁRIO:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(240, 365);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 13);
-            this.label17.TabIndex = 40;
-            this.label17.Text = "HOSPITAL:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(237, 245);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(50, 13);
-            this.label19.TabIndex = 42;
-            this.label19.Text = "CIDADE:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(237, 215);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(22, 13);
-            this.label18.TabIndex = 43;
-            this.label18.Text = "Nº:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(237, 395);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(35, 13);
-            this.label20.TabIndex = 44;
-            this.label20.Text = "TIPO:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(237, 425);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 13);
-            this.label21.TabIndex = 45;
-            this.label21.Text = "LOCAL:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(19, 425);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(63, 13);
-            this.label22.TabIndex = 46;
-            this.label22.Text = "VEÍCULOS:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(19, 455);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(90, 13);
-            this.label23.TabIndex = 47;
-            this.label23.Text = "OBSERVAÇÕES:";
-            // 
-            // lbReferencia
-            // 
-            this.lbReferencia.AutoSize = true;
-            this.lbReferencia.Location = new System.Drawing.Point(93, 275);
-            this.lbReferencia.Name = "lbReferencia";
-            this.lbReferencia.Size = new System.Drawing.Size(10, 13);
-            this.lbReferencia.TabIndex = 48;
-            this.lbReferencia.Text = "-";
-            // 
-            // lbLesoes
-            // 
-            this.lbLesoes.AutoSize = true;
-            this.lbLesoes.Location = new System.Drawing.Point(93, 305);
-            this.lbLesoes.Name = "lbLesoes";
-            this.lbLesoes.Size = new System.Drawing.Size(10, 13);
-            this.lbLesoes.TabIndex = 49;
-            this.lbLesoes.Text = "-";
-            // 
-            // lbData
-            // 
-            this.lbData.AutoSize = true;
-            this.lbData.Location = new System.Drawing.Point(93, 335);
-            this.lbData.Name = "lbData";
-            this.lbData.Size = new System.Drawing.Size(10, 13);
-            this.lbData.TabIndex = 50;
-            this.lbData.Text = "-";
-            // 
-            // lbSocorrista
-            // 
-            this.lbSocorrista.AutoSize = true;
-            this.lbSocorrista.Location = new System.Drawing.Point(93, 365);
-            this.lbSocorrista.Name = "lbSocorrista";
-            this.lbSocorrista.Size = new System.Drawing.Size(10, 13);
-            this.lbSocorrista.TabIndex = 51;
-            this.lbSocorrista.Text = "-";
-            // 
-            // lbProfissao
-            // 
-            this.lbProfissao.AutoSize = true;
-            this.lbProfissao.Location = new System.Drawing.Point(93, 395);
-            this.lbProfissao.Name = "lbProfissao";
-            this.lbProfissao.Size = new System.Drawing.Size(10, 13);
-            this.lbProfissao.TabIndex = 52;
-            this.lbProfissao.Text = "-";
-            // 
-            // lbVeiculos
-            // 
-            this.lbVeiculos.AutoSize = true;
-            this.lbVeiculos.Location = new System.Drawing.Point(93, 425);
-            this.lbVeiculos.Name = "lbVeiculos";
-            this.lbVeiculos.Size = new System.Drawing.Size(10, 13);
-            this.lbVeiculos.TabIndex = 53;
-            this.lbVeiculos.Text = "-";
-            // 
-            // lbObservacoes
-            // 
-            this.lbObservacoes.AutoSize = true;
-            this.lbObservacoes.Location = new System.Drawing.Point(115, 455);
-            this.lbObservacoes.Name = "lbObservacoes";
-            this.lbObservacoes.Size = new System.Drawing.Size(10, 13);
-            this.lbObservacoes.TabIndex = 54;
-            this.lbObservacoes.Text = "-";
-            // 
-            // lbNumerocasa
-            // 
-            this.lbNumerocasa.AutoSize = true;
-            this.lbNumerocasa.Location = new System.Drawing.Point(305, 215);
-            this.lbNumerocasa.Name = "lbNumerocasa";
-            this.lbNumerocasa.Size = new System.Drawing.Size(10, 13);
-            this.lbNumerocasa.TabIndex = 55;
-            this.lbNumerocasa.Text = "-";
-            // 
-            // lbCidade
-            // 
-            this.lbCidade.AutoSize = true;
-            this.lbCidade.Location = new System.Drawing.Point(305, 245);
-            this.lbCidade.Name = "lbCidade";
-            this.lbCidade.Size = new System.Drawing.Size(10, 13);
-            this.lbCidade.TabIndex = 56;
-            this.lbCidade.Text = "-";
-            // 
-            // lbRegistro
-            // 
-            this.lbRegistro.AutoSize = true;
-            this.lbRegistro.Location = new System.Drawing.Point(305, 275);
-            this.lbRegistro.Name = "lbRegistro";
-            this.lbRegistro.Size = new System.Drawing.Size(10, 13);
-            this.lbRegistro.TabIndex = 57;
-            this.lbRegistro.Text = "-";
-            // 
-            // lbInss
-            // 
-            this.lbInss.AutoSize = true;
-            this.lbInss.Location = new System.Drawing.Point(305, 305);
-            this.lbInss.Name = "lbInss";
-            this.lbInss.Size = new System.Drawing.Size(10, 13);
-            this.lbInss.TabIndex = 58;
-            this.lbInss.Text = "-";
-            // 
-            // lbHorario
-            // 
-            this.lbHorario.AutoSize = true;
-            this.lbHorario.Location = new System.Drawing.Point(305, 335);
-            this.lbHorario.Name = "lbHorario";
-            this.lbHorario.Size = new System.Drawing.Size(10, 13);
-            this.lbHorario.TabIndex = 59;
-            this.lbHorario.Text = "-";
-            // 
-            // lbHospital
-            // 
-            this.lbHospital.AutoSize = true;
-            this.lbHospital.Location = new System.Drawing.Point(306, 365);
-            this.lbHospital.Name = "lbHospital";
-            this.lbHospital.Size = new System.Drawing.Size(10, 13);
-            this.lbHospital.TabIndex = 61;
-            this.lbHospital.Text = "-";
-            // 
-            // lbTipo
-            // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(306, 395);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(10, 13);
-            this.lbTipo.TabIndex = 62;
-            this.lbTipo.Text = "-";
-            // 
-            // lbLocal
-            // 
-            this.lbLocal.AutoSize = true;
-            this.lbLocal.Location = new System.Drawing.Point(305, 425);
-            this.lbLocal.Name = "lbLocal";
-            this.lbLocal.Size = new System.Drawing.Size(10, 13);
-            this.lbLocal.TabIndex = 63;
-            this.lbLocal.Text = "-";
+            this.StatusProcesso.DataPropertyName = "Status";
+            this.StatusProcesso.HeaderText = "Status do Processo";
+            this.StatusProcesso.Name = "StatusProcesso";
             // 
             // TelaListaProcessos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(685, 601);
+            this.ClientSize = new System.Drawing.Size(805, 600);
+            this.Controls.Add(this.dgTodosOsClientes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btImprimirFolhaDeRosto);
             this.Controls.Add(this.label1);
@@ -616,19 +653,19 @@
             this.Controls.Add(this.btBuscarProcesso);
             this.Controls.Add(this.tbBusca);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(701, 639);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(701, 639);
             this.Name = "TelaListaProcessos";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaListaProcessos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaListaProcessos_FormClosed);
             this.Load += new System.EventHandler(this.TelaListaProcessos_Load);
             this.Shown += new System.EventHandler(this.TelaListaProcessos_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTodosOsClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,5 +724,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgTodosOsClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_dados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF_dados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusProcesso;
     }
 }

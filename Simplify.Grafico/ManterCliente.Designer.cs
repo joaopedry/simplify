@@ -204,6 +204,7 @@
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(200, 20);
             this.tbNome.TabIndex = 0;
+            this.tbNome.TextChanged += new System.EventHandler(this.tbNome_TextChanged);
             // 
             // tbindicacao
             // 
@@ -281,7 +282,7 @@
             this.Nome.Size = new System.Drawing.Size(47, 15);
             this.Nome.TabIndex = 9;
             this.Nome.Text = "NOME:";
-            this.Nome.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // Indicacao
             // 
@@ -1795,6 +1796,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManterCliente_FormClosing);
             this.Load += new System.EventHandler(this.ManterCliente_Load);
+            this.Shown += new System.EventHandler(this.ManterCliente_Shown);
             this.ctCadastro.ResumeLayout(false);
             this.tabcadastrocliente.ResumeLayout(false);
             this.tabcadastrocliente.PerformLayout();

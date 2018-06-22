@@ -81,15 +81,52 @@ namespace Simplify.Grafico
             lbObservacoes.Text = cliente.Observacao_observacao;
 
         }
+        private void CarregaDatagrid()
+        {
+            dgTodosOsClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgTodosOsClientes.MultiSelect = false;
+            dgTodosOsClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgTodosOsClientes.AutoGenerateColumns = false;
+            List<Cliente> clientes = Program.Gerenciador.TodosOsClientes();
+            dgTodosOsClientes.DataSource = clientes;
+        }
 
         private void TelaListaProcessos_Load(object sender, EventArgs e)
         {
+            CarregaDatagrid();
         }
 
         private void TelaListaProcessos_Shown(object sender, EventArgs e)
         {
         }
 
-        
+        private void AbreTelaInclusaoAlteracao(Cliente clienteSelecionado)
+        {
+            ManterCliente tela = new ManterCliente();
+            tela.MdiParent = this.MdiParent;
+            tela.ClienteSelecionado = clienteSelecionado;
+            //tela.FormClosed += Tela_FormClosed;
+            tela.Show();
+        }
+
+        private bool VerificarSelecao()
+        {
+            if (dgTodosOsClientes.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Selecione uma linha");
+                return false;
+            }
+            return true;
+        }
+
+        private void TelaListaProcessos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void btAlterarDados_Click(object sender, EventArgs e)
+        {
+            AbreTelaInclusaoAlteracao(null);
+        }
     }
 }

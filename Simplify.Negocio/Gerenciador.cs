@@ -322,5 +322,10 @@ namespace Simplify.Negocio
         {
             return this.banco.Clientes.Where(c => c.Status == StatusRecebido).ToList();
         }
+
+        public List<Cliente> TodosOsClientes()
+        {
+            return this.banco.Clientes.ToList();
+        }
     }
 }
