@@ -66,8 +66,8 @@ namespace Simplify.Grafico
             }
             else
             {
-                MessageBox.Show("Você não tem permissão para acessar esta área", "Acesso negado",
-                MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Usuário ou senha incorretos!", "Erro",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

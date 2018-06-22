@@ -31,11 +31,11 @@
             this.btAdicionarUsuario = new System.Windows.Forms.Button();
             this.btRemoverUsuario = new System.Windows.Forms.Button();
             this.dgUsuario = new System.Windows.Forms.DataGridView();
+            this.btAlterarUsuario = new System.Windows.Forms.Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Administrador = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btAlterarUsuario = new System.Windows.Forms.Button();
+            this.Função = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             this.Nome,
             this.Email,
             this.Login,
-            this.Administrador});
+            this.Função});
             this.dgUsuario.Location = new System.Drawing.Point(9, 67);
             this.dgUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.dgUsuario.Name = "dgUsuario";
@@ -78,34 +78,6 @@
             this.dgUsuario.Size = new System.Drawing.Size(586, 268);
             this.dgUsuario.TabIndex = 2;
             this.dgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuario_CellContentClick);
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome_usuario";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email_usuario";
-            this.Email.HeaderText = "E-mail";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Login
-            // 
-            this.Login.DataPropertyName = "Login_usuario";
-            this.Login.HeaderText = "Login";
-            this.Login.Name = "Login";
-            this.Login.ReadOnly = true;
-            // 
-            // Administrador
-            // 
-            this.Administrador.DataPropertyName = "Administrador_usuario";
-            this.Administrador.HeaderText = "Administrador";
-            this.Administrador.Name = "Administrador";
-            this.Administrador.ReadOnly = true;
             // 
             // btAlterarUsuario
             // 
@@ -117,6 +89,32 @@
             this.btAlterarUsuario.Text = "Alterar Usuário";
             this.btAlterarUsuario.UseVisualStyleBackColor = true;
             this.btAlterarUsuario.Click += new System.EventHandler(this.btAlterarUsuario_Click);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome_usuario";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email_usuario";
+            this.Email.HeaderText = "E-mail";
+            this.Email.Name = "Email";
+            // 
+            // Login
+            // 
+            this.Login.DataPropertyName = "Login_usuario";
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            // 
+            // Função
+            // 
+            this.Função.DataPropertyName = "Funcao_usuario";
+            this.Função.HeaderText = "Função";
+            this.Função.Name = "Função";
+            this.Função.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Função.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // TelaAjustes
             // 
@@ -150,6 +148,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Administrador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Função;
     }
 }
