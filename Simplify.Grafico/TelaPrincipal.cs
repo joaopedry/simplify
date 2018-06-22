@@ -12,6 +12,10 @@ namespace Simplify.Grafico
 {
     public partial class TelaPrincipal : Form
     {
+        TelaProcessosEnviados enviado = new TelaProcessosEnviados();
+        TelaProcessosNegados negado = new TelaProcessosNegados();
+        TelaProcessosPendencia pendente = new TelaProcessosPendencia();
+
         private int childFormNumber = 0;
 
         public TelaPrincipal()
@@ -336,6 +340,14 @@ namespace Simplify.Grafico
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //Buscando contadores dos tipos de processos
+        public void Buscacount(String count)
+        {
+            lbProcessosEnviados.Text = enviado.CarregaProcessoEnviado(count);
+            lbProcessoNegado.Text = negado.CarregaProcessoNegado(count);
+            lbProcessoPendencia.Text = pendente.CarregaProcessoPendente(count);
         }
     }
 }

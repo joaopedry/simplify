@@ -13,6 +13,9 @@ namespace Simplify.Grafico
 {
     public partial class TelaProcessosPendencia : Form
     {
+        //Variaveis
+        public string countPendentes;
+
         public TelaProcessosPendencia()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace Simplify.Grafico
 
         }
     
-        private void CarregaProcessoPendente()
+        public string CarregaProcessoPendente(string countPendente)
         {
             String Status = "Pendente";
             dgProcessosPendencia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -32,11 +35,12 @@ namespace Simplify.Grafico
             dgProcessosPendencia.AutoGenerateColumns = false;
             List<Cliente> clientes = Program.Gerenciador.BuscaProcessos(Status);
             dgProcessosPendencia.DataSource = clientes;
+            return countPendentes = dgProcessosPendencia.Rows.Count.ToString();
         }
 
         private void TelaProcessosPendencia_Load(object sender, EventArgs e)
         {
-            CarregaProcessoPendente();
+            CarregaProcessoPendente(null);
         }
     }
 }

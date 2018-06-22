@@ -13,6 +13,9 @@ namespace Simplify.Grafico
 {
     public partial class TelaProcessosNegados : Form
     {
+        //Variaveis
+        public string countNegados;
+
         public TelaProcessosNegados()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace Simplify.Grafico
 
         }
 
-        private void CarregaProcessoNegado()
+        public string CarregaProcessoNegado(string countNegado)
         {
             String Status = "Negado";
             dgProcessosNegados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -32,11 +35,12 @@ namespace Simplify.Grafico
             dgProcessosNegados.AutoGenerateColumns = false;
             List<Cliente> clientes = Program.Gerenciador.BuscaProcessos(Status);
             dgProcessosNegados.DataSource = clientes;
+            return countNegados = dgProcessosNegados.Rows.Count.ToString();
         }
 
         private void TelaProcessosNegados_Load(object sender, EventArgs e)
         {
-            CarregaProcessoNegado();
+            CarregaProcessoNegado(null);
         }
     }
 }

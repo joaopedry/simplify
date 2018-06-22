@@ -13,6 +13,8 @@ namespace Simplify.Grafico
 {
     public partial class TelaProcessosEnviados : Form
     {
+        //Variaveis
+        public string countEnviados;
         public TelaProcessosEnviados()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace Simplify.Grafico
 
         }
 
-        private void CarregaProcessoEnviado()
+        public string  CarregaProcessoEnviado(string countEnviado)
         {
             String Status = "Enviado";
             dgProcessosEnviados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -32,11 +34,12 @@ namespace Simplify.Grafico
             dgProcessosEnviados.AutoGenerateColumns = false;
             List<Cliente> clientes = Program.Gerenciador.BuscaProcessos(Status);
             dgProcessosEnviados.DataSource = clientes;
+            return countEnviados = dgProcessosEnviados.Rows.Count.ToString();
         }
 
         private void TelaProcessosEnviados_Load(object sender, EventArgs e)
         {
-            CarregaProcessoEnviado();
+            CarregaProcessoEnviado(null);
         }
     }
 }
