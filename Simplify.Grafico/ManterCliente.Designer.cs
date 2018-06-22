@@ -282,7 +282,6 @@
             this.Nome.Size = new System.Drawing.Size(47, 15);
             this.Nome.TabIndex = 9;
             this.Nome.Text = "NOME:";
-           
             // 
             // Indicacao
             // 

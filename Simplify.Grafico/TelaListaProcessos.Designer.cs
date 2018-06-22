@@ -100,23 +100,24 @@
             // 
             // btBuscarProcesso
             // 
+            this.btBuscarProcesso.BackColor = System.Drawing.Color.White;
             this.btBuscarProcesso.Location = new System.Drawing.Point(195, 51);
             this.btBuscarProcesso.Name = "btBuscarProcesso";
             this.btBuscarProcesso.Size = new System.Drawing.Size(128, 23);
             this.btBuscarProcesso.TabIndex = 2;
             this.btBuscarProcesso.Text = "Procurar";
-            this.btBuscarProcesso.UseVisualStyleBackColor = true;
+            this.btBuscarProcesso.UseVisualStyleBackColor = false;
             this.btBuscarProcesso.Click += new System.EventHandler(this.btBuscarProcesso_Click);
             // 
             // btAlterarDados
             // 
-            this.btAlterarDados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btAlterarDados.BackColor = System.Drawing.Color.White;
             this.btAlterarDados.Location = new System.Drawing.Point(12, 77);
             this.btAlterarDados.Name = "btAlterarDados";
             this.btAlterarDados.Size = new System.Drawing.Size(177, 23);
             this.btAlterarDados.TabIndex = 3;
             this.btAlterarDados.Text = "Alterar dados cadastrais";
-            this.btAlterarDados.UseVisualStyleBackColor = true;
+            this.btAlterarDados.UseVisualStyleBackColor = false;
             this.btAlterarDados.Click += new System.EventHandler(this.btAlterarDados_Click);
             // 
             // label1
@@ -130,13 +131,13 @@
             // 
             // btImprimirFolhaDeRosto
             // 
-            this.btImprimirFolhaDeRosto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btImprimirFolhaDeRosto.BackColor = System.Drawing.Color.White;
             this.btImprimirFolhaDeRosto.Location = new System.Drawing.Point(195, 77);
             this.btImprimirFolhaDeRosto.Name = "btImprimirFolhaDeRosto";
             this.btImprimirFolhaDeRosto.Size = new System.Drawing.Size(128, 23);
             this.btImprimirFolhaDeRosto.TabIndex = 5;
             this.btImprimirFolhaDeRosto.Text = "Imprimir folha de rosto";
-            this.btImprimirFolhaDeRosto.UseVisualStyleBackColor = true;
+            this.btImprimirFolhaDeRosto.UseVisualStyleBackColor = false;
             // 
             // lbNome
             // 
@@ -657,8 +658,9 @@
             this.Name = "TelaListaProcessos";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TelaListaProcessos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaListaProcessos_FormClosed);
             this.Load += new System.EventHandler(this.TelaListaProcessos_Load);
             this.Shown += new System.EventHandler(this.TelaListaProcessos_Shown);

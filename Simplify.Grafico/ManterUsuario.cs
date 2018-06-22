@@ -79,11 +79,6 @@ namespace Simplify.Grafico
 
         }
 
-        private void ManterUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void ManterUsuario_Shown(object sender, EventArgs e)
         {
             if (UsuarioSelecionado != null)
@@ -113,6 +108,11 @@ namespace Simplify.Grafico
         }
 
         private void tbNomeUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManterUsuario_Load(object sender, EventArgs e)
         {
 
         }

@@ -105,7 +105,7 @@ namespace Simplify.Grafico
             ManterCliente tela = new ManterCliente();
             tela.MdiParent = this.MdiParent;
             tela.ClienteSelecionado = clienteSelecionado;
-            //tela.FormClosed += Tela_FormClosed;
+            tela.FormClosed += TelaListaProcessos_FormClosed;
             tela.Show();
         }
 
@@ -126,7 +126,11 @@ namespace Simplify.Grafico
 
         private void btAlterarDados_Click(object sender, EventArgs e)
         {
-            AbreTelaInclusaoAlteracao(null);
+            if (VerificarSelecao())
+            {
+                Cliente clienteSelecionado = (Cliente)dgTodosOsClientes.SelectedRows[0].DataBoundItem;
+                AbreTelaInclusaoAlteracao(clienteSelecionado);
+            }
         }
     }
 }
