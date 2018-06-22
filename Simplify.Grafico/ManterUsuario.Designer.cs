@@ -42,9 +42,12 @@
             this.btCancelarUsuario = new System.Windows.Forms.Button();
             this.tbIdUsuario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbAdminUsuario = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rbAdministrador = new System.Windows.Forms.RadioButton();
+            this.rbUsuario = new System.Windows.Forms.RadioButton();
+            this.gbFuncao = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbFuncao.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbNomeUsuario
@@ -171,20 +174,10 @@
             this.label6.Location = new System.Drawing.Point(10, 151);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.Size = new System.Drawing.Size(46, 13);
             this.label6.TabIndex = 21;
-            this.label6.Text = "Administrador:";
+            this.label6.Text = "Função:";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // cbAdminUsuario
-            // 
-            this.cbAdminUsuario.AutoSize = true;
-            this.cbAdminUsuario.Location = new System.Drawing.Point(102, 150);
-            this.cbAdminUsuario.Name = "cbAdminUsuario";
-            this.cbAdminUsuario.Size = new System.Drawing.Size(15, 14);
-            this.cbAdminUsuario.TabIndex = 22;
-            this.cbAdminUsuario.UseVisualStyleBackColor = true;
-            this.cbAdminUsuario.CheckedChanged += new System.EventHandler(this.cbAdminUsuario_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -196,14 +189,47 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
+            // rbAdministrador
+            // 
+            this.rbAdministrador.AutoSize = true;
+            this.rbAdministrador.Checked = true;
+            this.rbAdministrador.Location = new System.Drawing.Point(10, 3);
+            this.rbAdministrador.Name = "rbAdministrador";
+            this.rbAdministrador.Size = new System.Drawing.Size(88, 17);
+            this.rbAdministrador.TabIndex = 24;
+            this.rbAdministrador.TabStop = true;
+            this.rbAdministrador.Text = "Administrador";
+            this.rbAdministrador.UseVisualStyleBackColor = true;
+            // 
+            // rbUsuario
+            // 
+            this.rbUsuario.AutoSize = true;
+            this.rbUsuario.Location = new System.Drawing.Point(101, 3);
+            this.rbUsuario.Name = "rbUsuario";
+            this.rbUsuario.Size = new System.Drawing.Size(61, 17);
+            this.rbUsuario.TabIndex = 25;
+            this.rbUsuario.TabStop = true;
+            this.rbUsuario.Text = "Usuário";
+            this.rbUsuario.UseVisualStyleBackColor = true;
+            // 
+            // gbFuncao
+            // 
+            this.gbFuncao.Controls.Add(this.rbAdministrador);
+            this.gbFuncao.Controls.Add(this.rbUsuario);
+            this.gbFuncao.Location = new System.Drawing.Point(92, 148);
+            this.gbFuncao.Name = "gbFuncao";
+            this.gbFuncao.Size = new System.Drawing.Size(241, 24);
+            this.gbFuncao.TabIndex = 26;
+            this.gbFuncao.TabStop = false;
+            // 
             // ManterUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(495, 210);
+            this.Controls.Add(this.gbFuncao);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbAdminUsuario);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbIdUsuario);
             this.Controls.Add(this.btCancelarUsuario);
@@ -226,6 +252,8 @@
             this.Load += new System.EventHandler(this.ManterUsuario_Load);
             this.Shown += new System.EventHandler(this.ManterUsuario_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gbFuncao.ResumeLayout(false);
+            this.gbFuncao.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,7 +274,9 @@
         private System.Windows.Forms.Button btCancelarUsuario;
         private System.Windows.Forms.TextBox tbIdUsuario;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox cbAdminUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton rbAdministrador;
+        private System.Windows.Forms.RadioButton rbUsuario;
+        private System.Windows.Forms.GroupBox gbFuncao;
     }
 }

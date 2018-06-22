@@ -37,7 +37,7 @@ namespace Simplify.Grafico
             {
                 Usuario usuario = new Usuario();
                 usuario.Id = 1;
-                usuario.Administrador_usuario = true;
+                usuario.Funcao_usuario = "Administrador";
                 usuario.Nome_usuario = "root";
                 usuario.Email_usuario = "root@simplify.com.br";
                 usuario.Login_usuario = "root";
@@ -66,8 +66,8 @@ namespace Simplify.Grafico
             }
             else
             {
-                MessageBox.Show("Usuário ou senha incorretos!", "Erro",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Você não tem permissão para acessar esta área", "Acesso negado",
+                MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

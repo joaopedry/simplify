@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Simplify.Negocio;
+using Simplify.Negocio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +22,29 @@ namespace Simplify.Grafico
         private void btAcessarAjustes_Click(object sender, EventArgs e)
         {
             TelaAjustes tela = new TelaAjustes();
-            this.Close();
+            Usuario usuario = new Usuario();
+
+            usuario.Login_usuario = tbUser_Admin.Text;
+            usuario.Password_usuario = tbSenha_admin.Text;
+
+            Validacao validacaoUser = new Validacao();
+            validacaoUser = Program.Gerenciador.VerificaUsuario2(usuario);
+
+            if (validacaoUser.Valido)
+            {
+                tela.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha incorretos!", "Erro",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             
-            tela.Show();
+            
+            
+            
         }
 
         private void TelaSenhaUsuarios_Load(object sender, EventArgs e)

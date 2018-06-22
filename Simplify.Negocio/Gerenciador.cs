@@ -14,6 +14,7 @@ namespace Simplify.Negocio
     {
         private Banco banco = new Banco();
         public int i;
+        public int negados;
 
         //public String i;
         // ADICIONAR CLIENTE //
@@ -183,7 +184,7 @@ namespace Simplify.Negocio
             usuarioBanco.Email_usuario = usuarioAlterado.Email_usuario;
             usuarioBanco.Login_usuario = usuarioAlterado.Login_usuario;
             usuarioBanco.Password_usuario = usuarioAlterado.Password_usuario;
-            usuarioBanco.Administrador_usuario = usuarioAlterado.Administrador_usuario;
+            usuarioBanco.Funcao_usuario = usuarioAlterado.Funcao_usuario;
             this.banco.SaveChanges();
             return validacao;
         }
@@ -216,8 +217,47 @@ namespace Simplify.Negocio
             return validacao;
         }
 
+        public Validacao VerificaUsuario2(Usuario usuarioVerificado)
+        {
+            Validacao validacao = new Validacao();
+            Usuario usuarioBanco = BuscaUsuarioPorLogin(usuarioVerificado.Login_usuario);
+            if (usuarioBanco != null)
+            {
 
-        public Validacao BuscaCliente(Cliente ClienteVerificado)
+                if (usuarioBanco.Login_usuario == usuarioVerificado.Login_usuario)
+                {
+                    if (usuarioBanco.Password_usuario == usuarioVerificado.Password_usuario)
+                    {
+                        if (usuarioBanco.Funcao_usuario == "Administrador")
+                        {
+
+                        }
+                        else
+                        {
+                            validacao.Mensagens.Add("!", "Acesso Negado");
+                        }
+                    }
+                    else
+                    {
+                        validacao.Mensagens.Add("Password_usuario", "Incorreto");
+                    }
+                }
+                else
+                {
+                    validacao.Mensagens.Add("Login_usuario", "Incorreto");
+                }
+            }
+            else
+            {
+                validacao.Mensagens.Add("Login_usuario", "Campo nome é obrigatório");
+            }
+            return validacao;
+        }
+
+        
+
+        
+    public Validacao BuscaCliente(Cliente ClienteVerificado)
         {
             Validacao validacao = new Validacao();
             Cliente usuarioBanco = BuscaClientePorCPF(ClienteVerificado.CPF_dados);
@@ -256,6 +296,11 @@ namespace Simplify.Negocio
         public Usuario BuscaUsuarioPorId(long id)
         {
             return this.banco.Usuarios.Where(c => c.Id == id).FirstOrDefault();
+        }
+
+        public Usuario BuscaUsuarioAdminPorLogin(String Login_usuario)
+        {
+            return this.banco.Usuarios.Where(c => c.Login_usuario == Login_usuario).FirstOrDefault();
         }
 
         public Cliente BuscaClientePorCPF(String CPF_dados)
