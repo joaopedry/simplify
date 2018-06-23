@@ -76,6 +76,7 @@ namespace Simplify.Grafico
         private void bt_salvar_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
+
             /*Dados Pessoais*/
             cliente.Nome_dados = tbNome.Text;
             cliente.Indicacao_dados = tbindicacao.Text;
