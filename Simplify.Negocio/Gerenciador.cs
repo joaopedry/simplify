@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Simplify.Negocio.Persistencia;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Simplify.Negocio
 {
@@ -137,7 +138,6 @@ namespace Simplify.Negocio
         {
             Validacao validacao = new Validacao();
             Cliente clienteBanco = BuscaClientePorCPF(clienteAlterado.CPF_dados);
-            //usuarioBanco.Nome_usuario = usuarioAlterado.Nome_usuario;
             
             /*Dados Pessoais*/
             clienteBanco.Nome_dados = clienteAlterado.Nome_dados;
@@ -203,16 +203,33 @@ namespace Simplify.Negocio
 
             return validacao;
         }
-
+ 
         public Validacao AdicionarUsuario(Usuario UsuarioAdicionado)
         {
+            Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+      
             Validacao validacao = new Validacao();
 
-
+            if (!rg.IsMatch(UsuarioAdicionado.Email_usuario))
+            {
+                validacao.Mensagens.Add("Email_contato", "Email no formato inválido");
+            }
+            
             if (String.IsNullOrEmpty(UsuarioAdicionado.Nome_usuario))
             {
                 validacao.Mensagens.Add("Nome_usuario", "Campo nome é obrigatório");
             }
+
+            if (String.IsNullOrEmpty(UsuarioAdicionado.Login_usuario))
+            {
+                validacao.Mensagens.Add("Login_usuario", "Login não pode ser nulo");
+            }
+
+            if (String.IsNullOrEmpty(UsuarioAdicionado.Password_usuario))
+            {
+                validacao.Mensagens.Add("Password_usuario", "Senha não pode ser nulo");
+            }
+
             if (validacao.Valido)
             {
                 this.banco.Usuarios.Add(UsuarioAdicionado);
@@ -307,11 +324,8 @@ namespace Simplify.Negocio
             }
             return validacao;
         }
-
         
-
-        
-    public Validacao BuscaCliente(Cliente ClienteVerificado)
+        public Validacao BuscaCliente(Cliente ClienteVerificado)
         {
             Validacao validacao = new Validacao();
             Cliente usuarioBanco = BuscaClientePorCPF(ClienteVerificado.CPF_dados);

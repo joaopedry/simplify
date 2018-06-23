@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Simplify.Negocio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -69,11 +71,7 @@ namespace Simplify.Grafico
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
-
-       
-
-       
-
+        
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
@@ -102,16 +100,6 @@ namespace Simplify.Grafico
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btSeguradora_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.seguradoralider.com.br");
@@ -135,10 +123,8 @@ namespace Simplify.Grafico
             }
             else
             {
-
                 mantercliente.Show();
-            }
-            
+            }           
         }
 
         private void btProcessAndamento_Click(object sender, EventArgs e)
@@ -155,7 +141,6 @@ namespace Simplify.Grafico
             }
             else
             {
-
                 telaandamento.Show();
             }
             
@@ -174,11 +159,8 @@ namespace Simplify.Grafico
             }
             else
             {
-
                 telaenviados.Show();
             }
-            
-
         }
 
         private void btProcessocompendencia_Click(object sender, EventArgs e)
@@ -194,7 +176,6 @@ namespace Simplify.Grafico
             }
             else
             {
-
                 telapendencia.Show();
             }
            
@@ -213,21 +194,8 @@ namespace Simplify.Grafico
             }
             else
             {
-
                 telanegados.Show();
-            }
-
-            
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgAniversariantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            }            
         }
 
         private void TelaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -246,19 +214,6 @@ namespace Simplify.Grafico
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            /* TelaAjustes ajustes = new TelaAjustes();
-
-             if (Application.OpenForms.OfType<TelaAjustes>().Count() > 0)
-             {
-                 MessageBox.Show("Esta janela já está em execução.", "!",
-                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                 Application.OpenForms.OfType<TelaAjustes>().First().Focus();
-             }
-             else
-             {
-
-                 ajustes.Show();
-             }*/
             TelaSenhaUsuarios tela = new TelaSenhaUsuarios();
 
             if (Application.OpenForms.OfType<TelaSenhaUsuarios>().Count() > 0)
@@ -269,7 +224,6 @@ namespace Simplify.Grafico
             }
             else
             {
-
                 tela.Show();
             }
 
@@ -287,7 +241,6 @@ namespace Simplify.Grafico
             }
             else
             {
-
                 ajuda.Show();
             }
         }
@@ -304,7 +257,6 @@ namespace Simplify.Grafico
             }
             else
             {
-
                 telarelatorio.Show();
             }
             
@@ -323,8 +275,7 @@ namespace Simplify.Grafico
                 Application.OpenForms.OfType<TelaListaProcessos>().First().Focus();
             }
             else
-            {
-                
+            {               
                 tela.Show();
             }
             
@@ -339,8 +290,9 @@ namespace Simplify.Grafico
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
-
+            
         }
+    
 
         //Buscando contadores dos tipos de processos
         public void Buscacount(String count)
@@ -348,6 +300,12 @@ namespace Simplify.Grafico
             lbProcessosEnviados.Text = enviado.CarregaProcessoEnviado(count);
             lbProcessoNegado.Text = negado.CarregaProcessoNegado(count);
             lbProcessoPendencia.Text = pendente.CarregaProcessoPendente(count);
+        }
+
+        //carregar contadores
+        private void TelaPrincipal_Activated(object sender, EventArgs e)
+        {
+            Buscacount(null);
         }
     }
 }
