@@ -265,8 +265,8 @@ namespace Simplify.Grafico
         private void btConsultarProcesso_Click(object sender, EventArgs e)
         {
             TelaListaProcessos tela = new TelaListaProcessos();
-           tela.MdiParent = this;
-           panel5.Controls.Add(tela);
+           //tela.MdiParent = this;
+          // panel5.Controls.Add(tela);
 
             if (Application.OpenForms.OfType<TelaListaProcessos>().Count() > 0)
             {
@@ -306,6 +306,16 @@ namespace Simplify.Grafico
         private void TelaPrincipal_Activated(object sender, EventArgs e)
         {
             Buscacount(null);
+        }
+
+        private void lbProcessosEnviados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

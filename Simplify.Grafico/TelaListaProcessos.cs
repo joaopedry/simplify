@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,19 @@ namespace Simplify.Grafico
 {
     public partial class TelaListaProcessos : Form
     {
+        Bitmap memoryImage;
+        private PrintDocument printDocument1 = new PrintDocument();
         Cliente cliente = new Cliente();
         public TelaListaProcessos()
         {
             InitializeComponent();
+        }
+
+        public void Imprimir()
+        {
+            btImprimirFolhaDeRosto.Click += new EventHandler(btImprimirFolhaDeRosto_Click);
+            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            this.Controls.Add(btImprimirFolhaDeRosto);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -58,6 +68,7 @@ namespace Simplify.Grafico
 
         public void CarregaCliente()
         {
+            
             lbCPF.Text = cliente.CPF_dados;
             lbNome.Text = cliente.Nome_dados;
             lbIndicacao.Text = cliente.Indicacao_dados;
@@ -131,6 +142,28 @@ namespace Simplify.Grafico
                 Cliente clienteSelecionado = (Cliente)dgTodosOsClientes.SelectedRows[0].DataBoundItem;
                 AbreTelaInclusaoAlteracao(clienteSelecionado);
             }
+        }
+
+        private void btImprimirFolhaDeRosto_Click(object sender, EventArgs e)
+        {
+            CaptureScreen();
+            printDocument1.Print();
+        }
+        
+        private void CaptureScreen()
+        {
+            Graphics myGraphics = this.CreateGraphics();
+            Size s = this.Size;
+            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
+            Imprimir();
+        }
+
+        private void printDocument1_PrintPage(System.Object sender,
+           System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(memoryImage, 0, 0);
         }
     }
 }

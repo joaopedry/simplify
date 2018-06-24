@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using Simplify.Negocio.Persistencia;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Drawing;
+using System.Security;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Simplify.Negocio
 {
@@ -188,7 +191,8 @@ namespace Simplify.Negocio
             clienteBanco.Observacao_observacao = clienteAlterado.Observacao_observacao;
             //status
             clienteBanco.Status = clienteAlterado.Status;
-
+            //caminho arquivo
+            clienteBanco.caminhoBoletim_anexos = clienteAlterado.caminhoBoletim_anexos;
             this.banco.SaveChanges();
 
             return validacao;
@@ -353,6 +357,7 @@ namespace Simplify.Negocio
                 ClienteVerificado.Tipo_ocorrencia = usuarioBanco.Tipo_ocorrencia;
                 ClienteVerificado.Local_ocorrencia = usuarioBanco.Local_ocorrencia;
                 ClienteVerificado.Observacao_observacao = usuarioBanco.Observacao_observacao;
+                ClienteVerificado.caminhoBoletim_anexos = usuarioBanco.caminhoBoletim_anexos;
             }
             else
             {

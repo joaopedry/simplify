@@ -83,6 +83,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgTodosOsClientes = new System.Windows.Forms.DataGridView();
             this.Nome_dados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF_dados = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusProcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -138,6 +139,7 @@
             this.btImprimirFolhaDeRosto.TabIndex = 5;
             this.btImprimirFolhaDeRosto.Text = "Imprimir folha de rosto";
             this.btImprimirFolhaDeRosto.UseVisualStyleBackColor = false;
+            this.btImprimirFolhaDeRosto.Click += new System.EventHandler(this.btImprimirFolhaDeRosto_Click);
             // 
             // lbNome
             // 
@@ -615,6 +617,7 @@
             this.dgTodosOsClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTodosOsClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome_dados,
+            this.Id,
             this.CPF_dados,
             this.StatusProcesso});
             this.dgTodosOsClientes.Location = new System.Drawing.Point(12, 108);
@@ -627,6 +630,13 @@
             this.Nome_dados.DataPropertyName = "Nome_dados";
             this.Nome_dados.HeaderText = "Nome";
             this.Nome_dados.Name = "Nome_dados";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // CPF_dados
             // 
@@ -728,6 +738,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgTodosOsClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome_dados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF_dados;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusProcesso;
     }

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,14 +15,18 @@ namespace Simplify.Grafico
 {
     public partial class ManterCliente : Form
     {
-        public Cliente ClienteSelecionado { get; set; }
+        Cliente cliente = new Cliente();
 
+        //var
+        public Cliente ClienteSelecionado { get; set; }
+        public String ArquivoShow;
+        public PictureBox arq;
         public ManterCliente()
         {
             InitializeComponent();
         }
 
-        
+
 
         private void ManterCliente_Load(object sender, EventArgs e)
         {
@@ -45,7 +50,7 @@ namespace Simplify.Grafico
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-      
+
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -75,8 +80,6 @@ namespace Simplify.Grafico
 
         private void bt_salvar_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-
             /*Dados Pessoais*/
             cliente.Nome_dados = tbNome.Text;
             cliente.Indicacao_dados = tbindicacao.Text;
@@ -126,8 +129,86 @@ namespace Simplify.Grafico
             cliente.Observacao_observacao = rtbAbaObservacoes.Text;
             //status
             cliente.Status = gbStatus.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
-
-
+            //caminho
+            cliente.caminhoBoletim_anexos = tbBoletimOcorrencia.Text;
+            cliente.caminhoProntuario_anexos = tbProntuario.Text;
+            cliente.caminhoComprovanteResidencia_anexos = tbComprovanteResidencia.Text;
+            cliente.caminhoCartaoBanco_anexos = tbCartaoBanco.Text;
+            cliente.caminhoRG_anexos = tbDOCRG.Text;
+            cliente.caminhoCPF_anexos = tbDOCCPF.Text;
+            cliente.caminhoCNH_anexos = tbDOCCNH.Text;
+            cliente.caminhoDOCVeiculo_anexos = tbDOCVeiculo.Text;
+            if (tbBoletimOcorrencia.Text == "")
+            {
+                cliente.BoletimOcorrencia_anexos = "Pendente";
+            }
+            else
+            {
+                cliente.BoletimOcorrencia_anexos = "Enviado";
+            }
+            //prontuario
+            if (tbProntuario.Text == "")
+            {
+                cliente.Prontuario_anexos = "Pendente";
+            }
+            else
+            {
+                cliente.Prontuario_anexos = "Enviado";
+            }
+            //comprovante
+            if (tbComprovanteResidencia.Text == "")
+            {
+                cliente.ComprovanteResidencia_anexos = "Pendente";
+            }
+            else
+            {
+                cliente.ComprovanteResidencia_anexos = "Enviado";
+            }
+            //cartão banco
+            if (tbCartaoBanco.Text == "")
+            {
+                cliente.CartaoBanco_anexos = "Pendente";
+            }
+            else
+            {
+                cliente.CartaoBanco_anexos = "Enviado";
+            }
+            //rg
+            if (tbDOCRG.Text == "")
+            {
+                cliente.RG_anexos = "Pendente";
+            }
+            else
+            {
+                cliente.RG_anexos = "Enviado";
+            }
+            //cpf
+            if (tbDOCCPF.Text == "")
+            {
+                cliente.CPF_anexos = "Pendente";
+            }
+            else
+            {
+                cliente.CPF_anexos = "Enviado";
+            }
+            //cnh
+            if (tbDOCCNH.Text == "")
+            {
+                cliente.CNH_anexos = "Pendente";
+            }
+            else
+            {
+                cliente.CNH_anexos = "Enviado";
+            }
+            //doc veiculo
+            if (tbDOCVeiculo.Text == "")
+            {
+                cliente.DOCVeiculo_anexos = "Pendente";
+            }
+            else
+            {
+                cliente.DOCVeiculo_anexos = "Enviado";
+            }
 
             Validacao validacao;
             if (ClienteSelecionado == null)
@@ -160,7 +241,7 @@ namespace Simplify.Grafico
             {
                 this.Close();
             }
-            
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -193,7 +274,7 @@ namespace Simplify.Grafico
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            
+
         }
 
         private void tbCpf_KeyPress(object sender, KeyPressEventArgs e)
@@ -350,10 +431,763 @@ namespace Simplify.Grafico
                 this.rtbAbaObservacoes.Text = ClienteSelecionado.Observacao_observacao;
                 //status
                 this.gbStatus.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.Status;
+                //Caminho arquivo
+                this.tbBoletimOcorrencia.Text       = ClienteSelecionado.caminhoBoletim_anexos;
+                this.tbProntuario.Text              = ClienteSelecionado.caminhoProntuario_anexos;
+                this.tbComprovanteResidencia.Text   = ClienteSelecionado.caminhoComprovanteResidencia_anexos;
+                this.tbCartaoBanco.Text             = ClienteSelecionado.caminhoCartaoBanco_anexos;
+                this.tbDOCRG.Text                   = ClienteSelecionado.caminhoRG_anexos;
+                this.tbDOCCPF.Text                  = ClienteSelecionado.caminhoCPF_anexos;
+                this.tbDOCCNH.Text                  = ClienteSelecionado.caminhoCNH_anexos;
+                this.tbDOCVeiculo.Text              = ClienteSelecionado.caminhoDOCVeiculo_anexos;
+                BoletimMostrar();
+                ProntuarioMostrar();
+                ComprovanteMostrar();
+                CartaoMostrar();
+                RGMostrar();
+                CPFMostrar();
+                CNHMostrar();
+                DOCVeiculoMostrar();
             }
         }
 
         private void tbNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void btAnexarBO_Click(object sender, EventArgs e)
+        {
+            if (tbBoletimOcorrencia.Text == "")
+            {
+                //define as propriedades do controle 
+                //OpenFileDialog
+                //this.ofdBoletimOcorrencia.Multiselect = true;
+                this.ofdBoletimOcorrencia.Title = "Selecionar Fotos";
+                ofdBoletimOcorrencia.InitialDirectory = @"C:\Users";
+                //filtra para exibir somente arquivos de imagens
+                ofdBoletimOcorrencia.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                ofdBoletimOcorrencia.CheckFileExists = true;
+                ofdBoletimOcorrencia.CheckPathExists = true;
+                ofdBoletimOcorrencia.FilterIndex = 2;
+                ofdBoletimOcorrencia.RestoreDirectory = true;
+                ofdBoletimOcorrencia.ReadOnlyChecked = true;
+                ofdBoletimOcorrencia.ShowReadOnly = true;
+
+                DialogResult dr = this.ofdBoletimOcorrencia.ShowDialog();
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String arquivo in ofdBoletimOcorrencia.FileNames)
+                    {
+                        tbBoletimOcorrencia.Text += arquivo;
+                        // cria um PictureBox
+                        try
+                        {
+                            BoletimMostrar();
+                        }
+                        catch (SecurityException ex)
+                        {
+                            // O usuário  não possui permissão para ler arquivos
+                            MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                                        "Mensagem : " + ex.Message + "\n\n" +
+                                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                            tbBoletimOcorrencia.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            // Não pode carregar a imagem (problemas de permissão)
+                            MessageBox.Show("Não é possível exibir a imagem : "
+                                                       + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                                       " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                            tbBoletimOcorrencia.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Já existe uma imagem anexada!\n"
+                    + "Por favor remova antes de anexar.");
+            }
+        }
+
+        private void btAnexarprontuario_Click(object sender, EventArgs e)
+        {
+            if (tbProntuario.Text == "")
+            {
+                //define as propriedades do controle 
+                //OpenFileDialog
+                //this.ofdBoletimOcorrencia.Multiselect = true;
+                this.ofdProntuario.Title = "Selecionar Fotos";
+                ofdProntuario.InitialDirectory = @"C:\Users";
+                //filtra para exibir somente arquivos de imagens
+                ofdProntuario.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                ofdProntuario.CheckFileExists = true;
+                ofdProntuario.CheckPathExists = true;
+                ofdProntuario.FilterIndex = 2;
+                ofdProntuario.RestoreDirectory = true;
+                ofdProntuario.ReadOnlyChecked = true;
+                ofdProntuario.ShowReadOnly = true;
+
+                DialogResult dr = this.ofdProntuario.ShowDialog();
+
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String arquivo in ofdProntuario.FileNames)
+                    {
+                        // cria um PictureBox
+                        try
+                        {
+                            PictureBox pb = new PictureBox();
+                            // Le os arquivos selecionados 
+                            tbProntuario.Text = arquivo;
+                            Image Imagem = Image.FromFile(arquivo);
+                            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                            //para exibir as imagens em tamanho natural 
+                            //descomente as linhas abaixo e comente as duas seguintes
+                            //pb.Height = loadedImage.Height;
+                            //pb.Width = loadedImage.Width;
+                            pb.Height = 100;
+                            pb.Width = 100;
+                            //atribui a imagem ao PictureBox - pb
+                            pb.Image = Imagem;
+                            //inclui a imagem no containter flowLayoutPanel
+                            flpProntuario.Controls.Add(pb);
+                        }
+                        catch (SecurityException ex)
+                        {
+                            // O usuário  não possui permissão para ler arquivos
+                            MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                                        "Mensagem : " + ex.Message + "\n\n" +
+                                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                            tbProntuario.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            // Não pode carregar a imagem (problemas de permissão)
+                            MessageBox.Show("Não é possível exibir a imagem : "
+                                                       + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                                       " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                            tbProntuario.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Já existe uma imagem anexada!\n"
+                    + "Por favor remova antes de anexar.");
+            }
+        }
+
+        private void btAnexarcomprovante_Click(object sender, EventArgs e)
+        {
+            if (tbComprovanteResidencia.Text == "")
+            {
+                //define as propriedades do controle 
+                //OpenFileDialog
+                //this.ofdBoletimOcorrencia.Multiselect = true;
+                this.ofdComprovanteResidencia.Title = "Selecionar Fotos";
+                ofdComprovanteResidencia.InitialDirectory = @"C:\Users";
+                //filtra para exibir somente arquivos de imagens
+                ofdComprovanteResidencia.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                ofdComprovanteResidencia.CheckFileExists = true;
+                ofdComprovanteResidencia.CheckPathExists = true;
+                ofdComprovanteResidencia.FilterIndex = 2;
+                ofdComprovanteResidencia.RestoreDirectory = true;
+                ofdComprovanteResidencia.ReadOnlyChecked = true;
+                ofdComprovanteResidencia.ShowReadOnly = true;
+
+                DialogResult dr = this.ofdComprovanteResidencia.ShowDialog();
+
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String arquivo in ofdComprovanteResidencia.FileNames)
+                    {
+                        // cria um PictureBox
+                        try
+                        {
+                            PictureBox pb = new PictureBox();
+                            // Le os arquivos selecionados 
+                            tbComprovanteResidencia.Text = arquivo;
+                            Image Imagem = Image.FromFile(arquivo);
+                            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                            //para exibir as imagens em tamanho natural 
+                            //descomente as linhas abaixo e comente as duas seguintes
+                            //pb.Height = loadedImage.Height;
+                            //pb.Width = loadedImage.Width;
+                            pb.Height = 100;
+                            pb.Width = 100;
+                            //atribui a imagem ao PictureBox - pb
+                            pb.Image = Imagem;
+                            //inclui a imagem no containter flowLayoutPanel
+                            flpComprovanteResidencia.Controls.Add(pb);
+                        }
+                        catch (SecurityException ex)
+                        {
+                            // O usuário  não possui permissão para ler arquivos
+                            MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                                        "Mensagem : " + ex.Message + "\n\n" +
+                                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                            tbComprovanteResidencia.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            // Não pode carregar a imagem (problemas de permissão)
+                            MessageBox.Show("Não é possível exibir a imagem : "
+                                                       + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                                       " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                            tbComprovanteResidencia.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Já existe uma imagem anexada!\n"
+                    + "Por favor remova antes de anexar.");
+            }
+        }
+
+        private void btAnexarcartao_Click(object sender, EventArgs e)
+        {
+            if (tbCartaoBanco.Text == "")
+            {
+                //define as propriedades do controle 
+                //OpenFileDialog
+                //this.ofdBoletimOcorrencia.Multiselect = true;
+                this.ofdCartaoBanco.Title = "Selecionar Fotos";
+                ofdCartaoBanco.InitialDirectory = @"C:\Users";
+                //filtra para exibir somente arquivos de imagens
+                ofdCartaoBanco.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                ofdCartaoBanco.CheckFileExists = true;
+                ofdCartaoBanco.CheckPathExists = true;
+                ofdCartaoBanco.FilterIndex = 2;
+                ofdCartaoBanco.RestoreDirectory = true;
+                ofdCartaoBanco.ReadOnlyChecked = true;
+                ofdCartaoBanco.ShowReadOnly = true;
+
+                DialogResult dr = this.ofdCartaoBanco.ShowDialog();
+
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String arquivo in ofdCartaoBanco.FileNames)
+                    {
+                        try
+                        {
+                            PictureBox pb = new PictureBox();
+                            // Le os arquivos selecionados 
+                            tbCartaoBanco.Text = arquivo;
+                            Image Imagem = Image.FromFile(arquivo);
+                            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                            //para exibir as imagens em tamanho natural 
+                            //descomente as linhas abaixo e comente as duas seguintes
+                            //pb.Height = loadedImage.Height;
+                            //pb.Width = loadedImage.Width;
+                            pb.Height = 100;
+                            pb.Width = 100;
+                            //atribui a imagem ao PictureBox - pb
+                            pb.Image = Imagem;
+                            //inclui a imagem no containter flowLayoutPanel
+                            flpCartaoBanco.Controls.Add(pb);
+                        }
+                        catch (SecurityException ex)
+                        {
+                            // O usuário  não possui permissão para ler arquivos
+                            MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                                        "Mensagem : " + ex.Message + "\n\n" +
+                                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                            tbCartaoBanco.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            // Não pode carregar a imagem (problemas de permissão)
+                            MessageBox.Show("Não é possível exibir a imagem : "
+                                                       + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                                       " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                            tbCartaoBanco.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Já existe uma imagem anexada!\n"
+                    + "Por favor remova antes de anexar.");
+            }
+        }
+
+        private void btAnexarRG_Click(object sender, EventArgs e)
+        {
+            if (tbDOCRG.Text == "")
+            {
+                //define as propriedades do controle 
+                //OpenFileDialog
+                //this.ofdBoletimOcorrencia.Multiselect = true;
+                this.ofdRG.Title = "Selecionar Fotos";
+                ofdRG.InitialDirectory = @"C:\Users";
+                //filtra para exibir somente arquivos de imagens
+                ofdRG.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                ofdRG.CheckFileExists = true;
+                ofdRG.CheckPathExists = true;
+                ofdRG.FilterIndex = 2;
+                ofdRG.RestoreDirectory = true;
+                ofdRG.ReadOnlyChecked = true;
+                ofdRG.ShowReadOnly = true;
+
+                DialogResult dr = this.ofdRG.ShowDialog();
+
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String arquivo in ofdRG.FileNames)
+                    {
+                        try
+                        {
+                            PictureBox pb = new PictureBox();
+                            // Le os arquivos selecionados 
+                            tbDOCRG.Text = arquivo;
+                            Image Imagem = Image.FromFile(arquivo);
+                            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                            //para exibir as imagens em tamanho natural 
+                            //descomente as linhas abaixo e comente as duas seguintes
+                            //pb.Height = loadedImage.Height;
+                            //pb.Width = loadedImage.Width;
+                            pb.Height = 100;
+                            pb.Width = 100;
+                            //atribui a imagem ao PictureBox - pb
+                            pb.Image = Imagem;
+                            //inclui a imagem no containter flowLayoutPanel
+                            flpRG.Controls.Add(pb);
+                        }
+                        catch (SecurityException ex)
+                        {
+                            // O usuário  não possui permissão para ler arquivos
+                            MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                                        "Mensagem : " + ex.Message + "\n\n" +
+                                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                            tbDOCRG.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            // Não pode carregar a imagem (problemas de permissão)
+                            MessageBox.Show("Não é possível exibir a imagem : "
+                                                       + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                                       " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                            tbDOCRG.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Já existe uma imagem anexada!\n"
+                    + "Por favor remova antes de anexar.");
+            }
+        }
+
+        private void btAnexarCPF_Click(object sender, EventArgs e)
+        {
+            if (tbDOCCPF.Text == "")
+            {
+                //define as propriedades do controle 
+                //OpenFileDialog
+                //this.ofdBoletimOcorrencia.Multiselect = true;
+                this.ofdCPF.Title = "Selecionar Fotos";
+                ofdCPF.InitialDirectory = @"C:\Users";
+                //filtra para exibir somente arquivos de imagens
+                ofdCPF.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                ofdCPF.CheckFileExists = true;
+                ofdCPF.CheckPathExists = true;
+                ofdCPF.FilterIndex = 2;
+                ofdCPF.RestoreDirectory = true;
+                ofdCPF.ReadOnlyChecked = true;
+                ofdCPF.ShowReadOnly = true;
+
+                DialogResult dr = this.ofdCPF.ShowDialog();
+
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String arquivo in ofdCPF.FileNames)
+                    {
+                        try
+                        {
+                            PictureBox pb = new PictureBox();
+                            // Le os arquivos selecionados 
+                            tbDOCCPF.Text = arquivo;
+                            Image Imagem = Image.FromFile(arquivo);
+                            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                            //para exibir as imagens em tamanho natural 
+                            //descomente as linhas abaixo e comente as duas seguintes
+                            //pb.Height = loadedImage.Height;
+                            //pb.Width = loadedImage.Width;
+                            pb.Height = 100;
+                            pb.Width = 100;
+                            //atribui a imagem ao PictureBox - pb
+                            pb.Image = Imagem;
+                            //inclui a imagem no containter flowLayoutPanel
+                            flpCPF.Controls.Add(pb);
+                        }
+                        catch (SecurityException ex)
+                        {
+                            // O usuário  não possui permissão para ler arquivos
+                            MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                                        "Mensagem : " + ex.Message + "\n\n" +
+                                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                            tbDOCCPF.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            // Não pode carregar a imagem (problemas de permissão)
+                            MessageBox.Show("Não é possível exibir a imagem : "
+                                                       + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                                       " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                            tbDOCCPF.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Já existe uma imagem anexada!\n"
+                    + "Por favor remova antes de anexar.");
+            }
+           
+        }
+
+        private void btAnexarCNH_Click(object sender, EventArgs e)
+        {
+            if (tbDOCCNH.Text == "")
+            {
+                //define as propriedades do controle 
+                //OpenFileDialog
+                //this.ofdBoletimOcorrencia.Multiselect = true;
+                this.ofdCNH.Title = "Selecionar Fotos";
+                ofdCNH.InitialDirectory = @"C:\Users";
+                //filtra para exibir somente arquivos de imagens
+                ofdCNH.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                ofdCNH.CheckFileExists = true;
+                ofdCNH.CheckPathExists = true;
+                ofdCNH.FilterIndex = 2;
+                ofdCNH.RestoreDirectory = true;
+                ofdCNH.ReadOnlyChecked = true;
+                ofdCNH.ShowReadOnly = true;
+
+                DialogResult dr = this.ofdCNH.ShowDialog();
+
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String arquivo in ofdCNH.FileNames)
+                    {
+                        try
+                        {
+                            PictureBox pb = new PictureBox();
+                            // Le os arquivos selecionados 
+                            tbDOCCNH.Text = arquivo;
+                            Image Imagem = Image.FromFile(arquivo);
+                            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                            //para exibir as imagens em tamanho natural 
+                            //descomente as linhas abaixo e comente as duas seguintes
+                            //pb.Height = loadedImage.Height;
+                            //pb.Width = loadedImage.Width;
+                            pb.Height = 100;
+                            pb.Width = 100;
+                            //atribui a imagem ao PictureBox - pb
+                            pb.Image = Imagem;
+                            //inclui a imagem no containter flowLayoutPanel
+                            flpCNH.Controls.Add(pb);
+                        }
+                        catch (SecurityException ex)
+                        {
+                            // O usuário  não possui permissão para ler arquivos
+                            MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                                        "Mensagem : " + ex.Message + "\n\n" +
+                                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                            tbDOCCNH.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            // Não pode carregar a imagem (problemas de permissão)
+                            MessageBox.Show("Não é possível exibir a imagem : "
+                                                       + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                                       " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                            tbDOCCNH.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Já existe uma imagem anexada!\n"
+                    + "Por favor remova antes de anexar.");
+            }
+        }
+
+        private void btAnexarDocVeiculo_Click(object sender, EventArgs e)
+        {
+            if (tbDOCVeiculo.Text == "")
+            {
+                //define as propriedades do controle 
+                //OpenFileDialog
+                //this.ofdBoletimOcorrencia.Multiselect = true;
+                this.ofdDOCVeiculo.Title = "Selecionar Fotos";
+                ofdDOCVeiculo.InitialDirectory = @"C:\Users";
+                //filtra para exibir somente arquivos de imagens
+                ofdDOCVeiculo.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                ofdDOCVeiculo.CheckFileExists = true;
+                ofdDOCVeiculo.CheckPathExists = true;
+                ofdDOCVeiculo.FilterIndex = 2;
+                ofdDOCVeiculo.RestoreDirectory = true;
+                ofdDOCVeiculo.ReadOnlyChecked = true;
+                ofdDOCVeiculo.ShowReadOnly = true;
+
+                DialogResult dr = this.ofdDOCVeiculo.ShowDialog();
+
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String arquivo in ofdDOCVeiculo.FileNames)
+                    {
+                        try
+                        {
+                            PictureBox pb = new PictureBox();
+                            // Le os arquivos selecionados 
+                            tbDOCVeiculo.Text = arquivo;
+                            Image Imagem = Image.FromFile(arquivo);
+                            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                            //para exibir as imagens em tamanho natural 
+                            //descomente as linhas abaixo e comente as duas seguintes
+                            //pb.Height = loadedImage.Height;
+                            //pb.Width = loadedImage.Width;
+                            pb.Height = 100;
+                            pb.Width = 100;
+                            //atribui a imagem ao PictureBox - pb
+                            pb.Image = Imagem;
+                            //inclui a imagem no containter flowLayoutPanel
+                            flpDOCVeiculo.Controls.Add(pb);
+                        }
+                        catch (SecurityException ex)
+                        {
+                            // O usuário  não possui permissão para ler arquivos
+                            MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                                        "Mensagem : " + ex.Message + "\n\n" +
+                                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                            tbDOCVeiculo.Text = "";
+                        }
+                        catch (Exception ex)
+                        {
+                            // Não pode carregar a imagem (problemas de permissão)
+                            MessageBox.Show("Não é possível exibir a imagem : "
+                                                       + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                                       " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                            tbDOCVeiculo.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Já existe uma imagem anexada!\n"
+                    + "Por favor remova antes de anexar.");
+            }
+        }
+
+        public void BoletimMostrar()
+        {
+            PictureBox pb = new PictureBox();
+            // Le os arquivos selecionados 
+            Image Imagem = Image.FromFile(tbBoletimOcorrencia.Text);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //para exibir as imagens em tamanho natural 
+            //descomente as linhas abaixo e comente as duas seguintes
+            //pb.Height = loadedImage.Height;
+            //pb.Width = loadedImage.Width;
+            pb.Height = 100;
+            pb.Width = 100;
+            //atribui a imagem ao PictureBox - pb
+            pb.Image = Imagem;
+            //inclui a imagem no containter flowLayoutPanel
+            flpBoletim.Controls.Add(pb);
+        }
+
+        public void ProntuarioMostrar()
+        {
+            PictureBox pb = new PictureBox();
+            // Le os arquivos selecionados 
+            Image Imagem = Image.FromFile(tbProntuario.Text);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //para exibir as imagens em tamanho natural 
+            //descomente as linhas abaixo e comente as duas seguintes
+            //pb.Height = loadedImage.Height;
+            //pb.Width = loadedImage.Width;
+            pb.Height = 100;
+            pb.Width = 100;
+            //atribui a imagem ao PictureBox - pb
+            pb.Image = Imagem;
+            //inclui a imagem no containter flowLayoutPanel
+            flpProntuario.Controls.Add(pb);
+        }
+
+        public void ComprovanteMostrar()
+        {
+            PictureBox pb = new PictureBox();
+            // Le os arquivos selecionados 
+            Image Imagem = Image.FromFile(tbComprovanteResidencia.Text);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //para exibir as imagens em tamanho natural 
+            //descomente as linhas abaixo e comente as duas seguintes
+            //pb.Height = loadedImage.Height;
+            //pb.Width = loadedImage.Width;
+            pb.Height = 100;
+            pb.Width = 100;
+            //atribui a imagem ao PictureBox - pb
+            pb.Image = Imagem;
+            //inclui a imagem no containter flowLayoutPanel
+            flpComprovanteResidencia.Controls.Add(pb);
+        }
+
+        public void CartaoMostrar()
+        {
+            PictureBox pb = new PictureBox();
+            // Le os arquivos selecionados 
+            Image Imagem = Image.FromFile(tbCartaoBanco.Text);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //para exibir as imagens em tamanho natural 
+            //descomente as linhas abaixo e comente as duas seguintes
+            //pb.Height = loadedImage.Height;
+            //pb.Width = loadedImage.Width;
+            pb.Height = 100;
+            pb.Width = 100;
+            //atribui a imagem ao PictureBox - pb
+            pb.Image = Imagem;
+            //inclui a imagem no containter flowLayoutPanel
+            flpCartaoBanco.Controls.Add(pb);
+        }
+
+        public void RGMostrar()
+        {
+            PictureBox pb = new PictureBox();
+            // Le os arquivos selecionados 
+            Image Imagem = Image.FromFile(tbDOCRG.Text);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //para exibir as imagens em tamanho natural 
+            //descomente as linhas abaixo e comente as duas seguintes
+            //pb.Height = loadedImage.Height;
+            //pb.Width = loadedImage.Width;
+            pb.Height = 100;
+            pb.Width = 100;
+            //atribui a imagem ao PictureBox - pb
+            pb.Image = Imagem;
+            //inclui a imagem no containter flowLayoutPanel
+            flpRG.Controls.Add(pb);
+        }
+
+        public void CPFMostrar()
+        {
+            PictureBox pb = new PictureBox();
+            // Le os arquivos selecionados 
+            Image Imagem = Image.FromFile(tbDOCCPF.Text);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //para exibir as imagens em tamanho natural 
+            //descomente as linhas abaixo e comente as duas seguintes
+            //pb.Height = loadedImage.Height;
+            //pb.Width = loadedImage.Width;
+            pb.Height = 100;
+            pb.Width = 100;
+            //atribui a imagem ao PictureBox - pb
+            pb.Image = Imagem;
+            //inclui a imagem no containter flowLayoutPanel
+            flpCPF.Controls.Add(pb);
+        }
+
+        public void CNHMostrar()
+        {
+            PictureBox pb = new PictureBox();
+            // Le os arquivos selecionados 
+            Image Imagem = Image.FromFile(tbDOCCNH.Text);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //para exibir as imagens em tamanho natural 
+            //descomente as linhas abaixo e comente as duas seguintes
+            //pb.Height = loadedImage.Height;
+            //pb.Width = loadedImage.Width;
+            pb.Height = 100;
+            pb.Width = 100;
+            //atribui a imagem ao PictureBox - pb
+            pb.Image = Imagem;
+            //inclui a imagem no containter flowLayoutPanel
+            flpCNH.Controls.Add(pb);
+        }
+
+        public void DOCVeiculoMostrar()
+        {
+            PictureBox pb = new PictureBox();
+            // Le os arquivos selecionados 
+            Image Imagem = Image.FromFile(tbDOCVeiculo.Text);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //para exibir as imagens em tamanho natural 
+            //descomente as linhas abaixo e comente as duas seguintes
+            //pb.Height = loadedImage.Height;
+            //pb.Width = loadedImage.Width;
+            pb.Height = 100;
+            pb.Width = 100;
+            //atribui a imagem ao PictureBox - pb
+            pb.Image = Imagem;
+            //inclui a imagem no containter flowLayoutPanel
+            flpDOCVeiculo.Controls.Add(pb);
+        }
+
+        private void openFileDialog2_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btRemoverBO_Click(object sender, EventArgs e)
+        {
+            flpBoletim.Controls.Clear();
+            tbBoletimOcorrencia.Text = "";
+        }
+
+        private void btRemoverProntuario_Click(object sender, EventArgs e)
+        {
+            flpProntuario.Controls.Clear();
+            tbProntuario.Text = "";
+        }
+
+        private void btRemoverComprovante_Click(object sender, EventArgs e)
+        {
+            flpComprovanteResidencia.Controls.Clear();
+            tbComprovanteResidencia.Text = "";
+        }
+
+        private void btRemoverCartao_Click(object sender, EventArgs e)
+        {
+            flpCartaoBanco.Controls.Clear();
+            tbCartaoBanco.Text = "";
+        }
+
+        private void btRemoverRG_Click(object sender, EventArgs e)
+        {
+            flpRG.Controls.Clear();
+            tbDOCRG.Text = "";
+        }
+
+        private void btRemoverCPF_Click(object sender, EventArgs e)
+        {
+            flpCPF.Controls.Clear();
+            tbDOCCPF.Text = "";
+        }
+
+        private void btRemoverCNH_Click(object sender, EventArgs e)
+        {
+            flpCNH.Controls.Clear();
+            tbDOCCNH.Text = "";
+        }
+
+        private void btRemoverDocVeiculo_Click(object sender, EventArgs e)
+        {
+            flpDOCVeiculo.Controls.Clear();
+            tbDOCVeiculo.Text = "";
+        }
+
+        private void ofdBoletimOcorrencia_FileOk(object sender, CancelEventArgs e)
         {
 
         }
