@@ -113,8 +113,8 @@ namespace Simplify.Grafico
         private void btNovoCadastro_Click(object sender, EventArgs e)
         {
             ManterCliente mantercliente = new ManterCliente();
-            mantercliente.MdiParent = this;
-            panel5.Controls.Add(mantercliente);
+            //mantercliente.MdiParent = this;
+            //panel5.Controls.Add(mantercliente);
             if (Application.OpenForms.OfType<ManterCliente>().Count() > 0)
             {
                 MessageBox.Show("Esta janela já está em execução.", "!",

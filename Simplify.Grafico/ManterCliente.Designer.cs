@@ -1704,12 +1704,10 @@
             this.Controls.Add(this.bt_salvar);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "ManterCliente";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Cliente";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManterCliente_FormClosing);
             this.Load += new System.EventHandler(this.ManterCliente_Load);
             this.Shown += new System.EventHandler(this.ManterCliente_Shown);

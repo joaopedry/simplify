@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -88,20 +88,21 @@
             this.panel1.Controls.Add(this.btSeguradora);
             this.panel1.Controls.Add(this.btDpvatonline);
             this.panel1.Controls.Add(this.txtSimplify);
-            this.panel1.Location = new System.Drawing.Point(1, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1352, 181);
+            this.panel1.Size = new System.Drawing.Size(782, 181);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(48, 15);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(39, 15);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 31);
+            this.pictureBox3.Size = new System.Drawing.Size(21, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             this.ttInfomacoes.SetToolTip(this.pictureBox3, "Informações");
@@ -111,9 +112,10 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(13, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.Size = new System.Drawing.Size(22, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             this.ttConfiguracoes.SetToolTip(this.pictureBox2, "Configurações");
@@ -123,9 +125,9 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1184, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(654, 30);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 134);
+            this.pictureBox1.Size = new System.Drawing.Size(120, 135);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
@@ -135,10 +137,10 @@
             this.btEmail.AutoSize = true;
             this.btEmail.BackColor = System.Drawing.Color.DarkGray;
             this.btEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEmail.Location = new System.Drawing.Point(789, 108);
-            this.btEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEmail.Location = new System.Drawing.Point(350, 138);
+            this.btEmail.Margin = new System.Windows.Forms.Padding(2);
             this.btEmail.Name = "btEmail";
-            this.btEmail.Size = new System.Drawing.Size(111, 35);
+            this.btEmail.Size = new System.Drawing.Size(97, 27);
             this.btEmail.TabIndex = 12;
             this.btEmail.Text = "Email";
             this.btEmail.UseVisualStyleBackColor = false;
@@ -150,10 +152,10 @@
             this.btSeguradora.AutoSize = true;
             this.btSeguradora.BackColor = System.Drawing.Color.DarkGray;
             this.btSeguradora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSeguradora.Location = new System.Drawing.Point(904, 108);
-            this.btSeguradora.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSeguradora.Location = new System.Drawing.Point(451, 139);
+            this.btSeguradora.Margin = new System.Windows.Forms.Padding(2);
             this.btSeguradora.Name = "btSeguradora";
-            this.btSeguradora.Size = new System.Drawing.Size(121, 35);
+            this.btSeguradora.Size = new System.Drawing.Size(97, 27);
             this.btSeguradora.TabIndex = 11;
             this.btSeguradora.Text = "Seguradora ";
             this.btSeguradora.UseVisualStyleBackColor = false;
@@ -164,11 +166,11 @@
             this.btDpvatonline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDpvatonline.AutoSize = true;
             this.btDpvatonline.BackColor = System.Drawing.Color.DarkGray;
-            this.btDpvatonline.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDpvatonline.Location = new System.Drawing.Point(1028, 108);
-            this.btDpvatonline.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btDpvatonline.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDpvatonline.Location = new System.Drawing.Point(552, 138);
+            this.btDpvatonline.Margin = new System.Windows.Forms.Padding(2);
             this.btDpvatonline.Name = "btDpvatonline";
-            this.btDpvatonline.Size = new System.Drawing.Size(136, 35);
+            this.btDpvatonline.Size = new System.Drawing.Size(97, 27);
             this.btDpvatonline.TabIndex = 10;
             this.btDpvatonline.Text = "DPVAT online";
             this.btDpvatonline.UseVisualStyleBackColor = false;
@@ -176,11 +178,11 @@
             // txtSimplify
             // 
             this.txtSimplify.AutoSize = true;
-            this.txtSimplify.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtSimplify.Location = new System.Drawing.Point(31, 97);
+            this.txtSimplify.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtSimplify.Location = new System.Drawing.Point(10, 137);
             this.txtSimplify.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtSimplify.Name = "txtSimplify";
-            this.txtSimplify.Size = new System.Drawing.Size(319, 46);
+            this.txtSimplify.Size = new System.Drawing.Size(221, 31);
             this.txtSimplify.TabIndex = 0;
             this.txtSimplify.Text = "Simplify DPVAT";
             // 
@@ -190,19 +192,19 @@
             this.panel2.Controls.Add(this.btConsultarProcesso);
             this.panel2.Controls.Add(this.btNovoCadastro);
             this.panel2.Location = new System.Drawing.Point(1, 184);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 233);
+            this.panel2.Size = new System.Drawing.Size(231, 157);
             this.panel2.TabIndex = 5;
             // 
             // btConsultarProcesso
             // 
             this.btConsultarProcesso.BackColor = System.Drawing.Color.DarkGray;
-            this.btConsultarProcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConsultarProcesso.Location = new System.Drawing.Point(58, 138);
-            this.btConsultarProcesso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btConsultarProcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btConsultarProcesso.Location = new System.Drawing.Point(10, 86);
+            this.btConsultarProcesso.Margin = new System.Windows.Forms.Padding(2);
             this.btConsultarProcesso.Name = "btConsultarProcesso";
-            this.btConsultarProcesso.Size = new System.Drawing.Size(224, 51);
+            this.btConsultarProcesso.Size = new System.Drawing.Size(203, 55);
             this.btConsultarProcesso.TabIndex = 1;
             this.btConsultarProcesso.Text = "Consultar Cadastro";
             this.btConsultarProcesso.UseVisualStyleBackColor = false;
@@ -211,11 +213,11 @@
             // btNovoCadastro
             // 
             this.btNovoCadastro.BackColor = System.Drawing.Color.DarkGray;
-            this.btNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNovoCadastro.Location = new System.Drawing.Point(58, 50);
-            this.btNovoCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNovoCadastro.Location = new System.Drawing.Point(10, 15);
+            this.btNovoCadastro.Margin = new System.Windows.Forms.Padding(2);
             this.btNovoCadastro.Name = "btNovoCadastro";
-            this.btNovoCadastro.Size = new System.Drawing.Size(224, 51);
+            this.btNovoCadastro.Size = new System.Drawing.Size(203, 59);
             this.btNovoCadastro.TabIndex = 0;
             this.btNovoCadastro.Text = "Novo Cadastro";
             this.btNovoCadastro.UseVisualStyleBackColor = false;
@@ -228,17 +230,17 @@
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
             this.panel3.Controls.Add(this.lbAniversariantes);
             this.panel3.Controls.Add(this.dgAniversariantes);
-            this.panel3.Location = new System.Drawing.Point(1, 420);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(1, 345);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(350, 209);
+            this.panel3.Size = new System.Drawing.Size(231, 206);
             this.panel3.TabIndex = 6;
             // 
             // lbAniversariantes
             // 
             this.lbAniversariantes.AutoSize = true;
             this.lbAniversariantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAniversariantes.Location = new System.Drawing.Point(71, 7);
+            this.lbAniversariantes.Location = new System.Drawing.Point(9, 8);
             this.lbAniversariantes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAniversariantes.Name = "lbAniversariantes";
             this.lbAniversariantes.Size = new System.Drawing.Size(204, 20);
@@ -251,11 +253,11 @@
             this.dgAniversariantes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgAniversariantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAniversariantes.Location = new System.Drawing.Point(2, 34);
-            this.dgAniversariantes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgAniversariantes.Location = new System.Drawing.Point(10, 30);
+            this.dgAniversariantes.Margin = new System.Windows.Forms.Padding(2);
             this.dgAniversariantes.Name = "dgAniversariantes";
             this.dgAniversariantes.RowTemplate.Height = 24;
-            this.dgAniversariantes.Size = new System.Drawing.Size(340, 172);
+            this.dgAniversariantes.Size = new System.Drawing.Size(203, 162);
             this.dgAniversariantes.TabIndex = 0;
             // 
             // panel4
@@ -268,12 +270,12 @@
             this.panel4.Controls.Add(this.lbProcessosEnviados);
             this.panel4.Controls.Add(this.btProcessocompendencia);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.btProcessEnviados);
             this.panel4.Controls.Add(this.btProcessosnegados);
-            this.panel4.Location = new System.Drawing.Point(355, 184);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Controls.Add(this.btProcessEnviados);
+            this.panel4.Location = new System.Drawing.Point(236, 185);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(248, 444);
+            this.panel4.Size = new System.Drawing.Size(225, 366);
             this.panel4.TabIndex = 7;
             // 
             // lbProcessoNegado
@@ -282,7 +284,7 @@
             this.lbProcessoNegado.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoNegado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessoNegado.ForeColor = System.Drawing.Color.Tomato;
-            this.lbProcessoNegado.Location = new System.Drawing.Point(113, 322);
+            this.lbProcessoNegado.Location = new System.Drawing.Point(104, 259);
             this.lbProcessoNegado.Name = "lbProcessoNegado";
             this.lbProcessoNegado.Size = new System.Drawing.Size(25, 25);
             this.lbProcessoNegado.TabIndex = 8;
@@ -294,7 +296,7 @@
             this.lbProcessoPendencia.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoPendencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessoPendencia.ForeColor = System.Drawing.Color.Khaki;
-            this.lbProcessoPendencia.Location = new System.Drawing.Point(111, 223);
+            this.lbProcessoPendencia.Location = new System.Drawing.Point(104, 181);
             this.lbProcessoPendencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProcessoPendencia.Name = "lbProcessoPendencia";
             this.lbProcessoPendencia.Size = new System.Drawing.Size(25, 25);
@@ -307,7 +309,7 @@
             this.lbProcessosEnviados.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessosEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessosEnviados.ForeColor = System.Drawing.Color.SkyBlue;
-            this.lbProcessosEnviados.Location = new System.Drawing.Point(111, 119);
+            this.lbProcessosEnviados.Location = new System.Drawing.Point(104, 98);
             this.lbProcessosEnviados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProcessosEnviados.Name = "lbProcessosEnviados";
             this.lbProcessosEnviados.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
@@ -320,13 +322,13 @@
             // 
             this.btProcessocompendencia.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessocompendencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessocompendencia.Location = new System.Drawing.Point(4, 165);
-            this.btProcessocompendencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btProcessocompendencia.Location = new System.Drawing.Point(4, 144);
+            this.btProcessocompendencia.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessocompendencia.Name = "btProcessocompendencia";
             this.btProcessocompendencia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
-            this.btProcessocompendencia.Size = new System.Drawing.Size(238, 94);
+            this.btProcessocompendencia.Size = new System.Drawing.Size(213, 74);
             this.btProcessocompendencia.TabIndex = 2;
-            this.btProcessocompendencia.Text = "Processos com pendência";
+            this.btProcessocompendencia.Text = "Processos Pendentes";
             this.btProcessocompendencia.UseVisualStyleBackColor = false;
             this.btProcessocompendencia.Click += new System.EventHandler(this.btProcessocompendencia_Click);
             // 
@@ -334,7 +336,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 13);
+            this.label1.Location = new System.Drawing.Point(8, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 22);
@@ -346,10 +348,10 @@
             this.btProcessEnviados.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btProcessEnviados.Location = new System.Drawing.Point(4, 66);
-            this.btProcessEnviados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btProcessEnviados.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessEnviados.Name = "btProcessEnviados";
             this.btProcessEnviados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
-            this.btProcessEnviados.Size = new System.Drawing.Size(238, 94);
+            this.btProcessEnviados.Size = new System.Drawing.Size(213, 74);
             this.btProcessEnviados.TabIndex = 1;
             this.btProcessEnviados.Text = "Processos enviados";
             this.btProcessEnviados.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -360,11 +362,11 @@
             // 
             this.btProcessosnegados.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessosnegados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessosnegados.Location = new System.Drawing.Point(4, 264);
-            this.btProcessosnegados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btProcessosnegados.Location = new System.Drawing.Point(4, 222);
+            this.btProcessosnegados.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessosnegados.Name = "btProcessosnegados";
             this.btProcessosnegados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
-            this.btProcessosnegados.Size = new System.Drawing.Size(238, 94);
+            this.btProcessosnegados.Size = new System.Drawing.Size(213, 72);
             this.btProcessosnegados.TabIndex = 3;
             this.btProcessosnegados.Text = "Processos Negados";
             this.btProcessosnegados.UseVisualStyleBackColor = false;
@@ -381,10 +383,10 @@
             this.panel5.Controls.Add(this.cbGraficoProcessosenviados);
             this.panel5.Controls.Add(this.chart1);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(607, 184);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Location = new System.Drawing.Point(465, 184);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(720, 444);
+            this.panel5.Size = new System.Drawing.Size(318, 366);
             this.panel5.TabIndex = 8;
             // 
             // btRelatorios
@@ -392,8 +394,8 @@
             this.btRelatorios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btRelatorios.BackColor = System.Drawing.Color.DarkGray;
             this.btRelatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRelatorios.Location = new System.Drawing.Point(597, 398);
-            this.btRelatorios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btRelatorios.Location = new System.Drawing.Point(216, 325);
+            this.btRelatorios.Margin = new System.Windows.Forms.Padding(2);
             this.btRelatorios.Name = "btRelatorios";
             this.btRelatorios.Size = new System.Drawing.Size(94, 30);
             this.btRelatorios.TabIndex = 4;
@@ -406,8 +408,8 @@
             this.cbGraficoProcessosnegdos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbGraficoProcessosnegdos.AutoSize = true;
             this.cbGraficoProcessosnegdos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGraficoProcessosnegdos.Location = new System.Drawing.Point(298, 401);
-            this.cbGraficoProcessosnegdos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbGraficoProcessosnegdos.Location = new System.Drawing.Point(9, 336);
+            this.cbGraficoProcessosnegdos.Margin = new System.Windows.Forms.Padding(2);
             this.cbGraficoProcessosnegdos.Name = "cbGraficoProcessosnegdos";
             this.cbGraficoProcessosnegdos.Size = new System.Drawing.Size(136, 19);
             this.cbGraficoProcessosnegdos.TabIndex = 3;
@@ -419,8 +421,8 @@
             this.cbGraficoProcessosenviados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbGraficoProcessosenviados.AutoSize = true;
             this.cbGraficoProcessosenviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGraficoProcessosenviados.Location = new System.Drawing.Point(30, 401);
-            this.cbGraficoProcessosenviados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbGraficoProcessosenviados.Location = new System.Drawing.Point(9, 313);
+            this.cbGraficoProcessosenviados.Margin = new System.Windows.Forms.Padding(2);
             this.cbGraficoProcessosenviados.Name = "cbGraficoProcessosenviados";
             this.cbGraficoProcessosenviados.Size = new System.Drawing.Size(136, 19);
             this.cbGraficoProcessosenviados.TabIndex = 2;
@@ -432,18 +434,18 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(30, 50);
-            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(9, 75);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(682, 328);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(299, 163);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
@@ -451,7 +453,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 13);
+            this.label3.Location = new System.Drawing.Point(8, 24);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 22);
@@ -468,7 +470,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1328, 639);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
