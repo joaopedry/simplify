@@ -460,9 +460,6 @@ namespace Simplify.Grafico
         {
             if (tbBoletimOcorrencia.Text == "")
             {
-                //define as propriedades do controle 
-                //OpenFileDialog
-                //this.ofdBoletimOcorrencia.Multiselect = true;
                 this.ofdBoletimOcorrencia.Title = "Selecionar Fotos";
                 ofdBoletimOcorrencia.InitialDirectory = @"C:\Users";
                 //filtra para exibir somente arquivos de imagens
@@ -475,15 +472,23 @@ namespace Simplify.Grafico
                 ofdBoletimOcorrencia.ShowReadOnly = true;
 
                 DialogResult dr = this.ofdBoletimOcorrencia.ShowDialog();
+
                 if (dr == System.Windows.Forms.DialogResult.OK)
                 {
                     foreach (String arquivo in ofdBoletimOcorrencia.FileNames)
                     {
-                        tbBoletimOcorrencia.Text += arquivo;
                         // cria um PictureBox
                         try
                         {
-                            BoletimMostrar();
+                            PictureBox pb = new PictureBox();
+                            // Le os arquivos selecionados 
+                            tbBoletimOcorrencia.Text = arquivo;
+                            Image Imagem = Image.FromFile(arquivo);
+                            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                            pb.Height = 100;
+                            pb.Width = 100;
+                            pb.Image = Imagem;
+                            flpBoletim.Controls.Add(pb);
                         }
                         catch (SecurityException ex)
                         {
@@ -515,9 +520,6 @@ namespace Simplify.Grafico
         {
             if (tbProntuario.Text == "")
             {
-                //define as propriedades do controle 
-                //OpenFileDialog
-                //this.ofdBoletimOcorrencia.Multiselect = true;
                 this.ofdProntuario.Title = "Selecionar Fotos";
                 ofdProntuario.InitialDirectory = @"C:\Users";
                 //filtra para exibir somente arquivos de imagens
@@ -539,19 +541,12 @@ namespace Simplify.Grafico
                         try
                         {
                             PictureBox pb = new PictureBox();
-                            // Le os arquivos selecionados 
                             tbProntuario.Text = arquivo;
                             Image Imagem = Image.FromFile(arquivo);
                             pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                            //para exibir as imagens em tamanho natural 
-                            //descomente as linhas abaixo e comente as duas seguintes
-                            //pb.Height = loadedImage.Height;
-                            //pb.Width = loadedImage.Width;
                             pb.Height = 100;
                             pb.Width = 100;
-                            //atribui a imagem ao PictureBox - pb
                             pb.Image = Imagem;
-                            //inclui a imagem no containter flowLayoutPanel
                             flpProntuario.Controls.Add(pb);
                         }
                         catch (SecurityException ex)
@@ -584,12 +579,8 @@ namespace Simplify.Grafico
         {
             if (tbComprovanteResidencia.Text == "")
             {
-                //define as propriedades do controle 
-                //OpenFileDialog
-                //this.ofdBoletimOcorrencia.Multiselect = true;
                 this.ofdComprovanteResidencia.Title = "Selecionar Fotos";
                 ofdComprovanteResidencia.InitialDirectory = @"C:\Users";
-                //filtra para exibir somente arquivos de imagens
                 ofdComprovanteResidencia.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
                 ofdComprovanteResidencia.CheckFileExists = true;
                 ofdComprovanteResidencia.CheckPathExists = true;
@@ -612,15 +603,9 @@ namespace Simplify.Grafico
                             tbComprovanteResidencia.Text = arquivo;
                             Image Imagem = Image.FromFile(arquivo);
                             pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                            //para exibir as imagens em tamanho natural 
-                            //descomente as linhas abaixo e comente as duas seguintes
-                            //pb.Height = loadedImage.Height;
-                            //pb.Width = loadedImage.Width;
                             pb.Height = 100;
                             pb.Width = 100;
-                            //atribui a imagem ao PictureBox - pb
                             pb.Image = Imagem;
-                            //inclui a imagem no containter flowLayoutPanel
                             flpComprovanteResidencia.Controls.Add(pb);
                         }
                         catch (SecurityException ex)
@@ -653,9 +638,6 @@ namespace Simplify.Grafico
         {
             if (tbCartaoBanco.Text == "")
             {
-                //define as propriedades do controle 
-                //OpenFileDialog
-                //this.ofdBoletimOcorrencia.Multiselect = true;
                 this.ofdCartaoBanco.Title = "Selecionar Fotos";
                 ofdCartaoBanco.InitialDirectory = @"C:\Users";
                 //filtra para exibir somente arquivos de imagens
@@ -680,15 +662,9 @@ namespace Simplify.Grafico
                             tbCartaoBanco.Text = arquivo;
                             Image Imagem = Image.FromFile(arquivo);
                             pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                            //para exibir as imagens em tamanho natural 
-                            //descomente as linhas abaixo e comente as duas seguintes
-                            //pb.Height = loadedImage.Height;
-                            //pb.Width = loadedImage.Width;
                             pb.Height = 100;
                             pb.Width = 100;
-                            //atribui a imagem ao PictureBox - pb
                             pb.Image = Imagem;
-                            //inclui a imagem no containter flowLayoutPanel
                             flpCartaoBanco.Controls.Add(pb);
                         }
                         catch (SecurityException ex)
@@ -721,9 +697,6 @@ namespace Simplify.Grafico
         {
             if (tbDOCRG.Text == "")
             {
-                //define as propriedades do controle 
-                //OpenFileDialog
-                //this.ofdBoletimOcorrencia.Multiselect = true;
                 this.ofdRG.Title = "Selecionar Fotos";
                 ofdRG.InitialDirectory = @"C:\Users";
                 //filtra para exibir somente arquivos de imagens
@@ -748,15 +721,9 @@ namespace Simplify.Grafico
                             tbDOCRG.Text = arquivo;
                             Image Imagem = Image.FromFile(arquivo);
                             pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                            //para exibir as imagens em tamanho natural 
-                            //descomente as linhas abaixo e comente as duas seguintes
-                            //pb.Height = loadedImage.Height;
-                            //pb.Width = loadedImage.Width;
                             pb.Height = 100;
                             pb.Width = 100;
-                            //atribui a imagem ao PictureBox - pb
                             pb.Image = Imagem;
-                            //inclui a imagem no containter flowLayoutPanel
                             flpRG.Controls.Add(pb);
                         }
                         catch (SecurityException ex)
@@ -789,9 +756,6 @@ namespace Simplify.Grafico
         {
             if (tbDOCCPF.Text == "")
             {
-                //define as propriedades do controle 
-                //OpenFileDialog
-                //this.ofdBoletimOcorrencia.Multiselect = true;
                 this.ofdCPF.Title = "Selecionar Fotos";
                 ofdCPF.InitialDirectory = @"C:\Users";
                 //filtra para exibir somente arquivos de imagens
@@ -816,15 +780,9 @@ namespace Simplify.Grafico
                             tbDOCCPF.Text = arquivo;
                             Image Imagem = Image.FromFile(arquivo);
                             pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                            //para exibir as imagens em tamanho natural 
-                            //descomente as linhas abaixo e comente as duas seguintes
-                            //pb.Height = loadedImage.Height;
-                            //pb.Width = loadedImage.Width;
                             pb.Height = 100;
                             pb.Width = 100;
-                            //atribui a imagem ao PictureBox - pb
                             pb.Image = Imagem;
-                            //inclui a imagem no containter flowLayoutPanel
                             flpCPF.Controls.Add(pb);
                         }
                         catch (SecurityException ex)
@@ -858,12 +816,8 @@ namespace Simplify.Grafico
         {
             if (tbDOCCNH.Text == "")
             {
-                //define as propriedades do controle 
-                //OpenFileDialog
-                //this.ofdBoletimOcorrencia.Multiselect = true;
                 this.ofdCNH.Title = "Selecionar Fotos";
                 ofdCNH.InitialDirectory = @"C:\Users";
-                //filtra para exibir somente arquivos de imagens
                 ofdCNH.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
                 ofdCNH.CheckFileExists = true;
                 ofdCNH.CheckPathExists = true;
@@ -881,19 +835,12 @@ namespace Simplify.Grafico
                         try
                         {
                             PictureBox pb = new PictureBox();
-                            // Le os arquivos selecionados 
                             tbDOCCNH.Text = arquivo;
                             Image Imagem = Image.FromFile(arquivo);
                             pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                            //para exibir as imagens em tamanho natural 
-                            //descomente as linhas abaixo e comente as duas seguintes
-                            //pb.Height = loadedImage.Height;
-                            //pb.Width = loadedImage.Width;
                             pb.Height = 100;
                             pb.Width = 100;
-                            //atribui a imagem ao PictureBox - pb
                             pb.Image = Imagem;
-                            //inclui a imagem no containter flowLayoutPanel
                             flpCNH.Controls.Add(pb);
                         }
                         catch (SecurityException ex)
@@ -926,12 +873,8 @@ namespace Simplify.Grafico
         {
             if (tbDOCVeiculo.Text == "")
             {
-                //define as propriedades do controle 
-                //OpenFileDialog
-                //this.ofdBoletimOcorrencia.Multiselect = true;
                 this.ofdDOCVeiculo.Title = "Selecionar Fotos";
                 ofdDOCVeiculo.InitialDirectory = @"C:\Users";
-                //filtra para exibir somente arquivos de imagens
                 ofdDOCVeiculo.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
                 ofdDOCVeiculo.CheckFileExists = true;
                 ofdDOCVeiculo.CheckPathExists = true;
@@ -949,19 +892,12 @@ namespace Simplify.Grafico
                         try
                         {
                             PictureBox pb = new PictureBox();
-                            // Le os arquivos selecionados 
                             tbDOCVeiculo.Text = arquivo;
                             Image Imagem = Image.FromFile(arquivo);
                             pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                            //para exibir as imagens em tamanho natural 
-                            //descomente as linhas abaixo e comente as duas seguintes
-                            //pb.Height = loadedImage.Height;
-                            //pb.Width = loadedImage.Width;
                             pb.Height = 100;
                             pb.Width = 100;
-                            //atribui a imagem ao PictureBox - pb
                             pb.Image = Imagem;
-                            //inclui a imagem no containter flowLayoutPanel
                             flpDOCVeiculo.Controls.Add(pb);
                         }
                         catch (SecurityException ex)
@@ -992,146 +928,122 @@ namespace Simplify.Grafico
 
         public void BoletimMostrar()
         {
-            PictureBox pb = new PictureBox();
-            // Le os arquivos selecionados 
-            Image Imagem = Image.FromFile(tbBoletimOcorrencia.Text);
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            //para exibir as imagens em tamanho natural 
-            //descomente as linhas abaixo e comente as duas seguintes
-            //pb.Height = loadedImage.Height;
-            //pb.Width = loadedImage.Width;
-            pb.Height = 100;
-            pb.Width = 100;
-            //atribui a imagem ao PictureBox - pb
-            pb.Image = Imagem;
-            //inclui a imagem no containter flowLayoutPanel
-            flpBoletim.Controls.Add(pb);
+            if (ClienteSelecionado.caminhoBoletim_anexos != "")
+            {
+                PictureBox pb = new PictureBox();
+                // Le os arquivos selecionados 
+                Image Imagem = Image.FromFile(tbBoletimOcorrencia.Text);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Height = 100;
+                pb.Width = 100;
+                pb.Image = Imagem;
+                flpBoletim.Controls.Add(pb);
+            }
         }
 
         public void ProntuarioMostrar()
         {
-            PictureBox pb = new PictureBox();
-            // Le os arquivos selecionados 
-            Image Imagem = Image.FromFile(tbProntuario.Text);
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            //para exibir as imagens em tamanho natural 
-            //descomente as linhas abaixo e comente as duas seguintes
-            //pb.Height = loadedImage.Height;
-            //pb.Width = loadedImage.Width;
-            pb.Height = 100;
-            pb.Width = 100;
-            //atribui a imagem ao PictureBox - pb
-            pb.Image = Imagem;
-            //inclui a imagem no containter flowLayoutPanel
-            flpProntuario.Controls.Add(pb);
+            if (ClienteSelecionado.caminhoProntuario_anexos != "")
+            {
+                PictureBox pb = new PictureBox();
+                // Le os arquivos selecionados 
+                Image Imagem = Image.FromFile(tbProntuario.Text);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Height = 100;
+                pb.Width = 100;
+                pb.Image = Imagem;
+                flpProntuario.Controls.Add(pb);
+            }
         }
 
         public void ComprovanteMostrar()
         {
-            PictureBox pb = new PictureBox();
-            // Le os arquivos selecionados 
-            Image Imagem = Image.FromFile(tbComprovanteResidencia.Text);
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            //para exibir as imagens em tamanho natural 
-            //descomente as linhas abaixo e comente as duas seguintes
-            //pb.Height = loadedImage.Height;
-            //pb.Width = loadedImage.Width;
-            pb.Height = 100;
-            pb.Width = 100;
-            //atribui a imagem ao PictureBox - pb
-            pb.Image = Imagem;
-            //inclui a imagem no containter flowLayoutPanel
-            flpComprovanteResidencia.Controls.Add(pb);
+            if (ClienteSelecionado.caminhoComprovanteResidencia_anexos != "")
+            {
+                PictureBox pb = new PictureBox();
+                // Le os arquivos selecionados 
+                Image Imagem = Image.FromFile(tbComprovanteResidencia.Text);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Height = 100;
+                pb.Width = 100;
+                pb.Image = Imagem;
+                flpComprovanteResidencia.Controls.Add(pb);
+            }
         }
 
         public void CartaoMostrar()
         {
-            PictureBox pb = new PictureBox();
-            // Le os arquivos selecionados 
-            Image Imagem = Image.FromFile(tbCartaoBanco.Text);
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            //para exibir as imagens em tamanho natural 
-            //descomente as linhas abaixo e comente as duas seguintes
-            //pb.Height = loadedImage.Height;
-            //pb.Width = loadedImage.Width;
-            pb.Height = 100;
-            pb.Width = 100;
-            //atribui a imagem ao PictureBox - pb
-            pb.Image = Imagem;
-            //inclui a imagem no containter flowLayoutPanel
-            flpCartaoBanco.Controls.Add(pb);
+            if (ClienteSelecionado.caminhoCartaoBanco_anexos != "")
+            {
+                PictureBox pb = new PictureBox();
+                // Le os arquivos selecionados 
+                Image Imagem = Image.FromFile(tbCartaoBanco.Text);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Height = 100;
+                pb.Width = 100;
+                pb.Image = Imagem;
+                flpCartaoBanco.Controls.Add(pb);
+            }
         }
 
         public void RGMostrar()
         {
-            PictureBox pb = new PictureBox();
-            // Le os arquivos selecionados 
-            Image Imagem = Image.FromFile(tbDOCRG.Text);
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            //para exibir as imagens em tamanho natural 
-            //descomente as linhas abaixo e comente as duas seguintes
-            //pb.Height = loadedImage.Height;
-            //pb.Width = loadedImage.Width;
-            pb.Height = 100;
-            pb.Width = 100;
-            //atribui a imagem ao PictureBox - pb
-            pb.Image = Imagem;
-            //inclui a imagem no containter flowLayoutPanel
-            flpRG.Controls.Add(pb);
+            if (ClienteSelecionado.caminhoRG_anexos != "")
+            {
+                PictureBox pb = new PictureBox();
+                // Le os arquivos selecionados 
+                Image Imagem = Image.FromFile(tbDOCRG.Text);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Height = 100;
+                pb.Width = 100;
+                pb.Image = Imagem;
+                flpRG.Controls.Add(pb);
+            }
         }
 
         public void CPFMostrar()
         {
-            PictureBox pb = new PictureBox();
-            // Le os arquivos selecionados 
-            Image Imagem = Image.FromFile(tbDOCCPF.Text);
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            //para exibir as imagens em tamanho natural 
-            //descomente as linhas abaixo e comente as duas seguintes
-            //pb.Height = loadedImage.Height;
-            //pb.Width = loadedImage.Width;
-            pb.Height = 100;
-            pb.Width = 100;
-            //atribui a imagem ao PictureBox - pb
-            pb.Image = Imagem;
-            //inclui a imagem no containter flowLayoutPanel
-            flpCPF.Controls.Add(pb);
+            if (ClienteSelecionado.caminhoCPF_anexos != "")
+            {
+                PictureBox pb = new PictureBox();
+                // Le os arquivos selecionados 
+                Image Imagem = Image.FromFile(tbDOCCPF.Text);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Height = 100;
+                pb.Width = 100;
+                pb.Image = Imagem;
+                flpCPF.Controls.Add(pb);
+            }
         }
 
         public void CNHMostrar()
         {
-            PictureBox pb = new PictureBox();
-            // Le os arquivos selecionados 
-            Image Imagem = Image.FromFile(tbDOCCNH.Text);
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            //para exibir as imagens em tamanho natural 
-            //descomente as linhas abaixo e comente as duas seguintes
-            //pb.Height = loadedImage.Height;
-            //pb.Width = loadedImage.Width;
-            pb.Height = 100;
-            pb.Width = 100;
-            //atribui a imagem ao PictureBox - pb
-            pb.Image = Imagem;
-            //inclui a imagem no containter flowLayoutPanel
-            flpCNH.Controls.Add(pb);
+            if (ClienteSelecionado.caminhoCNH_anexos != "")
+            {
+                PictureBox pb = new PictureBox();
+                // Le os arquivos selecionados 
+                Image Imagem = Image.FromFile(tbDOCCNH.Text);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Height = 100;
+                pb.Width = 100;
+                pb.Image = Imagem;
+                flpCNH.Controls.Add(pb);
+            }
         }
 
         public void DOCVeiculoMostrar()
         {
-            PictureBox pb = new PictureBox();
-            // Le os arquivos selecionados 
-            Image Imagem = Image.FromFile(tbDOCVeiculo.Text);
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            //para exibir as imagens em tamanho natural 
-            //descomente as linhas abaixo e comente as duas seguintes
-            //pb.Height = loadedImage.Height;
-            //pb.Width = loadedImage.Width;
-            pb.Height = 100;
-            pb.Width = 100;
-            //atribui a imagem ao PictureBox - pb
-            pb.Image = Imagem;
-            //inclui a imagem no containter flowLayoutPanel
-            flpDOCVeiculo.Controls.Add(pb);
+            if (ClienteSelecionado.caminhoDOCVeiculo_anexos != "")
+            {
+                PictureBox pb = new PictureBox();
+                // Le os arquivos selecionados 
+                Image Imagem = Image.FromFile(tbDOCVeiculo.Text);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Height = 100;
+                pb.Width = 100;
+                pb.Image = Imagem;
+                flpDOCVeiculo.Controls.Add(pb);
+            }
         }
 
         private void openFileDialog2_FileOk(object sender, CancelEventArgs e)

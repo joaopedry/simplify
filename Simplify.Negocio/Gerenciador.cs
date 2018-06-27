@@ -193,6 +193,13 @@ namespace Simplify.Negocio
             clienteBanco.Status = clienteAlterado.Status;
             //caminho arquivo
             clienteBanco.caminhoBoletim_anexos = clienteAlterado.caminhoBoletim_anexos;
+            clienteBanco.caminhoProntuario_anexos = clienteAlterado.caminhoProntuario_anexos;
+            clienteBanco.caminhoComprovanteResidencia_anexos = clienteAlterado.caminhoComprovanteResidencia_anexos;
+            clienteBanco.caminhoCartaoBanco_anexos = clienteAlterado.caminhoCartaoBanco_anexos;
+            clienteBanco.caminhoRG_anexos = clienteAlterado.caminhoRG_anexos;
+            clienteBanco.caminhoCPF_anexos = clienteAlterado.caminhoCPF_anexos;
+            clienteBanco.caminhoCNH_anexos = clienteAlterado.caminhoCNH_anexos;
+            clienteBanco.caminhoDOCVeiculo_anexos = clienteAlterado.caminhoDOCVeiculo_anexos;
             this.banco.SaveChanges();
 
             return validacao;
