@@ -173,6 +173,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbStatus = new System.Windows.Forms.GroupBox();
+            this.rbProcessoAprovado = new System.Windows.Forms.RadioButton();
+            this.rbProcessoNegado = new System.Windows.Forms.RadioButton();
             this.ofdBoletimOcorrencia = new System.Windows.Forms.OpenFileDialog();
             this.ofdProntuario = new System.Windows.Forms.OpenFileDialog();
             this.ofdComprovanteResidencia = new System.Windows.Forms.OpenFileDialog();
@@ -181,8 +183,6 @@
             this.ofdCPF = new System.Windows.Forms.OpenFileDialog();
             this.ofdCNH = new System.Windows.Forms.OpenFileDialog();
             this.ofdDOCVeiculo = new System.Windows.Forms.OpenFileDialog();
-            this.rbProcessoNegado = new System.Windows.Forms.RadioButton();
-            this.rbProcessoAprovado = new System.Windows.Forms.RadioButton();
             this.ctCadastro.SuspendLayout();
             this.tabcadastrocliente.SuspendLayout();
             this.abaEndereco.SuspendLayout();
@@ -205,6 +205,7 @@
             this.tbNome.Size = new System.Drawing.Size(200, 20);
             this.tbNome.TabIndex = 0;
             this.tbNome.TextChanged += new System.EventHandler(this.tbNome_TextChanged);
+            this.tbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbindicacao
             // 
@@ -214,6 +215,7 @@
             this.tbindicacao.Size = new System.Drawing.Size(200, 20);
             this.tbindicacao.TabIndex = 1;
             this.tbindicacao.TextChanged += new System.EventHandler(this.tbindicacao_TextChanged);
+            this.tbindicacao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbNascimento
             // 
@@ -243,6 +245,7 @@
             this.tbProfissao.Name = "tbProfissao";
             this.tbProfissao.Size = new System.Drawing.Size(200, 20);
             this.tbProfissao.TabIndex = 5;
+            this.tbProfissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbCpf
             // 
@@ -262,6 +265,7 @@
             this.tbEstadoCivil.Name = "tbEstadoCivil";
             this.tbEstadoCivil.Size = new System.Drawing.Size(200, 20);
             this.tbEstadoCivil.TabIndex = 7;
+            this.tbEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbSexo
             // 
@@ -271,6 +275,7 @@
             this.tbSexo.Size = new System.Drawing.Size(200, 20);
             this.tbSexo.TabIndex = 6;
             this.tbSexo.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.tbSexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // Nome
             // 
@@ -1675,13 +1680,17 @@
             this.gbStatus.TabIndex = 18;
             this.gbStatus.TabStop = false;
             // 
-            // ofdBoletimOcorrencia
+            // rbProcessoAprovado
             // 
-            this.ofdBoletimOcorrencia.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdBoletimOcorrencia_FileOk);
-            // 
-            // ofdProntuario
-            // 
-            this.ofdProntuario.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
+            this.rbProcessoAprovado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.rbProcessoAprovado.AutoSize = true;
+            this.rbProcessoAprovado.Location = new System.Drawing.Point(239, 7);
+            this.rbProcessoAprovado.Name = "rbProcessoAprovado";
+            this.rbProcessoAprovado.Size = new System.Drawing.Size(71, 17);
+            this.rbProcessoAprovado.TabIndex = 12;
+            this.rbProcessoAprovado.TabStop = true;
+            this.rbProcessoAprovado.Text = "Aprovado";
+            this.rbProcessoAprovado.UseVisualStyleBackColor = true;
             // 
             // rbProcessoNegado
             // 
@@ -1695,17 +1704,13 @@
             this.rbProcessoNegado.Text = "Negado";
             this.rbProcessoNegado.UseVisualStyleBackColor = true;
             // 
-            // rbProcessoAprovado
+            // ofdBoletimOcorrencia
             // 
-            this.rbProcessoAprovado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rbProcessoAprovado.AutoSize = true;
-            this.rbProcessoAprovado.Location = new System.Drawing.Point(239, 7);
-            this.rbProcessoAprovado.Name = "rbProcessoAprovado";
-            this.rbProcessoAprovado.Size = new System.Drawing.Size(71, 17);
-            this.rbProcessoAprovado.TabIndex = 12;
-            this.rbProcessoAprovado.TabStop = true;
-            this.rbProcessoAprovado.Text = "Aprovado";
-            this.rbProcessoAprovado.UseVisualStyleBackColor = true;
+            this.ofdBoletimOcorrencia.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdBoletimOcorrencia_FileOk);
+            // 
+            // ofdProntuario
+            // 
+            this.ofdProntuario.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
             // ManterCliente
             // 

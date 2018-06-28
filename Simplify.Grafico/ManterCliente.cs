@@ -377,7 +377,14 @@ namespace Simplify.Grafico
                 e.Handled = true;
             }
             //89227-064
+        }
+        private void tbValidacao_Letras(object sender, KeyPressEventArgs e)
+        {
 
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
         }
 
         private void ManterCliente_Shown(object sender, EventArgs e)

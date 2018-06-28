@@ -388,12 +388,7 @@ namespace Simplify.Grafico
             int Negados = int.Parse(lbProcessoNegado.Text);
             int Aprovados = int.Parse(lbProcessoAprovado.Text);
             int Total = (Enviados + Pendentes + Negados + Aprovados);
-            
 
-            int Enviados = GraficoEnviado;
-            int Pendentes = GraficoPendente;
-            int Negados = GraficoNegado;
-            int Aprovados = GraficoAprovado;
             series.Points.Clear();
             series.Points.Add(Enviados);
             series.Points.Add(Pendentes);
