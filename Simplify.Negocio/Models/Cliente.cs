@@ -58,6 +58,8 @@ namespace Simplify.Negocio.Models
         public String Observacao_observacao { get; set; }
         //status
         public String Status { get; set; }
+        //data criação
+        public DateTime DTCriacao { get; set; }
         //Status Anexos
         public String BoletimOcorrencia_anexos { get; set; }
         public String Prontuario_anexos { get; set; }

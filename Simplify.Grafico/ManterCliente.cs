@@ -129,6 +129,8 @@ namespace Simplify.Grafico
             cliente.Observacao_observacao = rtbAbaObservacoes.Text;
             //status
             cliente.Status = gbStatus.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
+            //Data Criação
+            cliente.DTCriacao = DateTime.Now;
             //caminho
             cliente.caminhoBoletim_anexos = tbBoletimOcorrencia.Text;
             cliente.caminhoProntuario_anexos = tbProntuario.Text;
@@ -241,7 +243,7 @@ namespace Simplify.Grafico
             {
                 this.Close();
             }
-
+           // this.Refresh();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -420,8 +422,28 @@ namespace Simplify.Grafico
                 this.tbDataocorrencia.Text = ClienteSelecionado.Data_ocorrencia;
                 this.tbLocalocorrencia.Text = ClienteSelecionado.Local_ocorrencia;
                 this.tbVeiculosacidente.Text = ClienteSelecionado.Veiculo_ocorrencia;
-                this.gbTipoAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.Tipo_ocorrencia;
-                this.gbINSSAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.INSS_ocorrencia;
+                //this.gbTipoAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.Tipo_ocorrencia;
+                if (rbTransito.Text == ClienteSelecionado.Tipo_ocorrencia)
+                {
+                    this.rbTransito.Checked = true;
+                }
+                else if (rbTrabalho.Text == ClienteSelecionado.Tipo_ocorrencia)
+                {
+                    this.rbTrabalho.Checked = true;
+                }
+                else
+                {
+                    this.rbPessoal.Checked = true;
+                }
+                //this.gbINSSAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.INSS_ocorrencia;
+                if (rbINSSsim.Text == ClienteSelecionado.INSS_ocorrencia)
+                {
+                    this.rbINSSsim.Checked = true;
+                }
+                else
+                {
+                    this.rbINSSnao.Checked = true;
+                }
                 this.tbHorarioacidente.Text = ClienteSelecionado.Horario_ocorrencia;
                 this.tbLesoesacidente.Text = ClienteSelecionado.Lesao_ocorrencia;
                 this.tbSocorrista.Text = ClienteSelecionado.Socorrista_ocorrencia;
@@ -431,6 +453,21 @@ namespace Simplify.Grafico
                 this.rtbAbaObservacoes.Text = ClienteSelecionado.Observacao_observacao;
                 //status
                 this.gbStatus.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.Status;
+                if(rbProcessoEnviado.Text == ClienteSelecionado.Status)
+                {
+                    this.rbProcessoEnviado.Checked = true;
+                }else if (rbProcessoPendencia.Text == ClienteSelecionado.Status)
+                {
+                    this.rbProcessoPendencia.Checked = true;
+                }
+                else if (rbProcessoNegado.Text == ClienteSelecionado.Status)
+                {
+                    this.rbProcessoNegado.Checked = true;
+                }
+                else
+                {
+                    this.rbProcessoAprovado.Checked = true;
+                }
                 //Caminho arquivo
                 this.tbBoletimOcorrencia.Text       = ClienteSelecionado.caminhoBoletim_anexos;
                 this.tbProntuario.Text              = ClienteSelecionado.caminhoProntuario_anexos;
@@ -1100,6 +1137,11 @@ namespace Simplify.Grafico
         }
 
         private void ofdBoletimOcorrencia_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void rbProcessoPendencia_CheckedChanged(object sender, EventArgs e)
         {
 
         }

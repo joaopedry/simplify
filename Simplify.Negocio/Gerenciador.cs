@@ -408,6 +408,37 @@ namespace Simplify.Negocio
             return this.banco.Clientes.Where(c => c.Status == StatusRecebido).ToList();
         }
 
+        public List<Cliente> CountEnviado(string CountEnviado)
+        {
+            DateTime newDate = DateTime.Now.AddDays(-30);
+            return this.banco.Clientes.Where(c => c.Status == "Enviado")
+                                      .Where(d => d.DTCriacao >= newDate)
+                                      .ToList();
+        }
+
+        public List<Cliente> CountPendente(string CountEnviado)
+        {
+            DateTime newDate = DateTime.Now.AddDays(-30);
+            return this.banco.Clientes.Where(c => c.Status == "Pendente")
+                                      .Where(d => d.DTCriacao >= newDate)
+                                      .ToList();
+        }
+
+        public List<Cliente> CountNegado(string CountEnviado)
+        {
+            DateTime newDate = DateTime.Now.AddDays(-30);
+            return this.banco.Clientes.Where(c => c.Status == "Negado")
+                                      .Where(d => d.DTCriacao >= newDate)
+                                      .ToList();
+        }
+
+        public List<Cliente> CountAprovado(string CountEnviado)
+        {
+            DateTime newDate = DateTime.Now.AddDays(-30);
+            return this.banco.Clientes.Where(c => c.Status == "Aprovado")
+                                      .Where(d => d.DTCriacao >= newDate)
+                                      .ToList();
+        }
         public List<Cliente> TodosOsClientes()
         {
             return this.banco.Clientes.ToList();

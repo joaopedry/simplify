@@ -48,13 +48,15 @@
             this.lbAniversariantes = new System.Windows.Forms.Label();
             this.dgAniversariantes = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbProcessoAprovado = new System.Windows.Forms.Label();
+            this.btProcessosaprovados = new System.Windows.Forms.Button();
             this.lbProcessoNegado = new System.Windows.Forms.Label();
             this.lbProcessoPendencia = new System.Windows.Forms.Label();
             this.lbProcessosEnviados = new System.Windows.Forms.Label();
             this.btProcessocompendencia = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btProcessEnviados = new System.Windows.Forms.Button();
             this.btProcessosnegados = new System.Windows.Forms.Button();
+            this.btProcessEnviados = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btRelatorios = new System.Windows.Forms.Button();
             this.cbGraficoProcessosnegdos = new System.Windows.Forms.CheckBox();
@@ -265,6 +267,8 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.lbProcessoAprovado);
+            this.panel4.Controls.Add(this.btProcessosaprovados);
             this.panel4.Controls.Add(this.lbProcessoNegado);
             this.panel4.Controls.Add(this.lbProcessoPendencia);
             this.panel4.Controls.Add(this.lbProcessosEnviados);
@@ -278,13 +282,39 @@
             this.panel4.Size = new System.Drawing.Size(225, 366);
             this.panel4.TabIndex = 7;
             // 
+            // lbProcessoAprovado
+            // 
+            this.lbProcessoAprovado.AutoSize = true;
+            this.lbProcessoAprovado.BackColor = System.Drawing.Color.DarkGray;
+            this.lbProcessoAprovado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.lbProcessoAprovado.ForeColor = System.Drawing.Color.Olive;
+            this.lbProcessoAprovado.Location = new System.Drawing.Point(104, 324);
+            this.lbProcessoAprovado.Name = "lbProcessoAprovado";
+            this.lbProcessoAprovado.Size = new System.Drawing.Size(25, 25);
+            this.lbProcessoAprovado.TabIndex = 10;
+            this.lbProcessoAprovado.Text = "0";
+            // 
+            // btProcessosaprovados
+            // 
+            this.btProcessosaprovados.BackColor = System.Drawing.Color.DarkGray;
+            this.btProcessosaprovados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btProcessosaprovados.Location = new System.Drawing.Point(4, 287);
+            this.btProcessosaprovados.Margin = new System.Windows.Forms.Padding(2);
+            this.btProcessosaprovados.Name = "btProcessosaprovados";
+            this.btProcessosaprovados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
+            this.btProcessosaprovados.Size = new System.Drawing.Size(213, 72);
+            this.btProcessosaprovados.TabIndex = 9;
+            this.btProcessosaprovados.Text = "Processos Aprovados";
+            this.btProcessosaprovados.UseVisualStyleBackColor = false;
+            this.btProcessosaprovados.Click += new System.EventHandler(this.btProcessosaprovados_Click);
+            // 
             // lbProcessoNegado
             // 
             this.lbProcessoNegado.AutoSize = true;
             this.lbProcessoNegado.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoNegado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessoNegado.ForeColor = System.Drawing.Color.Tomato;
-            this.lbProcessoNegado.Location = new System.Drawing.Point(104, 259);
+            this.lbProcessoNegado.Location = new System.Drawing.Point(104, 248);
             this.lbProcessoNegado.Name = "lbProcessoNegado";
             this.lbProcessoNegado.Size = new System.Drawing.Size(25, 25);
             this.lbProcessoNegado.TabIndex = 8;
@@ -296,7 +326,7 @@
             this.lbProcessoPendencia.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoPendencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessoPendencia.ForeColor = System.Drawing.Color.Khaki;
-            this.lbProcessoPendencia.Location = new System.Drawing.Point(104, 181);
+            this.lbProcessoPendencia.Location = new System.Drawing.Point(104, 170);
             this.lbProcessoPendencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProcessoPendencia.Name = "lbProcessoPendencia";
             this.lbProcessoPendencia.Size = new System.Drawing.Size(25, 25);
@@ -309,7 +339,7 @@
             this.lbProcessosEnviados.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessosEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.lbProcessosEnviados.ForeColor = System.Drawing.Color.SkyBlue;
-            this.lbProcessosEnviados.Location = new System.Drawing.Point(104, 98);
+            this.lbProcessosEnviados.Location = new System.Drawing.Point(104, 87);
             this.lbProcessosEnviados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProcessosEnviados.Name = "lbProcessosEnviados";
             this.lbProcessosEnviados.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
@@ -322,7 +352,7 @@
             // 
             this.btProcessocompendencia.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessocompendencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessocompendencia.Location = new System.Drawing.Point(4, 144);
+            this.btProcessocompendencia.Location = new System.Drawing.Point(4, 133);
             this.btProcessocompendencia.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessocompendencia.Name = "btProcessocompendencia";
             this.btProcessocompendencia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
@@ -343,26 +373,11 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Informativo";
             // 
-            // btProcessEnviados
-            // 
-            this.btProcessEnviados.BackColor = System.Drawing.Color.DarkGray;
-            this.btProcessEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessEnviados.Location = new System.Drawing.Point(4, 66);
-            this.btProcessEnviados.Margin = new System.Windows.Forms.Padding(2);
-            this.btProcessEnviados.Name = "btProcessEnviados";
-            this.btProcessEnviados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
-            this.btProcessEnviados.Size = new System.Drawing.Size(213, 74);
-            this.btProcessEnviados.TabIndex = 1;
-            this.btProcessEnviados.Text = "Processos enviados";
-            this.btProcessEnviados.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btProcessEnviados.UseVisualStyleBackColor = false;
-            this.btProcessEnviados.Click += new System.EventHandler(this.btProcessEnviados_Click);
-            // 
             // btProcessosnegados
             // 
             this.btProcessosnegados.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessosnegados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessosnegados.Location = new System.Drawing.Point(4, 222);
+            this.btProcessosnegados.Location = new System.Drawing.Point(4, 211);
             this.btProcessosnegados.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessosnegados.Name = "btProcessosnegados";
             this.btProcessosnegados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
@@ -371,6 +386,21 @@
             this.btProcessosnegados.Text = "Processos Negados";
             this.btProcessosnegados.UseVisualStyleBackColor = false;
             this.btProcessosnegados.Click += new System.EventHandler(this.btProcessosnegados_Click);
+            // 
+            // btProcessEnviados
+            // 
+            this.btProcessEnviados.BackColor = System.Drawing.Color.DarkGray;
+            this.btProcessEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btProcessEnviados.Location = new System.Drawing.Point(4, 55);
+            this.btProcessEnviados.Margin = new System.Windows.Forms.Padding(2);
+            this.btProcessEnviados.Name = "btProcessEnviados";
+            this.btProcessEnviados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
+            this.btProcessEnviados.Size = new System.Drawing.Size(213, 74);
+            this.btProcessEnviados.TabIndex = 1;
+            this.btProcessEnviados.Text = "Processos Enviados";
+            this.btProcessEnviados.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btProcessEnviados.UseVisualStyleBackColor = false;
+            this.btProcessEnviados.Click += new System.EventHandler(this.btProcessEnviados_Click);
             // 
             // panel5
             // 
@@ -448,6 +478,7 @@
             this.chart1.Size = new System.Drawing.Size(299, 163);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // label3
             // 
@@ -479,7 +510,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "TelaPrincipal";
-            this.Text = "Simplify DPVAT";
+            this.Text = "0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.TelaPrincipal_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaPrincipal_FormClosing);
@@ -533,6 +564,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ToolTip ttInfomacoes;
         private System.Windows.Forms.Button btConsultarProcesso;
+        private System.Windows.Forms.Label lbProcessoAprovado;
+        private System.Windows.Forms.Button btProcessosaprovados;
     }
 }
 

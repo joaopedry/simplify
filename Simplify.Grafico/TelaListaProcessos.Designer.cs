@@ -624,6 +624,7 @@
             this.dgTodosOsClientes.Name = "dgTodosOsClientes";
             this.dgTodosOsClientes.Size = new System.Drawing.Size(311, 480);
             this.dgTodosOsClientes.TabIndex = 30;
+            this.dgTodosOsClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTodosOsClientes_CellContentClick);
             // 
             // Nome_dados
             // 
@@ -671,6 +672,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TelaListaProcessos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.TelaListaProcessos_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaListaProcessos_FormClosed);
             this.Load += new System.EventHandler(this.TelaListaProcessos_Load);
             this.Shown += new System.EventHandler(this.TelaListaProcessos_Shown);

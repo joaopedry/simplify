@@ -165,5 +165,15 @@ namespace Simplify.Grafico
         {
             e.Graphics.DrawImage(memoryImage, 0, 0);
         }
+
+        private void dgTodosOsClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TelaListaProcessos_Activated(object sender, EventArgs e)
+        {
+            CarregaDatagrid();
+        }
     }
 }
