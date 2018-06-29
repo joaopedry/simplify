@@ -236,7 +236,6 @@
             this.tbRG.Name = "tbRG";
             this.tbRG.Size = new System.Drawing.Size(200, 20);
             this.tbRG.TabIndex = 3;
-            this.tbRG.TextChanged += new System.EventHandler(this.tbRG_TextChanged);
             this.tbRG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRG_KeyPress);
             // 
             // tbProfissao
@@ -256,6 +255,7 @@
             this.tbCpf.Name = "tbCpf";
             this.tbCpf.Size = new System.Drawing.Size(200, 20);
             this.tbCpf.TabIndex = 4;
+            this.tbCpf.ReadOnlyChanged += new System.EventHandler(this.tbCpf_ReadOnlyChanged);
             this.tbCpf.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             this.tbCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCpf_KeyPress);
             // 

@@ -35,6 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btImprimirFolhaDeRosto = new System.Windows.Forms.Button();
             this.dgTodosOsClientes = new System.Windows.Forms.DataGridView();
+            this.Nome_dados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF_dados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusProcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbRua = new System.Windows.Forms.Label();
@@ -82,9 +85,6 @@
             this.lbTipo = new System.Windows.Forms.Label();
             this.lbLocal = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Nome_dados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF_dados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusProcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTodosOsClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -93,10 +93,12 @@
             // tbBusca
             // 
             this.tbBusca.Location = new System.Drawing.Point(12, 51);
+            this.tbBusca.MaxLength = 14;
             this.tbBusca.Name = "tbBusca";
             this.tbBusca.Size = new System.Drawing.Size(144, 20);
             this.tbBusca.TabIndex = 1;
             this.tbBusca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbBusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbBusca_KeyPress);
             this.tbBusca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbBusca_KeyUp);
             // 
             // btBuscarProcesso
@@ -154,6 +156,27 @@
             this.dgTodosOsClientes.Size = new System.Drawing.Size(278, 482);
             this.dgTodosOsClientes.TabIndex = 30;
             this.dgTodosOsClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTodosOsClientes_CellContentClick);
+            // 
+            // Nome_dados
+            // 
+            this.Nome_dados.DataPropertyName = "Nome_dados";
+            this.Nome_dados.HeaderText = "Nome";
+            this.Nome_dados.Name = "Nome_dados";
+            this.Nome_dados.ReadOnly = true;
+            // 
+            // CPF_dados
+            // 
+            this.CPF_dados.DataPropertyName = "CPF_dados";
+            this.CPF_dados.HeaderText = "CPF";
+            this.CPF_dados.Name = "CPF_dados";
+            this.CPF_dados.ReadOnly = true;
+            // 
+            // StatusProcesso
+            // 
+            this.StatusProcesso.DataPropertyName = "Status";
+            this.StatusProcesso.HeaderText = "Status do Processo";
+            this.StatusProcesso.Name = "StatusProcesso";
+            this.StatusProcesso.ReadOnly = true;
             // 
             // label8
             // 
@@ -625,27 +648,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(705, 659);
             this.panel1.TabIndex = 29;
-            // 
-            // Nome_dados
-            // 
-            this.Nome_dados.DataPropertyName = "Nome_dados";
-            this.Nome_dados.HeaderText = "Nome";
-            this.Nome_dados.Name = "Nome_dados";
-            this.Nome_dados.ReadOnly = true;
-            // 
-            // CPF_dados
-            // 
-            this.CPF_dados.DataPropertyName = "CPF_dados";
-            this.CPF_dados.HeaderText = "CPF";
-            this.CPF_dados.Name = "CPF_dados";
-            this.CPF_dados.ReadOnly = true;
-            // 
-            // StatusProcesso
-            // 
-            this.StatusProcesso.DataPropertyName = "Status";
-            this.StatusProcesso.HeaderText = "Status do Processo";
-            this.StatusProcesso.Name = "StatusProcesso";
-            this.StatusProcesso.ReadOnly = true;
             // 
             // TelaListaProcessos
             // 

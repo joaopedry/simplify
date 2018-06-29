@@ -77,14 +77,14 @@ namespace Simplify.Grafico
             lbBairro.Text = cliente.Bairro_endereco1;
             lbReferencia.Text = cliente.Complemento_endereco1;
             lbLesoes.Text = cliente.Lesao_ocorrencia;
-            lbData.Text = cliente.Data_ocorrencia;
+            lbData.Text = cliente.Data_ocorrencia.ToString();
             lbSocorrista.Text = cliente.Socorrista_ocorrencia;
             lbProfissao.Text = cliente.Profissao_dados;
             lbVeiculos.Text = cliente.Veiculo_ocorrencia;
             lbNumerocasa.Text = cliente.Num_endereco1.ToString();
             lbCidade.Text = cliente.Cidade_endereco1;
             //lbRegistro.Text = cliente
-            lbHorario.Text = cliente.Horario_ocorrencia;
+            lbHorario.Text = cliente.Horario_ocorrencia.ToString();
             lbHospital.Text = cliente.Hospital_ocorrencia;
             lbTipo.Text = cliente.Tipo_ocorrencia;
             lbLocal.Text = cliente.Local_ocorrencia;
@@ -210,6 +210,27 @@ namespace Simplify.Grafico
         private void btImprimirFolhaDeRosto_MouseClick(object sender, MouseEventArgs e)
         {
             
+        }
+
+        private void tbBusca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; // ou ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 3 || t.Text.Length == 7)
+                    t.Text += ".";
+                else if (t.Text.Length == 11)
+                    t.Text += "-";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

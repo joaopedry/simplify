@@ -115,12 +115,12 @@ namespace Simplify.Grafico
             cliente.NomeRecado_contato = tbNomerecados.Text;
             cliente.TelefoneRecado_contato = tbTelrecados.Text;
             //Ocorrencia
-            cliente.Data_ocorrencia = tbDataocorrencia.Text;
+            cliente.Data_ocorrencia = DateTime.Parse(tbDataocorrencia.Text);
             cliente.Local_ocorrencia = tbLocalocorrencia.Text;
             cliente.Veiculo_ocorrencia = tbVeiculosacidente.Text;
             cliente.Tipo_ocorrencia = gbTipoAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
             cliente.INSS_ocorrencia = gbINSSAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
-            cliente.Horario_ocorrencia = tbHorarioacidente.Text;
+            cliente.Horario_ocorrencia = DateTime.Parse(tbHorarioacidente.Text);
             cliente.Lesao_ocorrencia = tbLesoesacidente.Text;
             cliente.Socorrista_ocorrencia = tbSocorrista.Text;
             cliente.Hospital_ocorrencia = tbHospital.Text;
@@ -298,11 +298,6 @@ namespace Simplify.Grafico
             {
                 e.Handled = true;
             }
-        }
-
-        private void tbRG_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void tbRG_KeyPress(object sender, KeyPressEventArgs e)
@@ -491,7 +486,9 @@ namespace Simplify.Grafico
                 this.tbindicacao.Text = ClienteSelecionado.Indicacao_dados;
                 this.tbNascimento.Text = ClienteSelecionado.Nascimento_dados.ToString();
                 this.tbCpf.Text = ClienteSelecionado.CPF_dados;
+                this.tbCpf.Enabled = false;
                 this.tbRG.Text = ClienteSelecionado.RG_dados;
+                this.tbRG.Enabled = false;
                 this.tbProfissao.Text = ClienteSelecionado.Profissao_dados;
                 this.tbSexo.Text = ClienteSelecionado.Sexo_dados;
                 this.tbEstadoCivil.Text = ClienteSelecionado.EstadoCivil_dados;
@@ -521,7 +518,7 @@ namespace Simplify.Grafico
                 this.tbNomerecados.Text = ClienteSelecionado.NomeRecado_contato;
                 this.tbTelrecados.Text = ClienteSelecionado.TelefoneRecado_contato;
                 //Ocorrencia
-                this.tbDataocorrencia.Text = ClienteSelecionado.Data_ocorrencia;
+                this.tbDataocorrencia.Text = ClienteSelecionado.Data_ocorrencia.ToString();
                 this.tbLocalocorrencia.Text = ClienteSelecionado.Local_ocorrencia;
                 this.tbVeiculosacidente.Text = ClienteSelecionado.Veiculo_ocorrencia;
                 //this.gbTipoAcidente.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text = ClienteSelecionado.Tipo_ocorrencia;
@@ -546,7 +543,7 @@ namespace Simplify.Grafico
                 {
                     this.rbINSSnao.Checked = true;
                 }
-                this.tbHorarioacidente.Text = ClienteSelecionado.Horario_ocorrencia;
+                this.tbHorarioacidente.Text = ClienteSelecionado.Horario_ocorrencia.ToString();
                 this.tbLesoesacidente.Text = ClienteSelecionado.Lesao_ocorrencia;
                 this.tbSocorrista.Text = ClienteSelecionado.Socorrista_ocorrencia;
                 this.tbHospital.Text = ClienteSelecionado.Hospital_ocorrencia;
@@ -1256,6 +1253,18 @@ namespace Simplify.Grafico
         private void tabcadastrocliente_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbCpf_ReadOnlyChanged(object sender, EventArgs e)
+        {
+                if (tbCpf.ReadOnly)
+                {
+                    tbCpf.ReadOnly = false;
+                }
+                else
+                {
+                    tbCpf.ReadOnly = true;
+                }
         }
     }
 }
