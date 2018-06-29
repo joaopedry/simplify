@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaGerarRelatorio));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGerarRelatorio = new System.Windows.Forms.Button();
@@ -59,9 +60,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btImprimirRelatorio = new System.Windows.Forms.Button();
             this.pdRelatorio = new System.Windows.Forms.PrintDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnResultado.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,13 +82,13 @@
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 599);
+            this.panel1.Size = new System.Drawing.Size(347, 599);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(291, 564);
+            this.btCancelar.Location = new System.Drawing.Point(261, 563);
             this.btCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 25);
@@ -94,7 +99,7 @@
             // 
             // btGerarRelatorio
             // 
-            this.btGerarRelatorio.Location = new System.Drawing.Point(212, 564);
+            this.btGerarRelatorio.Location = new System.Drawing.Point(182, 563);
             this.btGerarRelatorio.Margin = new System.Windows.Forms.Padding(2);
             this.btGerarRelatorio.Name = "btGerarRelatorio";
             this.btGerarRelatorio.Size = new System.Drawing.Size(75, 25);
@@ -105,7 +110,7 @@
             // 
             // dtpDataFimRelatorio
             // 
-            this.dtpDataFimRelatorio.Location = new System.Drawing.Point(122, 165);
+            this.dtpDataFimRelatorio.Location = new System.Drawing.Point(100, 165);
             this.dtpDataFimRelatorio.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataFimRelatorio.Name = "dtpDataFimRelatorio";
             this.dtpDataFimRelatorio.Size = new System.Drawing.Size(232, 20);
@@ -113,7 +118,7 @@
             // 
             // dtpDataInicioRelatorio
             // 
-            this.dtpDataInicioRelatorio.Location = new System.Drawing.Point(122, 112);
+            this.dtpDataInicioRelatorio.Location = new System.Drawing.Point(100, 112);
             this.dtpDataInicioRelatorio.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataInicioRelatorio.Name = "dtpDataInicioRelatorio";
             this.dtpDataInicioRelatorio.Size = new System.Drawing.Size(232, 20);
@@ -157,15 +162,17 @@
             this.pnResultado.BackColor = System.Drawing.Color.Gainsboro;
             this.pnResultado.Controls.Add(this.panel2);
             this.pnResultado.Controls.Add(this.btImprimirRelatorio);
-            this.pnResultado.Location = new System.Drawing.Point(378, 2);
+            this.pnResultado.Location = new System.Drawing.Point(352, 2);
             this.pnResultado.Margin = new System.Windows.Forms.Padding(2);
             this.pnResultado.Name = "pnResultado";
-            this.pnResultado.Size = new System.Drawing.Size(357, 599);
+            this.pnResultado.Size = new System.Drawing.Size(410, 599);
             this.pnResultado.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.lbDataGeracao);
             this.panel2.Controls.Add(this.lbDataFinal);
             this.panel2.Controls.Add(this.label14);
@@ -188,13 +195,13 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(11, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 551);
+            this.panel2.Size = new System.Drawing.Size(385, 551);
             this.panel2.TabIndex = 1;
             // 
             // lbDataGeracao
             // 
             this.lbDataGeracao.AutoSize = true;
-            this.lbDataGeracao.Location = new System.Drawing.Point(171, 527);
+            this.lbDataGeracao.Location = new System.Drawing.Point(206, 525);
             this.lbDataGeracao.Name = "lbDataGeracao";
             this.lbDataGeracao.Size = new System.Drawing.Size(48, 16);
             this.lbDataGeracao.TabIndex = 26;
@@ -245,7 +252,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(92, 527);
+            this.label9.Location = new System.Drawing.Point(127, 525);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 16);
             this.label9.TabIndex = 21;
@@ -266,7 +273,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(130, 16);
+            this.label2.Location = new System.Drawing.Point(156, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 22);
@@ -397,7 +404,7 @@
             // 
             // btImprimirRelatorio
             // 
-            this.btImprimirRelatorio.Location = new System.Drawing.Point(274, 566);
+            this.btImprimirRelatorio.Location = new System.Drawing.Point(321, 565);
             this.btImprimirRelatorio.Margin = new System.Windows.Forms.Padding(2);
             this.btImprimirRelatorio.Name = "btImprimirRelatorio";
             this.btImprimirRelatorio.Size = new System.Drawing.Size(75, 25);
@@ -409,23 +416,42 @@
             // 
             this.pdRelatorio.UseEXDialog = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(319, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(59, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(355, 525);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
             // TelaGerarRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(738, 610);
+            this.ClientSize = new System.Drawing.Size(759, 610);
             this.Controls.Add(this.pnResultado);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(754, 648);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(754, 648);
             this.Name = "TelaGerarRelatorio";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Relatórios";
             this.Activated += new System.EventHandler(this.TelaGerarRelatorio_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaGerarRelatorio_FormClosing);
             this.panel1.ResumeLayout(false);
@@ -433,6 +459,8 @@
             this.pnResultado.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +498,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbDataGeracao;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

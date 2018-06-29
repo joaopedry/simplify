@@ -244,12 +244,13 @@
             this.Controls.Add(this.tbLoginUsuario);
             this.Controls.Add(this.tbEmailUsuario);
             this.Controls.Add(this.tbNomeUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManterUsuario";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Adicionar Usuário";
             this.Load += new System.EventHandler(this.ManterUsuario_Load);
             this.Shown += new System.EventHandler(this.ManterUsuario_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

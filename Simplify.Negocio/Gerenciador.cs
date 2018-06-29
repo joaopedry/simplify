@@ -25,6 +25,7 @@ namespace Simplify.Negocio
         public Validacao AdicionarCliente(Cliente clienteAdicionado)
         {
             Validacao validacao = new Validacao();
+            //Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
 
             // -- CAMPO NOME OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Nome_dados))
@@ -33,10 +34,10 @@ namespace Simplify.Negocio
             }
 
             // -- CAMPO INDICAÇÃO OBRIGATÓRIO -- //
-            /*if (String.IsNullOrEmpty(clienteAdicionado.Indicacao_dados))
+            if (String.IsNullOrEmpty(clienteAdicionado.Indicacao_dados))
             {
                 validacao.Mensagens.Add("Indicacao_dados", "Campo indicação é obrigatório");
-            }*/
+            }
 
             // -- CAMPO NASCIMENTO OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Nascimento_dados.ToString()))
@@ -93,10 +94,10 @@ namespace Simplify.Negocio
             }
 
             // -- CAMPO COMPLEMENTO1 OBRIGATÓRIO -- //
-            /*if (String.IsNullOrEmpty(clienteAdicionado.Complemento_endereco1))
+            if (String.IsNullOrEmpty(clienteAdicionado.Complemento_endereco1))
             {
                 validacao.Mensagens.Add("Complemento_endereco1", "Campo complemento é obrigatório");
-            }*/
+            }
 
             // -- CAMPO CEP1 OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.CEP_endereco1))
@@ -119,15 +120,19 @@ namespace Simplify.Negocio
             // -- CAMPO EMAIL OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Email_contato))
             {
+                validacao.Mensagens.Add("Email_contato", "Campo email é obrigatório");
+            }
+
+            // -- CAMPO DATA DE NASCIMENTO OBRIGATÓRIO -- //
+           /* if ((clienteAdicionado.Nascimento_dados))
+            {
                 validacao.Mensagens.Add("Email_contato", "O email não pode ser nulo ou vazio");
             }
-
-            Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
-
-            if (!rg.IsMatch(clienteAdicionado.Email_contato))
-            {
-                validacao.Mensagens.Add("Email_contato", "Email no formato inválido");
-            }
+            */
+            /* if (!rg.IsMatch(clienteAdicionado.Email_contato))
+             {
+                 validacao.Mensagens.Add("Email_contato", "Email no formato inválido");
+             }*/
 
             if (validacao.Valido)
             {

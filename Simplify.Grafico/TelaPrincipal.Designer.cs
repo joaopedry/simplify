@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -42,6 +42,7 @@
             this.btDpvatonline = new System.Windows.Forms.Button();
             this.txtSimplify = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btConsultarProcesso = new System.Windows.Forms.Button();
             this.btNovoCadastro = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -65,7 +66,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ttConfiguracoes = new System.Windows.Forms.ToolTip(this.components);
             this.ttInfomacoes = new System.Windows.Forms.ToolTip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -76,13 +80,16 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -181,11 +188,11 @@
             // txtSimplify
             // 
             this.txtSimplify.AutoSize = true;
-            this.txtSimplify.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtSimplify.Location = new System.Drawing.Point(10, 137);
+            this.txtSimplify.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtSimplify.Location = new System.Drawing.Point(7, 130);
             this.txtSimplify.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtSimplify.Name = "txtSimplify";
-            this.txtSimplify.Size = new System.Drawing.Size(221, 31);
+            this.txtSimplify.Size = new System.Drawing.Size(249, 35);
             this.txtSimplify.TabIndex = 0;
             this.txtSimplify.Text = "Simplify DPVAT";
             // 
@@ -200,6 +207,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(231, 348);
             this.panel2.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 22);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Cadastros";
             // 
             // btConsultarProcesso
             // 
@@ -254,6 +272,8 @@
             // 
             // dgAniversariantes
             // 
+            this.dgAniversariantes.AllowUserToAddRows = false;
+            this.dgAniversariantes.AllowUserToDeleteRows = false;
             this.dgAniversariantes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgAniversariantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -263,6 +283,7 @@
             this.dgAniversariantes.Location = new System.Drawing.Point(10, 30);
             this.dgAniversariantes.Margin = new System.Windows.Forms.Padding(2);
             this.dgAniversariantes.Name = "dgAniversariantes";
+            this.dgAniversariantes.ReadOnly = true;
             this.dgAniversariantes.RowTemplate.Height = 24;
             this.dgAniversariantes.Size = new System.Drawing.Size(443, 140);
             this.dgAniversariantes.TabIndex = 0;
@@ -285,6 +306,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.pictureBox7);
+            this.panel4.Controls.Add(this.pictureBox6);
+            this.panel4.Controls.Add(this.pictureBox5);
+            this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.lbProcessoAprovado);
             this.panel4.Controls.Add(this.btProcessosaprovados);
             this.panel4.Controls.Add(this.lbProcessoNegado);
@@ -305,7 +330,7 @@
             this.lbProcessoAprovado.AutoSize = true;
             this.lbProcessoAprovado.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoAprovado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.lbProcessoAprovado.ForeColor = System.Drawing.Color.Green;
+            this.lbProcessoAprovado.ForeColor = System.Drawing.Color.Black;
             this.lbProcessoAprovado.Location = new System.Drawing.Point(97, 303);
             this.lbProcessoAprovado.Name = "lbProcessoAprovado";
             this.lbProcessoAprovado.Size = new System.Drawing.Size(25, 25);
@@ -332,7 +357,7 @@
             this.lbProcessoNegado.AutoSize = true;
             this.lbProcessoNegado.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoNegado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.lbProcessoNegado.ForeColor = System.Drawing.Color.Tomato;
+            this.lbProcessoNegado.ForeColor = System.Drawing.Color.Black;
             this.lbProcessoNegado.Location = new System.Drawing.Point(97, 227);
             this.lbProcessoNegado.Name = "lbProcessoNegado";
             this.lbProcessoNegado.Size = new System.Drawing.Size(25, 25);
@@ -345,7 +370,7 @@
             this.lbProcessoPendencia.AutoSize = true;
             this.lbProcessoPendencia.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoPendencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.lbProcessoPendencia.ForeColor = System.Drawing.Color.Khaki;
+            this.lbProcessoPendencia.ForeColor = System.Drawing.Color.Black;
             this.lbProcessoPendencia.Location = new System.Drawing.Point(97, 149);
             this.lbProcessoPendencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProcessoPendencia.Name = "lbProcessoPendencia";
@@ -359,7 +384,7 @@
             this.lbProcessosEnviados.AutoSize = true;
             this.lbProcessosEnviados.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessosEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.lbProcessosEnviados.ForeColor = System.Drawing.Color.SkyBlue;
+            this.lbProcessosEnviados.ForeColor = System.Drawing.Color.Black;
             this.lbProcessosEnviados.Location = new System.Drawing.Point(97, 66);
             this.lbProcessosEnviados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProcessosEnviados.Name = "lbProcessosEnviados";
@@ -412,7 +437,7 @@
             // 
             this.btProcessEnviados.BackColor = System.Drawing.Color.DarkGray;
             this.btProcessEnviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcessEnviados.Location = new System.Drawing.Point(5, 33);
+            this.btProcessEnviados.Location = new System.Drawing.Point(5, 34);
             this.btProcessEnviados.Margin = new System.Windows.Forms.Padding(2);
             this.btProcessEnviados.Name = "btProcessEnviados";
             this.btProcessEnviados.Padding = new System.Windows.Forms.Padding(0, 0, 0, 24);
@@ -457,18 +482,18 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(9, 34);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(523, 315);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -489,23 +514,56 @@
             // 
             this.ttConfiguracoes.Tag = "Configurações";
             // 
-            // label2
+            // pictureBox4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 22);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Cadastros";
+            this.pictureBox4.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(176, 76);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(178, 151);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(30, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(178, 228);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(30, 25);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(178, 304);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 25);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
             // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -515,7 +573,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "TelaPrincipal";
-            this.Text = "0";
+            this.Text = "Simplify ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.TelaPrincipal_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaPrincipal_FormClosing);
@@ -536,8 +594,11 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         #endregion
@@ -574,6 +635,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

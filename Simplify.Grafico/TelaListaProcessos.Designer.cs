@@ -662,10 +662,10 @@
             this.Controls.Add(this.btAlterarDados);
             this.Controls.Add(this.btBuscarProcesso);
             this.Controls.Add(this.tbBusca);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TelaListaProcessos";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Processos";
