@@ -378,10 +378,105 @@ namespace Simplify.Grafico
             }
             //89227-064
         }
+
         private void tbValidacao_Letras(object sender, KeyPressEventArgs e)
         {
 
             if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbValidacao_Celular(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 0)
+                    t.Text += "(";
+                else if (t.Text.Length == 3)
+                    t.Text += ")";
+                if (t.Text.Length == 4)
+                    t.Text += " ";
+                else if (t.Text.Length == 10)
+                    t.Text += "-";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbValidacao_TelefoneFixo(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 0)
+                    t.Text += "(";
+                else if (t.Text.Length == 3)
+                    t.Text += ")";
+                if (t.Text.Length == 4)
+                    t.Text += " ";
+                else if (t.Text.Length == 9)
+                    t.Text += "-";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbValidacao_TelefoneVariavel(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 0)
+                    t.Text += "(";
+                else if (t.Text.Length == 3)
+                    t.Text += ")";
+                if (t.Text.Length == 4)
+                    t.Text += " ";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbValidacao_Date(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = sender as TextBox; //ComboBox
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                t.SelectionStart = t.Text.Length + 1;
+
+                if (t.Text.Length == 2)
+                    t.Text += "/";
+                else if (t.Text.Length == 5)
+                    t.Text += "/";
+                t.SelectionStart = t.Text.Length + 1;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
             {
                 e.Handled = true;
             }

@@ -122,7 +122,9 @@ namespace Simplify.Negocio
                 validacao.Mensagens.Add("Email_contato", "O email não pode ser nulo ou vazio");
             }
 
-            if (!clienteAdicionado.Email_contato.Contains("@") && validacao.Mensagens.Count == 0)
+            Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+
+            if (!rg.IsMatch(clienteAdicionado.Email_contato))
             {
                 validacao.Mensagens.Add("Email_contato", "Email no formato inválido");
             }

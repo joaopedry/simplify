@@ -221,7 +221,7 @@
             // 
             this.tbNascimento.Location = new System.Drawing.Point(147, 115);
             this.tbNascimento.Margin = new System.Windows.Forms.Padding(2);
-            this.tbNascimento.MaxLength = 100;
+            this.tbNascimento.MaxLength = 10;
             this.tbNascimento.Name = "tbNascimento";
             this.tbNascimento.Size = new System.Drawing.Size(200, 20);
             this.tbNascimento.TabIndex = 2;
@@ -494,6 +494,7 @@
             this.tbCidade2.Name = "tbCidade2";
             this.tbCidade2.Size = new System.Drawing.Size(200, 20);
             this.tbCidade2.TabIndex = 27;
+            this.tbCidade2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbBairro2
             // 
@@ -501,6 +502,7 @@
             this.tbBairro2.Name = "tbBairro2";
             this.tbBairro2.Size = new System.Drawing.Size(200, 20);
             this.tbBairro2.TabIndex = 26;
+            this.tbBairro2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbCep2
             // 
@@ -688,6 +690,7 @@
             this.tbCidade1.Name = "tbCidade1";
             this.tbCidade1.Size = new System.Drawing.Size(200, 20);
             this.tbCidade1.TabIndex = 6;
+            this.tbCidade1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbBairro1
             // 
@@ -695,6 +698,7 @@
             this.tbBairro1.Name = "tbBairro1";
             this.tbBairro1.Size = new System.Drawing.Size(200, 20);
             this.tbBairro1.TabIndex = 5;
+            this.tbBairro1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbCep1
             // 
@@ -765,9 +769,11 @@
             // tbTelrecados
             // 
             this.tbTelrecados.Location = new System.Drawing.Point(523, 114);
+            this.tbTelrecados.MaxLength = 14;
             this.tbTelrecados.Name = "tbTelrecados";
             this.tbTelrecados.Size = new System.Drawing.Size(200, 20);
             this.tbTelrecados.TabIndex = 16;
+            this.tbTelrecados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_TelefoneVariavel);
             // 
             // tbNomerecados
             // 
@@ -793,31 +799,39 @@
             // tbTeltrabalho
             // 
             this.tbTeltrabalho.Location = new System.Drawing.Point(147, 155);
+            this.tbTeltrabalho.MaxLength = 14;
             this.tbTeltrabalho.Name = "tbTeltrabalho";
             this.tbTeltrabalho.Size = new System.Drawing.Size(200, 20);
             this.tbTeltrabalho.TabIndex = 12;
+            this.tbTeltrabalho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_TelefoneVariavel);
             // 
             // tbCel2
             // 
             this.tbCel2.Location = new System.Drawing.Point(147, 115);
+            this.tbCel2.MaxLength = 15;
             this.tbCel2.Name = "tbCel2";
             this.tbCel2.Size = new System.Drawing.Size(200, 20);
             this.tbCel2.TabIndex = 11;
+            this.tbCel2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Celular);
             // 
             // tbCel1
             // 
             this.tbCel1.Location = new System.Drawing.Point(147, 75);
+            this.tbCel1.MaxLength = 15;
             this.tbCel1.Name = "tbCel1";
             this.tbCel1.Size = new System.Drawing.Size(200, 20);
             this.tbCel1.TabIndex = 10;
             this.tbCel1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbCel1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Celular);
             // 
             // tbTelResidencial
             // 
             this.tbTelResidencial.Location = new System.Drawing.Point(147, 35);
+            this.tbTelResidencial.MaxLength = 14;
             this.tbTelResidencial.Name = "tbTelResidencial";
             this.tbTelResidencial.Size = new System.Drawing.Size(200, 20);
             this.tbTelResidencial.TabIndex = 9;
+            this.tbTelResidencial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_TelefoneFixo);
             // 
             // label23
             // 
@@ -1049,6 +1063,7 @@
             this.tbSocorrista.Name = "tbSocorrista";
             this.tbSocorrista.Size = new System.Drawing.Size(200, 20);
             this.tbSocorrista.TabIndex = 15;
+            this.tbSocorrista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbLesoesacidente
             // 
@@ -1056,6 +1071,7 @@
             this.tbLesoesacidente.Name = "tbLesoesacidente";
             this.tbLesoesacidente.Size = new System.Drawing.Size(200, 20);
             this.tbLesoesacidente.TabIndex = 14;
+            this.tbLesoesacidente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbHorarioacidente
             // 
@@ -1081,9 +1097,11 @@
             // tbDataocorrencia
             // 
             this.tbDataocorrencia.Location = new System.Drawing.Point(147, 35);
+            this.tbDataocorrencia.MaxLength = 10;
             this.tbDataocorrencia.Name = "tbDataocorrencia";
             this.tbDataocorrencia.Size = new System.Drawing.Size(100, 20);
             this.tbDataocorrencia.TabIndex = 10;
+            this.tbDataocorrencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Date);
             // 
             // label33
             // 
@@ -1250,14 +1268,14 @@
             // 
             // tbDOCCPF
             // 
-            this.tbDOCCPF.Location = new System.Drawing.Point(664, 237);
+            this.tbDOCCPF.Location = new System.Drawing.Point(664, 233);
             this.tbDOCCPF.Name = "tbDOCCPF";
             this.tbDOCCPF.Size = new System.Drawing.Size(96, 20);
             this.tbDOCCPF.TabIndex = 55;
             // 
             // tbDOCRG
             // 
-            this.tbDOCRG.Location = new System.Drawing.Point(542, 234);
+            this.tbDOCRG.Location = new System.Drawing.Point(543, 233);
             this.tbDOCRG.Name = "tbDOCRG";
             this.tbDOCRG.Size = new System.Drawing.Size(96, 20);
             this.tbDOCRG.TabIndex = 54;

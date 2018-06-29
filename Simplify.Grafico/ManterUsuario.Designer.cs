@@ -58,6 +58,7 @@
             this.tbNomeUsuario.Size = new System.Drawing.Size(231, 20);
             this.tbNomeUsuario.TabIndex = 0;
             this.tbNomeUsuario.TextChanged += new System.EventHandler(this.tbNomeUsuario_TextChanged);
+            this.tbNomeUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // tbEmailUsuario
             // 
