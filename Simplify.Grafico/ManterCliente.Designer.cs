@@ -33,10 +33,9 @@
             this.tbindicacao = new System.Windows.Forms.TextBox();
             this.tbNascimento = new System.Windows.Forms.TextBox();
             this.tbRG = new System.Windows.Forms.TextBox();
-            this.tbProfissao = new System.Windows.Forms.TextBox();
             this.tbCpf = new System.Windows.Forms.TextBox();
             this.tbEstadoCivil = new System.Windows.Forms.TextBox();
-            this.tbSexo = new System.Windows.Forms.TextBox();
+            this.tbProfissao = new System.Windows.Forms.TextBox();
             this.Nome = new System.Windows.Forms.Label();
             this.Indicacao = new System.Windows.Forms.Label();
             this.Nascimento = new System.Windows.Forms.Label();
@@ -49,8 +48,10 @@
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.ctCadastro = new System.Windows.Forms.TabControl();
             this.tabcadastrocliente = new System.Windows.Forms.TabPage();
+            this.label43 = new System.Windows.Forms.Label();
             this.gbStatusProcesso = new System.Windows.Forms.GroupBox();
             this.abaEndereco = new System.Windows.Forms.TabPage();
+            this.label44 = new System.Windows.Forms.Label();
             this.tbCidade2 = new System.Windows.Forms.TextBox();
             this.tbBairro2 = new System.Windows.Forms.TextBox();
             this.tbCep2 = new System.Windows.Forms.TextBox();
@@ -80,6 +81,7 @@
             this.tbRua1 = new System.Windows.Forms.TextBox();
             this.tbEndereco1 = new System.Windows.Forms.TextBox();
             this.tabContato = new System.Windows.Forms.TabPage();
+            this.label45 = new System.Windows.Forms.Label();
             this.tbTelrecados = new System.Windows.Forms.TextBox();
             this.tbNomerecados = new System.Windows.Forms.TextBox();
             this.tbFacebook = new System.Windows.Forms.TextBox();
@@ -98,6 +100,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabOcorrencia = new System.Windows.Forms.TabPage();
+            this.label46 = new System.Windows.Forms.Label();
             this.gbINSSAcidente = new System.Windows.Forms.GroupBox();
             this.rbINSSsim = new System.Windows.Forms.RadioButton();
             this.rbINSSnao = new System.Windows.Forms.RadioButton();
@@ -183,10 +186,11 @@
             this.ofdCPF = new System.Windows.Forms.OpenFileDialog();
             this.ofdCNH = new System.Windows.Forms.OpenFileDialog();
             this.ofdDOCVeiculo = new System.Windows.Forms.OpenFileDialog();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
+            this.gbSexo_Dados = new System.Windows.Forms.GroupBox();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.rbFeminino = new System.Windows.Forms.RadioButton();
+            this.rbNaoBinario = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ctCadastro.SuspendLayout();
             this.tabcadastrocliente.SuspendLayout();
             this.abaEndereco.SuspendLayout();
@@ -198,6 +202,7 @@
             this.tabObservacoes.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbStatus.SuspendLayout();
+            this.gbSexo_Dados.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbNome
@@ -242,15 +247,6 @@
             this.tbRG.TabIndex = 3;
             this.tbRG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRG_KeyPress);
             // 
-            // tbProfissao
-            // 
-            this.tbProfissao.Location = new System.Drawing.Point(147, 235);
-            this.tbProfissao.Margin = new System.Windows.Forms.Padding(2);
-            this.tbProfissao.Name = "tbProfissao";
-            this.tbProfissao.Size = new System.Drawing.Size(200, 21);
-            this.tbProfissao.TabIndex = 5;
-            this.tbProfissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
-            // 
             // tbCpf
             // 
             this.tbCpf.Location = new System.Drawing.Point(147, 195);
@@ -272,15 +268,15 @@
             this.tbEstadoCivil.TabIndex = 7;
             this.tbEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
-            // tbSexo
+            // tbProfissao
             // 
-            this.tbSexo.Location = new System.Drawing.Point(147, 275);
-            this.tbSexo.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSexo.Name = "tbSexo";
-            this.tbSexo.Size = new System.Drawing.Size(200, 21);
-            this.tbSexo.TabIndex = 6;
-            this.tbSexo.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
-            this.tbSexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
+            this.tbProfissao.Location = new System.Drawing.Point(147, 236);
+            this.tbProfissao.Margin = new System.Windows.Forms.Padding(2);
+            this.tbProfissao.Name = "tbProfissao";
+            this.tbProfissao.Size = new System.Drawing.Size(200, 21);
+            this.tbProfissao.TabIndex = 6;
+            this.tbProfissao.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.tbProfissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValidacao_Letras);
             // 
             // Nome
             // 
@@ -342,7 +338,7 @@
             // 
             this.Profissao.AutoSize = true;
             this.Profissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Profissao.Location = new System.Drawing.Point(20, 275);
+            this.Profissao.Location = new System.Drawing.Point(20, 236);
             this.Profissao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Profissao.Name = "Profissao";
             this.Profissao.Size = new System.Drawing.Size(86, 15);
@@ -353,7 +349,7 @@
             // 
             this.Sexo.AutoSize = true;
             this.Sexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sexo.Location = new System.Drawing.Point(20, 235);
+            this.Sexo.Location = new System.Drawing.Point(20, 277);
             this.Sexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Sexo.Name = "Sexo";
             this.Sexo.Size = new System.Drawing.Size(51, 15);
@@ -419,6 +415,8 @@
             // tabcadastrocliente
             // 
             this.tabcadastrocliente.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabcadastrocliente.Controls.Add(this.comboBox1);
+            this.tabcadastrocliente.Controls.Add(this.gbSexo_Dados);
             this.tabcadastrocliente.Controls.Add(this.label43);
             this.tabcadastrocliente.Controls.Add(this.gbStatusProcesso);
             this.tabcadastrocliente.Controls.Add(this.Nome);
@@ -429,11 +427,10 @@
             this.tabcadastrocliente.Controls.Add(this.Sexo);
             this.tabcadastrocliente.Controls.Add(this.tbCpf);
             this.tabcadastrocliente.Controls.Add(this.Profissao);
-            this.tabcadastrocliente.Controls.Add(this.tbProfissao);
             this.tabcadastrocliente.Controls.Add(this.RG);
             this.tabcadastrocliente.Controls.Add(this.tbRG);
             this.tabcadastrocliente.Controls.Add(this.CPF);
-            this.tabcadastrocliente.Controls.Add(this.tbSexo);
+            this.tabcadastrocliente.Controls.Add(this.tbProfissao);
             this.tabcadastrocliente.Controls.Add(this.Nascimento);
             this.tabcadastrocliente.Controls.Add(this.tbEstadoCivil);
             this.tabcadastrocliente.Controls.Add(this.Indicacao);
@@ -446,6 +443,16 @@
             this.tabcadastrocliente.TabIndex = 0;
             this.tabcadastrocliente.Text = "Dados Pessoais";
             this.tabcadastrocliente.Click += new System.EventHandler(this.tabcadastrocliente_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(20, 384);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(219, 13);
+            this.label43.TabIndex = 19;
+            this.label43.Text = "Os campos marcados com (*) são obrigatórios";
             // 
             // gbStatusProcesso
             // 
@@ -496,6 +503,16 @@
             this.abaEndereco.Size = new System.Drawing.Size(780, 399);
             this.abaEndereco.TabIndex = 1;
             this.abaEndereco.Text = "Endereço";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(20, 384);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(219, 13);
+            this.label44.TabIndex = 28;
+            this.label44.Text = "Os campos marcados com (*) são obrigatórios";
             // 
             // tbCidade2
             // 
@@ -776,6 +793,16 @@
             this.tabContato.TabIndex = 2;
             this.tabContato.Text = "Contato";
             // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(20, 384);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(219, 13);
+            this.label45.TabIndex = 20;
+            this.label45.Text = "Os campos marcados com (*) são obrigatórios";
+            // 
             // tbTelrecados
             // 
             this.tbTelrecados.Location = new System.Drawing.Point(523, 114);
@@ -964,6 +991,16 @@
             this.tabOcorrencia.Size = new System.Drawing.Size(780, 399);
             this.tabOcorrencia.TabIndex = 3;
             this.tabOcorrencia.Text = "Ocorrência";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(20, 384);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(219, 13);
+            this.label46.TabIndex = 25;
+            this.label46.Text = "Os campos marcados com (*) são obrigatórios";
             // 
             // gbINSSAcidente
             // 
@@ -1741,45 +1778,64 @@
             // 
             this.ofdProntuario.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
-            // label43
+            // gbSexo_Dados
             // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(20, 384);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(219, 13);
-            this.label43.TabIndex = 19;
-            this.label43.Text = "Os campos marcados com (*) são obrigatórios";
+            this.gbSexo_Dados.Controls.Add(this.rbNaoBinario);
+            this.gbSexo_Dados.Controls.Add(this.rbFeminino);
+            this.gbSexo_Dados.Controls.Add(this.rbMasculino);
+            this.gbSexo_Dados.Location = new System.Drawing.Point(147, 262);
+            this.gbSexo_Dados.Name = "gbSexo_Dados";
+            this.gbSexo_Dados.Size = new System.Drawing.Size(274, 43);
+            this.gbSexo_Dados.TabIndex = 20;
+            this.gbSexo_Dados.TabStop = false;
             // 
-            // label44
+            // rbMasculino
             // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(20, 384);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(219, 13);
-            this.label44.TabIndex = 28;
-            this.label44.Text = "Os campos marcados com (*) são obrigatórios";
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(0, 15);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(82, 19);
+            this.rbMasculino.TabIndex = 0;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
             // 
-            // label45
+            // rbFeminino
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(20, 384);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(219, 13);
-            this.label45.TabIndex = 20;
-            this.label45.Text = "Os campos marcados com (*) são obrigatórios";
+            this.rbFeminino.AutoSize = true;
+            this.rbFeminino.Location = new System.Drawing.Point(88, 15);
+            this.rbFeminino.Name = "rbFeminino";
+            this.rbFeminino.Size = new System.Drawing.Size(77, 19);
+            this.rbFeminino.TabIndex = 1;
+            this.rbFeminino.TabStop = true;
+            this.rbFeminino.Text = "Feminino";
+            this.rbFeminino.UseVisualStyleBackColor = true;
             // 
-            // label46
+            // rbNaoBinario
             // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(20, 384);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(219, 13);
-            this.label46.TabIndex = 25;
-            this.label46.Text = "Os campos marcados com (*) são obrigatórios";
+            this.rbNaoBinario.AutoSize = true;
+            this.rbNaoBinario.Checked = true;
+            this.rbNaoBinario.Location = new System.Drawing.Point(171, 15);
+            this.rbNaoBinario.Name = "rbNaoBinario";
+            this.rbNaoBinario.Size = new System.Drawing.Size(91, 19);
+            this.rbNaoBinario.TabIndex = 21;
+            this.rbNaoBinario.TabStop = true;
+            this.rbNaoBinario.Text = "Não-Binário";
+            this.rbNaoBinario.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Solteiro(a)",
+            "Casado(a)",
+            "Viúvo(a)",
+            "Divorciado(a)",
+            ""});
+            this.comboBox1.Location = new System.Drawing.Point(475, 236);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 21;
             // 
             // ManterCliente
             // 
@@ -1820,6 +1876,8 @@
             this.panel1.PerformLayout();
             this.gbStatus.ResumeLayout(false);
             this.gbStatus.PerformLayout();
+            this.gbSexo_Dados.ResumeLayout(false);
+            this.gbSexo_Dados.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1830,10 +1888,9 @@
         private System.Windows.Forms.TextBox tbindicacao;
         private System.Windows.Forms.TextBox tbNascimento;
         private System.Windows.Forms.TextBox tbRG;
-        private System.Windows.Forms.TextBox tbProfissao;
         private System.Windows.Forms.TextBox tbCpf;
         private System.Windows.Forms.TextBox tbEstadoCivil;
-        private System.Windows.Forms.TextBox tbSexo;
+        private System.Windows.Forms.TextBox tbProfissao;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Label Indicacao;
         private System.Windows.Forms.Label Nascimento;
@@ -1984,5 +2041,10 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.GroupBox gbSexo_Dados;
+        private System.Windows.Forms.RadioButton rbNaoBinario;
+        private System.Windows.Forms.RadioButton rbFeminino;
+        private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

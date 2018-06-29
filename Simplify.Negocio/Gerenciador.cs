@@ -63,12 +63,6 @@ namespace Simplify.Negocio
                 validacao.Mensagens.Add("Profissao_dados", "Campo profissão é obrigatório");
             }
 
-            // -- CAMPO SEXO OBRIGATÓRIO -- //
-            if (String.IsNullOrEmpty(clienteAdicionado.Sexo_dados))
-            {
-                validacao.Mensagens.Add("Sexo_dados", "Campo sexo é obrigatório");
-            }
-
             // -- CAMPO ESTADO CIVIL OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.EstadoCivil_dados))
             {

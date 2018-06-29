@@ -87,7 +87,7 @@ namespace Simplify.Grafico
             cliente.CPF_dados = tbCpf.Text;
             cliente.RG_dados = tbRG.Text;
             cliente.Profissao_dados = tbProfissao.Text;
-            cliente.Sexo_dados = tbSexo.Text;
+            cliente.Sexo_dados = gbSexo_Dados.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
             cliente.EstadoCivil_dados = tbEstadoCivil.Text;
             //Endereço1
             cliente.Endereco_endereco1 = tbEndereco1.Text;
@@ -490,8 +490,19 @@ namespace Simplify.Grafico
                 this.tbRG.Text = ClienteSelecionado.RG_dados;
                 this.tbRG.Enabled = false;
                 this.tbProfissao.Text = ClienteSelecionado.Profissao_dados;
-                this.tbSexo.Text = ClienteSelecionado.Sexo_dados;
                 this.tbEstadoCivil.Text = ClienteSelecionado.EstadoCivil_dados;
+                if (rbMasculino.Text == ClienteSelecionado.Sexo_dados)
+                {
+                    this.rbMasculino.Checked = true;
+                }
+                else if (rbFeminino.Text == ClienteSelecionado.Sexo_dados)
+                {
+                    this.rbFeminino.Checked = true;
+                }
+                else
+                {
+                    this.rbNaoBinario.Checked = true;
+                }
                 //Endereço1
                 this.tbEndereco1.Text = ClienteSelecionado.Endereco_endereco1;
                 this.tbRua1.Text = ClienteSelecionado.Rua_endereco1;
