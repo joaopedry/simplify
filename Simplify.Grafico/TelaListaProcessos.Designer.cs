@@ -95,7 +95,7 @@
             this.tbBusca.Location = new System.Drawing.Point(12, 51);
             this.tbBusca.MaxLength = 14;
             this.tbBusca.Name = "tbBusca";
-            this.tbBusca.Size = new System.Drawing.Size(144, 20);
+            this.tbBusca.Size = new System.Drawing.Size(190, 20);
             this.tbBusca.TabIndex = 1;
             this.tbBusca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tbBusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbBusca_KeyPress);
@@ -104,7 +104,7 @@
             // btBuscarProcesso
             // 
             this.btBuscarProcesso.BackColor = System.Drawing.Color.White;
-            this.btBuscarProcesso.Location = new System.Drawing.Point(162, 49);
+            this.btBuscarProcesso.Location = new System.Drawing.Point(208, 49);
             this.btBuscarProcesso.Name = "btBuscarProcesso";
             this.btBuscarProcesso.Size = new System.Drawing.Size(128, 23);
             this.btBuscarProcesso.TabIndex = 2;
@@ -117,7 +117,7 @@
             this.btAlterarDados.BackColor = System.Drawing.Color.White;
             this.btAlterarDados.Location = new System.Drawing.Point(12, 77);
             this.btAlterarDados.Name = "btAlterarDados";
-            this.btAlterarDados.Size = new System.Drawing.Size(144, 23);
+            this.btAlterarDados.Size = new System.Drawing.Size(190, 23);
             this.btAlterarDados.TabIndex = 3;
             this.btAlterarDados.Text = "Alterar dados cadastrais";
             this.btAlterarDados.UseVisualStyleBackColor = false;
@@ -135,7 +135,7 @@
             // btImprimirFolhaDeRosto
             // 
             this.btImprimirFolhaDeRosto.BackColor = System.Drawing.Color.White;
-            this.btImprimirFolhaDeRosto.Location = new System.Drawing.Point(162, 77);
+            this.btImprimirFolhaDeRosto.Location = new System.Drawing.Point(208, 78);
             this.btImprimirFolhaDeRosto.Name = "btImprimirFolhaDeRosto";
             this.btImprimirFolhaDeRosto.Size = new System.Drawing.Size(128, 23);
             this.btImprimirFolhaDeRosto.TabIndex = 5;
@@ -151,9 +151,9 @@
             this.Nome_dados,
             this.CPF_dados,
             this.StatusProcesso});
-            this.dgTodosOsClientes.Location = new System.Drawing.Point(12, 106);
+            this.dgTodosOsClientes.Location = new System.Drawing.Point(12, 107);
             this.dgTodosOsClientes.Name = "dgTodosOsClientes";
-            this.dgTodosOsClientes.Size = new System.Drawing.Size(278, 482);
+            this.dgTodosOsClientes.Size = new System.Drawing.Size(324, 482);
             this.dgTodosOsClientes.TabIndex = 30;
             this.dgTodosOsClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTodosOsClientes_CellContentClick);
             // 
@@ -644,9 +644,9 @@
             this.panel1.Controls.Add(this.lbRua);
             this.panel1.Controls.Add(this.lbEmail);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(296, 13);
+            this.panel1.Location = new System.Drawing.Point(342, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(705, 659);
+            this.panel1.Size = new System.Drawing.Size(659, 659);
             this.panel1.TabIndex = 29;
             // 
             // TelaListaProcessos

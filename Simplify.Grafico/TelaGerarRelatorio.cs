@@ -37,6 +37,9 @@ namespace Simplify.Grafico
             lbProcessosAprovados.Text   = AprovadoCountRelatorio.ToString();
             lbProcessosConcluidos.Text  = (AprovadoCountRelatorio + NegadoCountRelatorio).ToString();
             lbProcessosEmAberto.Text    = (PendenteCountRelatorio + EnviadoCountRelatorio).ToString();
+            lbDatainicio.Text = dtpDataInicioRelatorio.Value.Date.ToString("dd/MM/yyyy");
+            lbDataFinal.Text = dtpDataFimRelatorio.Value.Date.ToString("dd/MM/yyyy");
+            lbDataGeracao.Text = DateTime.Now.ToString();
         }
 
         public void DataInformadaInicio(int count)
@@ -109,6 +112,21 @@ namespace Simplify.Grafico
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbDatainicio_Click(object sender, EventArgs e)
         {
 
         }
