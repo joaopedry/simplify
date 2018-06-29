@@ -112,12 +112,6 @@
     <Compile Include="TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaMostraArquivos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TelaMostraArquivos.Designer.cs">
-      <DependentUpon>TelaMostraArquivos.cs</DependentUpon>
-    </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,12 +123,6 @@
     </Compile>
     <Compile Include="TelaProcessosAprovados.Designer.cs">
       <DependentUpon>TelaProcessosAprovados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="telaProcessosCadastrados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="telaProcessosCadastrados.Designer.cs">
-      <DependentUpon>telaProcessosCadastrados.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaProcessosEnviados.cs">
       <SubType>Form</SubType>
@@ -190,17 +178,11 @@
     <EmbeddedResource Include="TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaMostraArquivos.resx">
-      <DependentUpon>TelaMostraArquivos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaProcessosAprovados.resx">
       <DependentUpon>TelaProcessosAprovados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="telaProcessosCadastrados.resx">
-      <DependentUpon>telaProcessosCadastrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaProcessosEnviados.resx">
       <DependentUpon>TelaProcessosEnviados.cs</DependentUpon>

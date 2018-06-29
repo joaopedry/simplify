@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.dgProcessosPendencia = new System.Windows.Forms.DataGridView();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgProcessosPendencia)).BeginInit();
             this.SuspendLayout();
@@ -42,8 +42,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgProcessosPendencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProcessosPendencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CPF,
             this.Nome,
+            this.CPF,
             this.Status});
             this.dgProcessosPendencia.Location = new System.Drawing.Point(1, 2);
             this.dgProcessosPendencia.Name = "dgProcessosPendencia";
@@ -51,23 +51,26 @@
             this.dgProcessosPendencia.TabIndex = 0;
             this.dgProcessosPendencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProcessosPendencia_CellContentClick);
             // 
-            // CPF
-            // 
-            this.CPF.DataPropertyName = "CPF_dados";
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            // 
             // Nome
             // 
             this.Nome.DataPropertyName = "Nome_dados";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "CPF_dados";
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
             // 
             // Status
             // 
             this.Status.DataPropertyName = "Status";
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // TelaProcessosPendencia
             // 
@@ -91,8 +94,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgProcessosPendencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

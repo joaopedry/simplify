@@ -12,7 +12,7 @@ namespace Simplify.Negocio.Models
         public long Id { get; set; }
         public String Nome_dados { get; set; }
         public String Indicacao_dados { get; set; }
-        public String Nascimento_dados { get; set; }
+        public DateTime Nascimento_dados { get; set; }
         public String CPF_dados { get; set; }
         public String RG_dados { get; set; }
         public String Profissao_dados { get; set; }

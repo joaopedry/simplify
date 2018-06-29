@@ -45,8 +45,11 @@
             this.btConsultarProcesso = new System.Windows.Forms.Button();
             this.btNovoCadastro = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btVerAniversario = new System.Windows.Forms.Button();
             this.lbAniversariantes = new System.Windows.Forms.Label();
             this.dgAniversariantes = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbProcessoAprovado = new System.Windows.Forms.Label();
             this.btProcessosaprovados = new System.Windows.Forms.Button();
@@ -59,8 +62,6 @@
             this.btProcessEnviados = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btRelatorios = new System.Windows.Forms.Button();
-            this.cbGraficoProcessosnegdos = new System.Windows.Forms.CheckBox();
-            this.cbGraficoProcessosenviados = new System.Windows.Forms.CheckBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label3 = new System.Windows.Forms.Label();
             this.ttConfiguracoes = new System.Windows.Forms.ToolTip(this.components);
@@ -230,6 +231,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.btVerAniversario);
             this.panel3.Controls.Add(this.lbAniversariantes);
             this.panel3.Controls.Add(this.dgAniversariantes);
             this.panel3.Location = new System.Drawing.Point(1, 345);
@@ -238,6 +240,16 @@
             this.panel3.Size = new System.Drawing.Size(231, 206);
             this.panel3.TabIndex = 6;
             // 
+            // btVerAniversario
+            // 
+            this.btVerAniversario.Location = new System.Drawing.Point(179, 5);
+            this.btVerAniversario.Name = "btVerAniversario";
+            this.btVerAniversario.Size = new System.Drawing.Size(34, 23);
+            this.btVerAniversario.TabIndex = 2;
+            this.btVerAniversario.Text = "Ver";
+            this.btVerAniversario.UseVisualStyleBackColor = true;
+            this.btVerAniversario.Click += new System.EventHandler(this.btVerAniversario_Click);
+            // 
             // lbAniversariantes
             // 
             this.lbAniversariantes.AutoSize = true;
@@ -245,9 +257,9 @@
             this.lbAniversariantes.Location = new System.Drawing.Point(9, 8);
             this.lbAniversariantes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAniversariantes.Name = "lbAniversariantes";
-            this.lbAniversariantes.Size = new System.Drawing.Size(204, 20);
+            this.lbAniversariantes.Size = new System.Drawing.Size(174, 20);
             this.lbAniversariantes.TabIndex = 1;
-            this.lbAniversariantes.Text = "Aniversariantes da Semana";
+            this.lbAniversariantes.Text = "Aniversariantes do Mês";
             this.lbAniversariantes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgAniversariantes
@@ -255,12 +267,30 @@
             this.dgAniversariantes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgAniversariantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAniversariantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.DataNascimento});
             this.dgAniversariantes.Location = new System.Drawing.Point(10, 30);
             this.dgAniversariantes.Margin = new System.Windows.Forms.Padding(2);
             this.dgAniversariantes.Name = "dgAniversariantes";
             this.dgAniversariantes.RowTemplate.Height = 24;
             this.dgAniversariantes.Size = new System.Drawing.Size(203, 162);
             this.dgAniversariantes.TabIndex = 0;
+            this.dgAniversariantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAniversariantes_CellContentClick);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "nome_dados";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // DataNascimento
+            // 
+            this.DataNascimento.DataPropertyName = "Nascimento_dados";
+            this.DataNascimento.HeaderText = "Data Nascimento";
+            this.DataNascimento.Name = "DataNascimento";
+            this.DataNascimento.ReadOnly = true;
             // 
             // panel4
             // 
@@ -287,12 +317,13 @@
             this.lbProcessoAprovado.AutoSize = true;
             this.lbProcessoAprovado.BackColor = System.Drawing.Color.DarkGray;
             this.lbProcessoAprovado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.lbProcessoAprovado.ForeColor = System.Drawing.Color.Olive;
+            this.lbProcessoAprovado.ForeColor = System.Drawing.Color.Green;
             this.lbProcessoAprovado.Location = new System.Drawing.Point(104, 324);
             this.lbProcessoAprovado.Name = "lbProcessoAprovado";
             this.lbProcessoAprovado.Size = new System.Drawing.Size(25, 25);
             this.lbProcessoAprovado.TabIndex = 10;
             this.lbProcessoAprovado.Text = "0";
+            this.lbProcessoAprovado.Click += new System.EventHandler(this.lbProcessoAprovado_Click);
             // 
             // btProcessosaprovados
             // 
@@ -319,6 +350,7 @@
             this.lbProcessoNegado.Size = new System.Drawing.Size(25, 25);
             this.lbProcessoNegado.TabIndex = 8;
             this.lbProcessoNegado.Text = "0";
+            this.lbProcessoNegado.Click += new System.EventHandler(this.lbProcessoNegado_Click);
             // 
             // lbProcessoPendencia
             // 
@@ -332,6 +364,7 @@
             this.lbProcessoPendencia.Size = new System.Drawing.Size(25, 25);
             this.lbProcessoPendencia.TabIndex = 7;
             this.lbProcessoPendencia.Text = "0";
+            this.lbProcessoPendencia.Click += new System.EventHandler(this.lbProcessoPendencia_Click);
             // 
             // lbProcessosEnviados
             // 
@@ -409,8 +442,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Gainsboro;
             this.panel5.Controls.Add(this.btRelatorios);
-            this.panel5.Controls.Add(this.cbGraficoProcessosnegdos);
-            this.panel5.Controls.Add(this.cbGraficoProcessosenviados);
             this.panel5.Controls.Add(this.chart1);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(465, 184);
@@ -433,32 +464,6 @@
             this.btRelatorios.UseVisualStyleBackColor = false;
             this.btRelatorios.Click += new System.EventHandler(this.btRelatorios_Click);
             // 
-            // cbGraficoProcessosnegdos
-            // 
-            this.cbGraficoProcessosnegdos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbGraficoProcessosnegdos.AutoSize = true;
-            this.cbGraficoProcessosnegdos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGraficoProcessosnegdos.Location = new System.Drawing.Point(9, 336);
-            this.cbGraficoProcessosnegdos.Margin = new System.Windows.Forms.Padding(2);
-            this.cbGraficoProcessosnegdos.Name = "cbGraficoProcessosnegdos";
-            this.cbGraficoProcessosnegdos.Size = new System.Drawing.Size(136, 19);
-            this.cbGraficoProcessosnegdos.TabIndex = 3;
-            this.cbGraficoProcessosnegdos.Text = "Processos Negados";
-            this.cbGraficoProcessosnegdos.UseVisualStyleBackColor = true;
-            // 
-            // cbGraficoProcessosenviados
-            // 
-            this.cbGraficoProcessosenviados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbGraficoProcessosenviados.AutoSize = true;
-            this.cbGraficoProcessosenviados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGraficoProcessosenviados.Location = new System.Drawing.Point(9, 313);
-            this.cbGraficoProcessosenviados.Margin = new System.Windows.Forms.Padding(2);
-            this.cbGraficoProcessosenviados.Name = "cbGraficoProcessosenviados";
-            this.cbGraficoProcessosenviados.Size = new System.Drawing.Size(136, 19);
-            this.cbGraficoProcessosenviados.TabIndex = 2;
-            this.cbGraficoProcessosenviados.Text = "Processos Enviados";
-            this.cbGraficoProcessosenviados.UseVisualStyleBackColor = true;
-            // 
             // chart1
             // 
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -471,6 +476,7 @@
             this.chart1.Location = new System.Drawing.Point(9, 75);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
@@ -487,9 +493,9 @@
             this.label3.Location = new System.Drawing.Point(8, 24);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 22);
+            this.label3.Size = new System.Drawing.Size(250, 22);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Resultados";
+            this.label3.Text = "Resultados últimos 30 dias";
             // 
             // ttConfiguracoes
             // 
@@ -514,6 +520,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.TelaPrincipal_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaPrincipal_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -555,8 +562,6 @@
         private System.Windows.Forms.Label lbProcessoNegado;
         private System.Windows.Forms.Label lbProcessoPendencia;
         private System.Windows.Forms.Label lbProcessosEnviados;
-        private System.Windows.Forms.CheckBox cbGraficoProcessosnegdos;
-        private System.Windows.Forms.CheckBox cbGraficoProcessosenviados;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button btRelatorios;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -566,6 +571,9 @@
         private System.Windows.Forms.Button btConsultarProcesso;
         private System.Windows.Forms.Label lbProcessoAprovado;
         private System.Windows.Forms.Button btProcessosaprovados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
+        private System.Windows.Forms.Button btVerAniversario;
     }
 }
 

@@ -225,6 +225,7 @@
             this.tbNascimento.Name = "tbNascimento";
             this.tbNascimento.Size = new System.Drawing.Size(200, 20);
             this.tbNascimento.TabIndex = 2;
+            this.tbNascimento.TextChanged += new System.EventHandler(this.tbNascimento_TextChanged);
             this.tbNascimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNascimento_KeyPress);
             // 
             // tbRG
@@ -438,6 +439,7 @@
             this.tabcadastrocliente.Size = new System.Drawing.Size(780, 399);
             this.tabcadastrocliente.TabIndex = 0;
             this.tabcadastrocliente.Text = "Dados Pessoais";
+            this.tabcadastrocliente.Click += new System.EventHandler(this.tabcadastrocliente_Click);
             // 
             // gbStatusProcesso
             // 

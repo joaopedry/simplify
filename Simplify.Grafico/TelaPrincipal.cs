@@ -11,11 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Simplify.Negocio;
+using Simplify.Negocio.Persistencia;
 
 namespace Simplify.Grafico
 {
     public partial class TelaPrincipal : Form
     {
+        private Banco banco = new Banco();
         Gerenciador gerenciador = new Gerenciador();
         TelaProcessosEnviados enviado = new TelaProcessosEnviados();
         TelaProcessosNegados negado = new TelaProcessosNegados();
@@ -42,28 +44,6 @@ namespace Simplify.Grafico
             childForm.MdiParent = this;
             childForm.Text = "Janela " + childFormNumber++;
             childForm.Show();
-        }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Arquivos de texto (*.txt)|*.txt|Todos os arquivos (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Arquivos de texto (*.txt)|*.txt|Todos os arquivos (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
         }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
@@ -136,25 +116,6 @@ namespace Simplify.Grafico
             {
                 mantercliente.Show();
             }           
-        }
-
-        private void btProcessAndamento_Click(object sender, EventArgs e)
-        {
-            TelaProcessosAndamento telaandamento = new TelaProcessosAndamento();
-            telaandamento.MdiParent = this;
-            panel5.Controls.Add(telaandamento);
-
-            if (Application.OpenForms.OfType<TelaProcessosAndamento>().Count() > 0)
-            {
-                MessageBox.Show("Esta janela já está em execução.", "!",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                Application.OpenForms.OfType<TelaProcessosAndamento>().First().Focus();
-            }
-            else
-            {
-                telaandamento.Show();
-            }
-            
         }
 
         private void btProcessEnviados_Click(object sender, EventArgs e)
@@ -346,11 +307,24 @@ namespace Simplify.Grafico
             Buscacount(null);
             PercentualGrafico();
             CountGrafico(null);
+            MostrarAniversariantes(null);
         }
 
         private void lbProcessosEnviados_Click(object sender, EventArgs e)
         {
-
+            TelaProcessosEnviados TelaEnviado = new TelaProcessosEnviados();
+            TelaEnviado.MdiParent = this;
+            panel5.Controls.Add(TelaEnviado);
+            if (Application.OpenForms.OfType<TelaProcessosEnviados>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaProcessosEnviados>().First().Focus();
+            }
+            else
+            {
+                TelaEnviado.Show();
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -366,13 +340,13 @@ namespace Simplify.Grafico
         private void Grafico()
         {
             string[] Status = {
-            "Enviado",
-            "Pendente",
-            "Negado",
-            "Aprovado",
-            "Total"
+            "1- Enviado",
+            "2- Pendente",
+            "3- Negado",
+            "4- Aprovado",
+            "5- Total"
             };
-            this.chart1.Palette = ChartColorPalette.SeaGreen;
+            this.chart1.Palette = ChartColorPalette.None;
             this.chart1.Titles.Add("Processos");
             for (int i = 0; i < Status.Length; i++)
             {
@@ -383,11 +357,11 @@ namespace Simplify.Grafico
         public void PercentualGrafico()
         {
             
-            int Enviados = int.Parse(lbProcessosEnviados.Text);
-            int Pendentes = int.Parse(lbProcessoPendencia.Text);
-            int Negados = int.Parse(lbProcessoNegado.Text);
-            int Aprovados = int.Parse(lbProcessoAprovado.Text);
-            int Total = (Enviados + Pendentes + Negados + Aprovados);
+            int Enviados = GraficoEnviado;
+            int Pendentes = GraficoPendente;
+            int Negados = GraficoNegado;
+            int Aprovados = GraficoAprovado;
+            int Total = (GraficoEnviado + GraficoPendente + GraficoNegado + GraficoAprovado);
 
             series.Points.Clear();
             series.Points.Add(Enviados);
@@ -395,6 +369,105 @@ namespace Simplify.Grafico
             series.Points.Add(Negados);
             series.Points.Add(Aprovados);
             series.Points.Add(Total);
+        }
+
+        private void lbProcessoPendencia_Click(object sender, EventArgs e)
+        {
+            TelaProcessosPendencia TelaPendente = new TelaProcessosPendencia();
+            TelaPendente.MdiParent = this;
+            panel5.Controls.Add(TelaPendente);
+            if (Application.OpenForms.OfType<TelaProcessosPendencia>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaProcessosPendencia>().First().Focus();
+            }
+            else
+            {
+                TelaPendente.Show();
+            }
+        }
+
+        private void lbProcessoNegado_Click(object sender, EventArgs e)
+        {
+            TelaProcessosNegados TelaNegado = new TelaProcessosNegados();
+            TelaNegado.MdiParent = this;
+            panel5.Controls.Add(TelaNegado);
+            if (Application.OpenForms.OfType<TelaProcessosNegados>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaProcessosNegados>().First().Focus();
+            }
+            else
+            {
+                TelaNegado.Show();
+            }
+        }
+
+        private void lbProcessoAprovado_Click(object sender, EventArgs e)
+        {
+            TelaProcessosAprovados TelaAprovado = new TelaProcessosAprovados();
+            TelaAprovado.MdiParent = this;
+            panel5.Controls.Add(TelaAprovado);
+            if (Application.OpenForms.OfType<TelaProcessosNegados>().Count() > 0)
+            {
+                MessageBox.Show("Esta janela já está em execução.", "!",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.OpenForms.OfType<TelaProcessosNegados>().First().Focus();
+            }
+            else
+            {
+                TelaAprovado.Show();
+            }
+        }
+
+        private void dgAniversariantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public void MostrarAniversariantes(String nome)
+        {
+            dgAniversariantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgAniversariantes.MultiSelect = false;
+            dgAniversariantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgAniversariantes.AutoGenerateColumns = false;
+            List<Cliente> clientes = Program.Gerenciador.Aniversariantes(nome);
+            dgAniversariantes.DataSource = clientes;
+        }
+
+        private void btVerAniversario_Click(object sender, EventArgs e)
+        {
+            if (VerificarSelecao())
+            {
+                Cliente clienteSelecionado = (Cliente)dgAniversariantes.SelectedRows[0].DataBoundItem;
+                AbreTelaInclusaoAlteracao(clienteSelecionado);
+            }
+        }
+
+        private bool VerificarSelecao()
+        {
+            if (dgAniversariantes.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Selecione uma linha");
+                return false;
+            }
+            return true;
+        }
+
+        private void AbreTelaInclusaoAlteracao(Cliente clienteSelecionado)
+        {
+            ManterCliente tela = new ManterCliente();
+            tela.MdiParent = this.MdiParent;
+            tela.ClienteSelecionado = clienteSelecionado;
+            tela.FormClosed += TelaPrincipal_FormClosed;
+            tela.Show();
+        }
+
+        private void TelaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Simplify.Negocio
             }*/
 
             // -- CAMPO NASCIMENTO OBRIGATÓRIO -- //
-            if (String.IsNullOrEmpty(clienteAdicionado.Nascimento_dados))
+            if (String.IsNullOrEmpty(clienteAdicionado.Nascimento_dados.ToString()))
             {
                 validacao.Mensagens.Add("Nascimento_dados", "Campo nascimento é obrigatório");
             }
@@ -143,67 +143,66 @@ namespace Simplify.Negocio
         {
             Validacao validacao = new Validacao();
             Cliente clienteBanco = BuscaClientePorCPF(clienteAlterado.CPF_dados);
+                /*Dados Pessoais*/
+                clienteBanco.Nome_dados = clienteAlterado.Nome_dados;
+                clienteBanco.Indicacao_dados = clienteAlterado.Indicacao_dados;
+                clienteBanco.Nascimento_dados = clienteAlterado.Nascimento_dados;
+                //clienteBanco.CPF_dados = clienteAlterado.CPF_dados;
+                clienteBanco.RG_dados = clienteAlterado.RG_dados;
+                clienteBanco.Profissao_dados = clienteAlterado.Profissao_dados;
+                clienteBanco.Sexo_dados = clienteAlterado.Sexo_dados;
+                clienteBanco.EstadoCivil_dados = clienteAlterado.EstadoCivil_dados;
+                //Endereço1
+                clienteBanco.Endereco_endereco1 = clienteAlterado.Endereco_endereco1;
+                clienteBanco.Rua_endereco1 = clienteAlterado.Rua_endereco1;
+                clienteBanco.Num_endereco1 = clienteAlterado.Num_endereco1;
+                clienteBanco.Complemento_endereco1 = clienteAlterado.Complemento_endereco1;
+                clienteBanco.CEP_endereco1 = clienteAlterado.CEP_endereco1;
+                clienteBanco.Bairro_endereco1 = clienteAlterado.Bairro_endereco1;
+                clienteBanco.Cidade_endereco1 = clienteAlterado.Cidade_endereco1;
+                //Endereço2
+                clienteBanco.Endereco_endereco2 = clienteAlterado.Endereco_endereco2;
+                clienteBanco.Rua_endereco2 = clienteAlterado.Rua_endereco2;
+                clienteBanco.Num_endereco2 = clienteAlterado.Num_endereco2;
+                clienteBanco.Complemento_endereco2 = clienteAlterado.Complemento_endereco2;
+                clienteBanco.CEP_endereco2 = clienteAlterado.CEP_endereco2;
+                clienteBanco.Bairro_endereco2 = clienteAlterado.Bairro_endereco2;
+                clienteBanco.Cidade_endereco2 = clienteAlterado.Cidade_endereco2;
+                //Contato
+                clienteBanco.Residencial_contato = clienteAlterado.Residencial_contato;
+                clienteBanco.Celular1_contato = clienteAlterado.Celular1_contato;
+                clienteBanco.Celular2_contato = clienteAlterado.Celular2_contato;
+                clienteBanco.TelTrabalho_contato = clienteAlterado.TelTrabalho_contato;
+                clienteBanco.Email_contato = clienteAlterado.Email_contato;
+                clienteBanco.Facebook_contato = clienteAlterado.Facebook_contato;
+                clienteBanco.NomeRecado_contato = clienteAlterado.NomeRecado_contato;
+                clienteBanco.TelefoneRecado_contato = clienteAlterado.TelefoneRecado_contato;
+                //Ocorrencia
+                clienteBanco.Data_ocorrencia = clienteAlterado.Data_ocorrencia;
+                clienteBanco.Local_ocorrencia = clienteAlterado.Local_ocorrencia;
+                clienteBanco.Veiculo_ocorrencia = clienteAlterado.Veiculo_ocorrencia;
+                clienteBanco.Tipo_ocorrencia = clienteAlterado.Tipo_ocorrencia;
+                clienteBanco.INSS_ocorrencia = clienteAlterado.INSS_ocorrencia;
+                clienteBanco.Horario_ocorrencia = clienteAlterado.Horario_ocorrencia;
+                clienteBanco.Lesao_ocorrencia = clienteAlterado.Lesao_ocorrencia;
+                clienteBanco.Socorrista_ocorrencia = clienteAlterado.Socorrista_ocorrencia;
+                clienteBanco.Hospital_ocorrencia = clienteAlterado.Hospital_ocorrencia;
+                clienteBanco.Observacao_ocorrencia = clienteAlterado.Observacao_ocorrencia;
+                //Observaçoes
+                clienteBanco.Observacao_observacao = clienteAlterado.Observacao_observacao;
+                //status
+                clienteBanco.Status = clienteAlterado.Status;
+                //caminho arquivo
+                clienteBanco.caminhoBoletim_anexos = clienteAlterado.caminhoBoletim_anexos;
+                clienteBanco.caminhoProntuario_anexos = clienteAlterado.caminhoProntuario_anexos;
+                clienteBanco.caminhoComprovanteResidencia_anexos = clienteAlterado.caminhoComprovanteResidencia_anexos;
+                clienteBanco.caminhoCartaoBanco_anexos = clienteAlterado.caminhoCartaoBanco_anexos;
+                clienteBanco.caminhoRG_anexos = clienteAlterado.caminhoRG_anexos;
+                clienteBanco.caminhoCPF_anexos = clienteAlterado.caminhoCPF_anexos;
+                clienteBanco.caminhoCNH_anexos = clienteAlterado.caminhoCNH_anexos;
+                clienteBanco.caminhoDOCVeiculo_anexos = clienteAlterado.caminhoDOCVeiculo_anexos;
+                this.banco.SaveChanges();
             
-            /*Dados Pessoais*/
-            clienteBanco.Nome_dados = clienteAlterado.Nome_dados;
-            clienteBanco.Indicacao_dados = clienteAlterado.Indicacao_dados;
-            clienteBanco.Nascimento_dados = clienteAlterado.Nascimento_dados;
-            clienteBanco.CPF_dados = clienteAlterado.CPF_dados;
-            clienteBanco.RG_dados = clienteAlterado.RG_dados;
-            clienteBanco.Profissao_dados = clienteAlterado.Profissao_dados;
-            clienteBanco.Sexo_dados = clienteAlterado.Sexo_dados;
-            clienteBanco.EstadoCivil_dados = clienteAlterado.EstadoCivil_dados;
-            //Endereço1
-            clienteBanco.Endereco_endereco1 = clienteAlterado.Endereco_endereco1;
-            clienteBanco.Rua_endereco1 = clienteAlterado.Rua_endereco1;
-            clienteBanco.Num_endereco1 = clienteAlterado.Num_endereco1;
-            clienteBanco.Complemento_endereco1 = clienteAlterado.Complemento_endereco1;
-            clienteBanco.CEP_endereco1 = clienteAlterado.CEP_endereco1;
-            clienteBanco.Bairro_endereco1 = clienteAlterado.Bairro_endereco1;
-            clienteBanco.Cidade_endereco1 = clienteAlterado.Cidade_endereco1;
-            //Endereço2
-            clienteBanco.Endereco_endereco2 = clienteAlterado.Endereco_endereco2;
-            clienteBanco.Rua_endereco2 = clienteAlterado.Rua_endereco2;
-            clienteBanco.Num_endereco2 = clienteAlterado.Num_endereco2;
-            clienteBanco.Complemento_endereco2 = clienteAlterado.Complemento_endereco2;
-            clienteBanco.CEP_endereco2 = clienteAlterado.CEP_endereco2;
-            clienteBanco.Bairro_endereco2 = clienteAlterado.Bairro_endereco2;
-            clienteBanco.Cidade_endereco2 = clienteAlterado.Cidade_endereco2;
-            //Contato
-            clienteBanco.Residencial_contato = clienteAlterado.Residencial_contato;
-            clienteBanco.Celular1_contato = clienteAlterado.Celular1_contato;
-            clienteBanco.Celular2_contato = clienteAlterado.Celular2_contato;
-            clienteBanco.TelTrabalho_contato = clienteAlterado.TelTrabalho_contato;
-            clienteBanco.Email_contato = clienteAlterado.Email_contato;
-            clienteBanco.Facebook_contato = clienteAlterado.Facebook_contato;
-            clienteBanco.NomeRecado_contato = clienteAlterado.NomeRecado_contato;
-            clienteBanco.TelefoneRecado_contato = clienteAlterado.TelefoneRecado_contato;
-            //Ocorrencia
-            clienteBanco.Data_ocorrencia = clienteAlterado.Data_ocorrencia;
-            clienteBanco.Local_ocorrencia = clienteAlterado.Local_ocorrencia;
-            clienteBanco.Veiculo_ocorrencia = clienteAlterado.Veiculo_ocorrencia;
-            clienteBanco.Tipo_ocorrencia = clienteAlterado.Tipo_ocorrencia;
-            clienteBanco.INSS_ocorrencia = clienteAlterado.INSS_ocorrencia;
-            clienteBanco.Horario_ocorrencia = clienteAlterado.Horario_ocorrencia;
-            clienteBanco.Lesao_ocorrencia = clienteAlterado.Lesao_ocorrencia;
-            clienteBanco.Socorrista_ocorrencia = clienteAlterado.Socorrista_ocorrencia;
-            clienteBanco.Hospital_ocorrencia = clienteAlterado.Hospital_ocorrencia;
-            clienteBanco.Observacao_ocorrencia = clienteAlterado.Observacao_ocorrencia;
-            //Observaçoes
-            clienteBanco.Observacao_observacao = clienteAlterado.Observacao_observacao;
-            //status
-            clienteBanco.Status = clienteAlterado.Status;
-            //caminho arquivo
-            clienteBanco.caminhoBoletim_anexos = clienteAlterado.caminhoBoletim_anexos;
-            clienteBanco.caminhoProntuario_anexos = clienteAlterado.caminhoProntuario_anexos;
-            clienteBanco.caminhoComprovanteResidencia_anexos = clienteAlterado.caminhoComprovanteResidencia_anexos;
-            clienteBanco.caminhoCartaoBanco_anexos = clienteAlterado.caminhoCartaoBanco_anexos;
-            clienteBanco.caminhoRG_anexos = clienteAlterado.caminhoRG_anexos;
-            clienteBanco.caminhoCPF_anexos = clienteAlterado.caminhoCPF_anexos;
-            clienteBanco.caminhoCNH_anexos = clienteAlterado.caminhoCNH_anexos;
-            clienteBanco.caminhoDOCVeiculo_anexos = clienteAlterado.caminhoDOCVeiculo_anexos;
-            this.banco.SaveChanges();
-
             return validacao;
         }
 
@@ -412,7 +411,7 @@ namespace Simplify.Negocio
 
         public List<Cliente> CountEnviado(string CountEnviado)
         {
-            DateTime newDate = DateTime.Now.AddDays(-30);
+            DateTime newDate = DateTime.Now.AddDays(-31);
             return this.banco.Clientes.Where(c => c.Status == "Enviado")
                                       .Where(d => d.DTCriacao >= newDate)
                                       .ToList();
@@ -420,7 +419,7 @@ namespace Simplify.Negocio
 
         public List<Cliente> CountPendente(string CountEnviado)
         {
-            DateTime newDate = DateTime.Now.AddDays(-30);
+            DateTime newDate = DateTime.Now.AddDays(-31);
             return this.banco.Clientes.Where(c => c.Status == "Pendente")
                                       .Where(d => d.DTCriacao >= newDate)
                                       .ToList();
@@ -428,7 +427,7 @@ namespace Simplify.Negocio
 
         public List<Cliente> CountNegado(string CountEnviado)
         {
-            DateTime newDate = DateTime.Now.AddDays(-30);
+            DateTime newDate = DateTime.Now.AddDays(-31);
             return this.banco.Clientes.Where(c => c.Status == "Negado")
                                       .Where(d => d.DTCriacao >= newDate)
                                       .ToList();
@@ -436,14 +435,29 @@ namespace Simplify.Negocio
 
         public List<Cliente> CountAprovado(string CountEnviado)
         {
-            DateTime newDate = DateTime.Now.AddDays(-30);
+            DateTime newDate = DateTime.Now.AddDays(-31);
             return this.banco.Clientes.Where(c => c.Status == "Aprovado")
                                       .Where(d => d.DTCriacao >= newDate)
                                       .ToList();
         }
+
         public List<Cliente> TodosOsClientes()
         {
             return this.banco.Clientes.ToList();
+        }
+
+        public List<Cliente> FiltraGrid(String CPFRecebido)
+        {
+            return this.banco.Clientes.Where(c => c.CPF_dados == CPFRecebido).ToList();
+        }
+
+        public List<Cliente> Aniversariantes(String nome)
+        {
+            int mes = DateTime.Now.Month;
+            return this.banco.Clientes
+                                      .Where(d => d.Nascimento_dados.Month == mes)
+                                      .ToList();
+            
         }
     }
 }

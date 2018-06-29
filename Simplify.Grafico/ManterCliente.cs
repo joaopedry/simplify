@@ -83,7 +83,7 @@ namespace Simplify.Grafico
             /*Dados Pessoais*/
             cliente.Nome_dados = tbNome.Text;
             cliente.Indicacao_dados = tbindicacao.Text;
-            cliente.Nascimento_dados = tbNascimento.Text;
+            cliente.Nascimento_dados =DateTime.Parse(tbNascimento.Text);
             cliente.CPF_dados = tbCpf.Text;
             cliente.RG_dados = tbRG.Text;
             cliente.Profissao_dados = tbProfissao.Text;
@@ -489,7 +489,7 @@ namespace Simplify.Grafico
                 /*Dados Pessoais*/
                 this.tbNome.Text = ClienteSelecionado.Nome_dados;
                 this.tbindicacao.Text = ClienteSelecionado.Indicacao_dados;
-                this.tbNascimento.Text = ClienteSelecionado.Nascimento_dados;
+                this.tbNascimento.Text = ClienteSelecionado.Nascimento_dados.ToString();
                 this.tbCpf.Text = ClienteSelecionado.CPF_dados;
                 this.tbRG.Text = ClienteSelecionado.RG_dados;
                 this.tbProfissao.Text = ClienteSelecionado.Profissao_dados;
@@ -1244,6 +1244,16 @@ namespace Simplify.Grafico
         }
 
         private void rbProcessoPendencia_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbNascimento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabcadastrocliente_Click(object sender, EventArgs e)
         {
 
         }
