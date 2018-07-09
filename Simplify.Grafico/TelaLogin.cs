@@ -102,5 +102,10 @@ namespace Simplify.Grafico
                 btLogin_Click(sender, e);
             }
         }
+
+        private void TelaLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

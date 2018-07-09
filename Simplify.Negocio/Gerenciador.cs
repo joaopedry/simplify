@@ -25,108 +25,143 @@ namespace Simplify.Negocio
         public Validacao AdicionarCliente(Cliente clienteAdicionado)
         {
             Validacao validacao = new Validacao();
-            //Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+            Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
 
             // -- CAMPO NOME OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Nome_dados))
             {
-                validacao.Mensagens.Add("Nome_dados", "Campo nome é obrigatório");
+                validacao.Mensagens.Add("Nome_dados", "Campo NOME é obrigatório!");
             }
 
             // -- CAMPO INDICAÇÃO OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Indicacao_dados))
             {
-                validacao.Mensagens.Add("Indicacao_dados", "Campo indicação é obrigatório");
+                validacao.Mensagens.Add("Indicacao_dados", "Campo INDICAÇÃO é obrigatório!");
             }
 
             // -- CAMPO NASCIMENTO OBRIGATÓRIO -- //
-            if (String.IsNullOrEmpty(clienteAdicionado.Nascimento_dados.ToString()))
+        
+
+            // -- CAMPO RG OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.RG_dados))
             {
-                validacao.Mensagens.Add("Nascimento_dados", "Campo nascimento é obrigatório");
+                validacao.Mensagens.Add("RG_dados", "Campo RG obrigatório!");
             }
 
             // -- CAMPO CPF OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.CPF_dados))
             {
-                validacao.Mensagens.Add("CPF_dados", "Campo CPF é obrigatório");
+                validacao.Mensagens.Add("CPF_dados", "Campo CPF é obrigatório!");
             }
 
-            // -- CAMPO RG OBRIGATÓRIO -- //
-            if (String.IsNullOrEmpty(clienteAdicionado.RG_dados))
+            // -- CAMPO CPF JÁ CADASTRADO -- //
+            Cliente usuarioBanco = BuscaClientePorCPF(clienteAdicionado.CPF_dados);
+            if ((usuarioBanco != null) && (usuarioBanco.CPF_dados == clienteAdicionado.CPF_dados))
             {
-                validacao.Mensagens.Add("RG_dados", "Campo RG obrigatório");
+                validacao.Mensagens.Add("CPF_dados", "Existe um CPF já cadastrado!");
             }
 
             // -- CAMPO PROFISSÃO OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Profissao_dados))
             {
-                validacao.Mensagens.Add("Profissao_dados", "Campo profissão é obrigatório");
-            }
-
-            // -- CAMPO ESTADO CIVIL OBRIGATÓRIO -- //
-            if (String.IsNullOrEmpty(clienteAdicionado.EstadoCivil_dados))
-            {
-                validacao.Mensagens.Add("EstadoCivil_dados", "Campo estado civil é obrigatório");
+                validacao.Mensagens.Add("Profissao_dados", "Campo PROFISSÃO é obrigatório!");
             }
 
             // -- CAMPO ENDEREÇO1 OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Endereco_endereco1))
             {
-                validacao.Mensagens.Add("Endereco_endereco1", "Campo endereço é obrigatório");
+                validacao.Mensagens.Add("Endereco_endereco1", "Campo ENDEREÇO é obrigatório!");
             }
 
             // -- CAMPO RUA1 OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Rua_endereco1))
             {
-                validacao.Mensagens.Add("Rua_endereco1", "Campo rua é obrigatório");
+                validacao.Mensagens.Add("Rua_endereco1", "Campo RUA é obrigatório!");
             }
 
             // -- CAMPO NUMERO1 OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(Convert.ToString(clienteAdicionado.Num_endereco1)))
             {
-                validacao.Mensagens.Add("Num_endereco1", "Campo número é obrigatório");
+                validacao.Mensagens.Add("Num_endereco1", "Campo NÚMERO é obrigatório!");
             }
 
             // -- CAMPO COMPLEMENTO1 OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Complemento_endereco1))
             {
-                validacao.Mensagens.Add("Complemento_endereco1", "Campo complemento é obrigatório");
+                validacao.Mensagens.Add("Complemento_endereco1", "Campo COMPLEMENTO é obrigatório!");
             }
 
             // -- CAMPO CEP1 OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.CEP_endereco1))
             {
-                validacao.Mensagens.Add("CEP_endereco1", "Campo CEP é obrigatório");
+                validacao.Mensagens.Add("CEP_endereco1", "Campo CEP é obrigatório!");
             }
 
             // -- CAMPO BAIRRO1 OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Bairro_endereco1))
             {
-                validacao.Mensagens.Add("Bairro_endereco1", "Campo bairro é obrigatório");
+                validacao.Mensagens.Add("Bairro_endereco1", "Campo BAIRRO é obrigatório!");
             }
 
             // -- CAMPO CIDADE1 OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Cidade_endereco1))
             {
-                validacao.Mensagens.Add("Cidade_endereco1", "Campo cidade é obrigatório");
+                validacao.Mensagens.Add("Cidade_endereco1", "Campo CIDADE é obrigatório!");
             }
-            
+
+            // -- CAMPO CELULAR OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.Celular1_contato))
+            {
+                validacao.Mensagens.Add("Celular1_contato", "Campo CELULAR é obrigatório!");
+            }
+
             // -- CAMPO EMAIL OBRIGATÓRIO -- //
             if (String.IsNullOrEmpty(clienteAdicionado.Email_contato))
             {
-                validacao.Mensagens.Add("Email_contato", "Campo email é obrigatório");
+                validacao.Mensagens.Add("Email_contato", "Campo EMAIL é obrigatório!");
             }
 
-            // -- CAMPO DATA DE NASCIMENTO OBRIGATÓRIO -- //
-           /* if ((clienteAdicionado.Nascimento_dados))
+            // -- CAMPO NOME OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.NomeRecado_contato))
             {
-                validacao.Mensagens.Add("Email_contato", "O email não pode ser nulo ou vazio");
+                validacao.Mensagens.Add("NomeRecado_contato", "Informe um CONTATO para recados!");
             }
-            */
-            /* if (!rg.IsMatch(clienteAdicionado.Email_contato))
-             {
-                 validacao.Mensagens.Add("Email_contato", "Email no formato inválido");
-             }*/
+
+            // -- CAMPO TELEFONE OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.TelefoneRecado_contato))
+            {
+                validacao.Mensagens.Add("TelefoneRecado_contato", "Informe um TELEFONE para recados!");
+            }
+
+            // -- CAMPO LOCAL OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.Local_ocorrencia))
+            {
+                validacao.Mensagens.Add("Local_ocorrencia", "Informe o LOCAL da ocorrência!");
+            }
+
+            // -- CAMPO VEICULOS OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.Veiculo_ocorrencia))
+            {
+                validacao.Mensagens.Add("Veiculo_ocorrencia", "Informe os VEÍCULOS envolvidos!");
+            }
+
+            // -- CAMPO LESÕES OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.Lesao_ocorrencia))
+            {
+                validacao.Mensagens.Add("Lesao_ocorrencia", "Informe as LESÕES!");
+            }
+
+            // -- CAMPO SOCORRISTA OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.Socorrista_ocorrencia))
+            {
+                validacao.Mensagens.Add("Socorrista_ocorrencia", "Informe o SOCORRISTA que foi acionado!");
+            }
+
+            // -- CAMPO HOSPITAL OBRIGATÓRIO -- //
+            if (String.IsNullOrEmpty(clienteAdicionado.Hospital_ocorrencia))
+            {
+                validacao.Mensagens.Add("Hospital_ocorrencia", "Informe o HOSPITAL!");
+            }
 
             if (validacao.Valido)
             {
